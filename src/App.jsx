@@ -99,8 +99,28 @@ function App() {
   const [hover, setHover] = useState("")
   const [projects, setProjects] = useState([
     {
-      name: "Deleafly",
+      name: "Weekode",
       right: false,
+      icons: [
+        <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
+        <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />,
+        <BiLogoTypescript opacity={"80%"} size={28} color='#b0b0b0' />,
+        <BiLogoFlask opacity={"80%"} size={28} color='#b0b0b0' />,
+        <BiLogoPython opacity={"80%"} size={28} color='#b0b0b0' />,
+        <SiPostgresql opacity={"80%"} size={28} color='#b0b0b0' />,
+      ],
+      description: "Guess the output in 10 seconds and earn as much points as possible. If get to the top 3 of the podium we are going to show everyone your projects for one week",
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://weekode.pages.dev",
+        link_github: ""
+      },
+      image: "weekode.png"
+    },
+    {
+      name: "Deleafly",
+      right: true,
       icons: [
         <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
         <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />,
@@ -120,7 +140,7 @@ function App() {
     },
     {
       name: "Cryllet",
-      right: true,
+      right: false,
       icons: [
         <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
         <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />,
@@ -140,7 +160,7 @@ function App() {
     },
     {
       name: "MyPooling",
-      right: false,
+      right: true,
       icons: [
         <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
         <IoLogoJavascript opacity={"80%"} size={28} color='#b0b0b0' />,
