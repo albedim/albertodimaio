@@ -109,7 +109,7 @@ function App() {
         <BiLogoPython opacity={"80%"} size={28} color='#b0b0b0' />,
         <SiPostgresql opacity={"80%"} size={28} color='#b0b0b0' />,
       ],
-      description: "Guess the output in 10 seconds and earn as much points as possible. If get to the top 3 of the podium we are going to show everyone your projects for one week",
+      description: "Guess the output in 10 seconds and earn as much points as possible. If you get to the top 3 of the podium we are going to show everyone your projects for one week",
       links: {
         overview: true,
         code: false,
