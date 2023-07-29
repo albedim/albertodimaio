@@ -437,7 +437,7 @@ function App() {
           <div className='flex-block justify-between'>
             <h2 style={{ color: 'gray' }} className={'mt-2 text-1xl font-regular font-p'} >© 2023 - Made with ♥ by <span className='text-[#4ca14c]' >albedim</span></h2>
             <div className='justify-around flex'>
-              <div className='p-4'><a target='_blank' href="https://twitter.com/alberto_dimaio"><SiTwitter size={24} color='gray' /></a></div>
+              <div className='p-4'><a target='_blank' href="https://twitter.com/TheAlbeDim"><SiTwitter size={24} color='gray' /></a></div>
               <div className='p-4'><a target='_blank' href="https://github.com/albedim"><AiFillGithub size={24} color='gray' /></a></div>
             </div>
           </div>
