@@ -11,7 +11,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { projects, skills } from './consts';
 
 const COLORS = ['#5fc95f', '#56b556', '#4ca14c', '#438d43', '#397939', '#306530', '#265026', '#1c3c1c', '#132813', '#091409']
@@ -296,6 +296,7 @@ function App() {
             <div className='justify-around flex'>
               <div className='p-4'><a target='_blank' href="https://twitter.com/TheAlbeDim"><SiTwitter size={24} color='gray' /></a></div>
               <div className='p-4'><a target='_blank' href="https://github.com/albedim"><AiFillGithub size={24} color='gray' /></a></div>
+              <div className='p-4'><a target='_blank' href="https://linkedin.com/in/alberto-di-maio-520531285"><AiFillLinkedin size={24} color='gray' /></a></div>
             </div>
           </div>
         </div>
