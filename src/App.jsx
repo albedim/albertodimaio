@@ -12,173 +12,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AiFillGithub } from 'react-icons/ai'
+import { projects, skills } from './consts';
 
 const COLORS = ['#5fc95f', '#56b556', '#4ca14c', '#438d43', '#397939', '#306530', '#265026', '#1c3c1c', '#132813', '#091409']
 
+
 function App() {
 
-  const [skills, setSkills] = useState([
-    {
-      name: "HTML",
-      icon: <ImHtmlFive opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "94%"
-    },
-    {
-      name: "CSS",
-      icon: <ImCss3 opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "80%"
-    },
-    {
-      name: "Javascript",
-      icon: <IoLogoJavascript opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "70%"
-    },
-    {
-      name: "Typescript",
-      icon: <BiLogoTypescript opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "70%"
-    },
-    {
-      name: "React JS",
-      icon: <GrReactjs opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "80%"
-    },
-    {
-      name: "TailwindCss",
-      icon: <BiLogoTailwindCss opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "50%"
-    },
-    {
-      name: "Python",
-      icon: <BiLogoPython opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "94%"
-    },
-    {
-      name: "Flask",
-      icon: <BiLogoFlask opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "94%"
-    },
-    {
-      name: "Java",
-      icon: <FaJava opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "84%"
-    },
-    {
-      name: "Spring Boot",
-      icon: <BiLogoSpringBoot opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "75%"
-    },
-    {
-      name: "MySQL",
-      icon: <SiMysql opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "70%"
-    },
-    {
-      name: "PostgreSQL",
-      icon: <SiPostgresql opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "70%"
-    },
-    {
-      name: "MongoDb",
-      icon: <BiLogoMongodb opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "45%"
-    },
-    {
-      name: "PHP",
-      icon: <BiLogoPhp opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "50%"
-    },
-    {
-      name: "Express.js",
-      icon: <SiExpress opacity={"80%"} size={54} color='#b0b0b0' />,
-      value: "60%"
-    }
-  ])
   const [menu, setMenu] = useState(false)
-  const [counter, setCounter] = useState(0)
+
+  const [hoverable, setHoverable] = useState(true)
+
   const [hover, setHover] = useState("")
-  const [projects, setProjects] = useState([
-    {
-      name: "Weekode",
-      right: false,
-      icons: [
-        <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoTypescript opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoFlask opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoPython opacity={"80%"} size={28} color='#b0b0b0' />,
-        <SiPostgresql opacity={"80%"} size={28} color='#b0b0b0' />,
-      ],
-      description: "Guess the output in 10 seconds and earn as much points as possible. If you get to the top 3 of the podium we are going to show everyone your projects for one week",
-      links: {
-        overview: true,
-        code: false,
-        link_overview: "https://weekode.pages.dev",
-        link_github: ""
-      },
-      image: "weekode.png"
-    },
-    {
-      name: "Deleafly",
-      right: true,
-      icons: [
-        <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoTypescript opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoFlask opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoPython opacity={"80%"} size={28} color='#b0b0b0' />,
-        <SiMysql opacity={"80%"} size={28} color='#b0b0b0' />,
-      ],
-      description: "A platform for tracking your url's and see their stats daily, weekly or monthly",
-      links: {
-        overview: true,
-        code: false,
-        link_overview: "https://deleafly.pages.dev",
-        link_github: ""
-      },
-      image: "deleafly.png"
-    },
-    {
-      name: "Cryllet",
-      right: false,
-      icons: [
-        <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />,
-        <IoLogoJavascript opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoFlask opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoPython opacity={"80%"} size={28} color='#b0b0b0' />,
-        <SiMysql opacity={"80%"} size={28} color='#b0b0b0' />,
-      ],
-      description: "Create your payment links with Cryllet. Pay and get paid by others using cryptocurrencies",
-      links: {
-        overview: true,
-        code: false,
-        link_overview: "https://cryllet-fe.pages.dev",
-        link_github: ""
-      },
-      image: "cryllet.png"
-    },
-    {
-      name: "MyPooling",
-      right: true,
-      icons: [
-        <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />,
-        <IoLogoJavascript opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoFlask opacity={"80%"} size={28} color='#b0b0b0' />,
-        <BiLogoPython opacity={"80%"} size={28} color='#b0b0b0' />,
-        <SiMysql opacity={"80%"} size={28} color='#b0b0b0' />,
-      ],
-      description: "Open source project for car pooling. If you have a company and want to help your employees arrive to it or go back home. They are going to give and find fast rides",
-      links: {
-        overview: false,
-        code: true,
-        link_overview: "",
-        link_github: "https://github.com/albedim/mypooling-fe"
-      },
-      image: "mypooling.png"
-    }
-  ])
+
   const [selectedPage, setSelectedPage] = useState("home")
+
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -199,7 +47,7 @@ function App() {
     <div className='justify-around flex h-screen w-screen'>
       <div style={{ display: menu ? 'block' : 'none' }} className='right-0 h-screen w-4/5 bg-[black] fixed'>
         <div className='h-10'>
-          
+
         </div>
         <div className='p-6'  >
           <IoMdClose onClick={() => setMenu(false)} size={54} color='white' />
@@ -343,7 +191,7 @@ function App() {
                 {
                   skills.map(skill => (
                     hover == skill.name ? (
-                      <div className='mt-10'>
+                      <div className='cursor-pointer mt-10'>
                         <div onMouseLeave={() => setHover("")} className='rounded-lg bg-[#152415]'>
                           <div className='pb-1 p-10'>
                             {skill.icon}
@@ -357,7 +205,10 @@ function App() {
                         </div>
                       </div>
                     ) : (
-                      <div onMouseEnter={() => setHover(skill.name)} className='mt-10 pb-1 p-10'>
+                      <div onMouseEnter={() => {
+                        if(hoverable)
+                          setHover(skill.name)
+                      }} className='cursor-pointer mt-10 pb-1 p-10'>
                         {skill.icon}
                       </div>
                     )
@@ -380,16 +231,15 @@ function App() {
                     <div className='p-8'>
                       <div style={{ justifyContent: project.right ? 'space-between' : '' }} className='project-flex rounded-lg p-8 bg-[#152415]'>
                         {
-                          !project.right &&
-                          <div className='flex padding-r-no items-center justify-around'>
-                            <img width={640} className='rounded-lg' src={require("./images/" + project.image)} alt="" />
-                          </div>
-                        }
-                        {
-                          project.right &&
-                          <div className='padding-l-no none-flex items-center justify-around'>
-                            <img width={640} className='rounded-lg' src={require("./images/" + project.image)} alt="" />
-                          </div>
+                          project.right ? (
+                            <div className='padding-l-no none-flex items-center justify-around'>
+                              <img width={640} className='rounded-lg' src={require("./images/" + project.image)} alt="" />
+                            </div>
+                          ) : (
+                            <div className='flex padding-r-no items-center justify-around'>
+                              <img width={640} className='rounded-lg' src={require("./images/" + project.image)} alt="" />
+                            </div>
+                          )
                         }
                         <div>
                           <h2 style={{ color: 'white' }} className={'mt-2 text-3xl font-bold font-p'}>
@@ -399,7 +249,14 @@ function App() {
                           <div className='pt-4 flex'>
                             {
                               project.icons.map(icon => (
-                                <div className='pl-0 p-2'>{icon}</div>
+                                <div onClick={() => {
+                                  window.scrollTo({ top: 1634, left: 0, behavior: "smooth" })
+                                  setHoverable(false)
+                                  setHover(icon.name)
+                                  setTimeout(() => {
+                                    setHoverable(true)
+                                  },1400)
+                                }} className='pl-0 p-2'><div className='cursor-pointer'>{icon.icon}</div></div>
                               ))
                             }
                           </div>
