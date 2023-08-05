@@ -196,8 +196,24 @@ export const projects = [
     image: "deleafly.png"
   },
   {
-    name: "Cryllet",
+    name: "Skilly",
     right: false,
+    icons: [
+      projectsLanguages[6],
+      projectsLanguages[11],
+    ],
+    description: "Python web framework. Build organized and fast rest api's with Skilly.",
+    links: {
+      overview: false,
+      code: true,
+      link_overview: "",
+      link_github: "https://github.com/albedim/skilly"
+    },
+    image: "skilly.png"
+  },
+  {
+    name: "Cryllet",
+    right: true,
     icons: [
       projectsLanguages[4],
       projectsLanguages[5],
@@ -214,24 +230,5 @@ export const projects = [
       link_github: ""
     },
     image: "cryllet.png"
-  },
-  {
-    name: "MyPooling",
-    right: true,
-    icons: [
-      projectsLanguages[4],
-      projectsLanguages[2],
-      projectsLanguages[7],
-      projectsLanguages[6],
-      projectsLanguages[10],
-    ],
-    description: "Open source project for car pooling. If you have a company and want to help your employees arrive to it or go back home. They are going to give and find fast rides",
-    links: {
-      overview: false,
-      code: true,
-      link_overview: "",
-      link_github: "https://github.com/albedim/mypooling-fe"
-    },
-    image: "mypooling.png"
   }
 ]
