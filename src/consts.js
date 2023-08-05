@@ -200,7 +200,7 @@ export const projects = [
     right: false,
     icons: [
       projectsLanguages[6],
-      projectsLanguages[11],
+      projectsLanguages[10],
     ],
     description: "Python web framework. Build organized and fast rest api's with Skilly.",
     links: {
