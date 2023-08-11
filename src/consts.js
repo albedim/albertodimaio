@@ -166,7 +166,7 @@ export const projects = [
       projectsLanguages[6],
       projectsLanguages[11],
     ],
-    description: "Contrycode is helping 5000+ developers find the right open source projects to contribute to",
+    description: "Contrycode is helping 500+ developers find the right open source projects to contribute to",
     links: {
       overview: true,
       code: false,
