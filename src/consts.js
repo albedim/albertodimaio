@@ -156,7 +156,7 @@ const projectsLanguages = [
 
 export const projects = [
   {
-    name: "Contrycode",
+    name: "Codymio",
     right: false,
     icons: [
       projectsLanguages[4],
@@ -166,14 +166,14 @@ export const projects = [
       projectsLanguages[6],
       projectsLanguages[11],
     ],
-    description: "Contrycode is helping 500+ developers find the right open source projects to contribute to",
+    description: "''We didn't create open source, we just made it more accessible''. Codymio is helping 500+ developers find the perfect open source projects to contribute to",
     links: {
       overview: true,
       code: false,
-      link_overview: "https://contrycode.pages.dev",
+      link_overview: "https://codymio.pages.dev",
       link_github: ""
     },
-    image: "contrycode.png"
+    image: "codtmio.png"
   },
   {
     name: "Deleafly",

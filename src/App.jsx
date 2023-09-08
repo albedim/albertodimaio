@@ -278,19 +278,22 @@ function App() {
               </h2>
               <div>
                 <h2 style={{ maxWidth: 940 }} className='mt-14 text-lg text-[#b0b0b0] font-regular font-p'>
-                  My name is Alberto I'm Italian, 18 years old. I like to describe myself using two adjectives: 
-                  Creative and courius. Since I was a child i have been interested in almost anything I tried.
-                  <br /><br />I've always loved to try new things and <span className='text-[#4ca14c]' >challange myself</span> because I 
-                  think it's the only thing that can make you grow. I changed passions and hobbies a lot in my life because as I said, 
-                  I've always liked anything I tried but none was the passion that I wanted to turn into my job.
-                  <br /><br />One year ago I started getting passionated of technology 
-                  and after years of designing and video making I started to code and make little websites. 
-                  After 4 months I understood that wasn't a passion, but <span className='text-[#4ca14c]' >THE PASSION</span>. 
-                  I realised I was good at it and continued learning.
-                  <br /><br />After One year, I have made so many projects and improved my
-                   skills a lot. I've recently started making money with my passion creating online 
-                   businesses. I also work as freelance developer. 
-                   I like my job and that's the most important thing
+                    Alberto Di Maio, Full-stack developer. <br />
+                    I like to describe myself using two adjectives: <br />
+                    <b>curious & creative.</b> <br /> <br />
+
+                    My favourite passion is building products and the perfect way for me to build them by doing something 
+                    I loved was to become a software developer. <br /> <br />
+                    I started <b>building</b> a lot of projects and working as Freelance Full-Stack developer. <br />
+                    I've been programming since I was 16 and I've always learnt everything by myself. <br />
+                    I really love what I do and that's the most important thing. <br /> <br />
+
+                    I love trying new things and challenge myself because It makes me grow a lot. <br />
+                    I like creating goals, working on them and reaching them. <br />
+                    I love my my perseverance, I don’t like giving up and I work on my goals until I reach them. <br />
+                    I love working with people and share ideas. <br />
+
+                    I also love learning new things to improve my skills and become the best version of myself.
                 </h2>
                 <TypeAnimation
                   className='italic mt-14 text-lg text-[#b0b0b0] font-regular font-p'
