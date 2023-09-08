@@ -166,7 +166,7 @@ export const projects = [
       projectsLanguages[6],
       projectsLanguages[11],
     ],
-    description: "''We didn't create open source, we just made it more accessible''. Codymio is helping 500+ developers find the perfect open source projects to contribute to",
+    description: "Codymio is helping 500+ developers find the perfect open source projects to contribute to",
     links: {
       overview: true,
       code: false,
