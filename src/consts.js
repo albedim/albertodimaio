@@ -173,7 +173,7 @@ export const projects = [
       link_overview: "https://codymio.pages.dev",
       link_github: ""
     },
-    image: "codtmio.png"
+    image: "codymio.png"
   },
   {
     name: "Deleafly",
