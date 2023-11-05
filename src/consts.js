@@ -177,7 +177,7 @@ export const projects = [
   },
   {
     name: "Codymio",
-    right: false,
+    right: true,
     icons: [
       projectsLanguages[4],
       projectsLanguages[5],
@@ -197,7 +197,7 @@ export const projects = [
   },
   {
     name: "Deleafly",
-    right: true,
+    right: false,
     icons: [
       projectsLanguages[4],
       projectsLanguages[5],
@@ -217,7 +217,7 @@ export const projects = [
   },
   {
     name: "Skilly",
-    right: false,
+    right: true,
     icons: [
       projectsLanguages[6],
       projectsLanguages[10],
@@ -233,7 +233,7 @@ export const projects = [
   },
   {
     name: "Cryllet",
-    right: true,
+    right: false,
     icons: [
       projectsLanguages[4],
       projectsLanguages[5],
