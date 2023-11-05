@@ -156,6 +156,26 @@ const projectsLanguages = [
 
 export const projects = [
   {
+    name: "UnBoring",
+    right: false,
+    icons: [
+      projectsLanguages[4],
+      projectsLanguages[5],
+      projectsLanguages[3],
+      projectsLanguages[7],
+      projectsLanguages[6],
+      projectsLanguages[10],
+    ],
+    description: "Bored And Tired of procrastinating? Create and complete some tasks and meet new people.",
+    links: {
+      overview: true,
+      code: false,
+      link_overview: "https://unboring.pages.dev",
+      link_github: ""
+    },
+    image: "unboring.png"
+  },
+  {
     name: "Codymio",
     right: false,
     icons: [
