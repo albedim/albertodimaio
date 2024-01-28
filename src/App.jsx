@@ -51,17 +51,17 @@ function App() {
   }
 
   return (
-    <div className='justify-around flex h-screen w-screen'>
+    <div className='bg-[white] justify-around flex h-screen w-screen'>
       <div 
         style={{ display: menu ? 'block' : 'none' }} 
-        className='right-0 h-screen w-4/5 bg-[black] fixed'
+        className='bg-[white] border right-0 h-screen w-4/5 fixed'
       >
         <div className='h-10'></div>
         <div className='p-6'  >
           <IoMdClose 
             onClick={() => setMenu(false)} 
             size={54} 
-            color='white' 
+            color='black'
           />
         </div>
         <ul>
@@ -71,7 +71,7 @@ function App() {
               homeRef.current.scrollIntoView({ behavior: 'smooth' });
               setMenu(false) 
             }} 
-            style={{ color: selectedPage == 'home' ? 'white' : 'gray' }} 
+            style={{ color: selectedPage == 'home' ? 'black' : 'gray' }} 
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
@@ -88,7 +88,7 @@ function App() {
               aboutRef.current.scrollIntoView({ behavior: 'smooth' }); 
               setMenu(false) 
             }} 
-            style={{ color: selectedPage == 'about' ? 'white' : 'gray' }} 
+            style={{ color: selectedPage == 'about' ? 'black' : 'gray' }} 
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
@@ -99,13 +99,13 @@ function App() {
               </div>
             </div>
           </li>
-          <li 
+          <li
             onClick={() => { 
               setSelectedPage("skills"); 
               skillsRef.current.scrollIntoView({ behavior: 'smooth' }); 
               setMenu(false) 
             }} 
-            style={{ color: selectedPage == 'skills' ? 'white' : 'gray' }} 
+            style={{ color: selectedPage == 'skills' ? 'black' : 'gray' }} 
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
@@ -122,7 +122,7 @@ function App() {
               projectsRef.current.scrollIntoView({ behavior: 'smooth' }); 
               setMenu(false) 
             }} 
-            style={{ color: selectedPage == 'projects' ? 'white' : 'gray' }} 
+            style={{ color: selectedPage == 'projects' ? 'black' : 'gray' }} 
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
@@ -150,7 +150,7 @@ function App() {
           <div className='justify-between p-8 items-center flex'>
             <div className='items-center flex'>
               <FaLaptopCode size={34} color={COLORS[3]} />
-              <h2 className={'ml-4 font-medium font-p text-[white]'} >Alberto Di Maio</h2>
+              <h2 className={'ml-4 font-medium font-p text-[black]'} >Alberto Di Maio</h2>
             </div>
             <div>
               <ul className='flex-none'>
@@ -159,7 +159,7 @@ function App() {
                     setSelectedPage("home"); 
                     homeRef.current.scrollIntoView({ behavior: 'smooth' }) 
                   }} 
-                  style={{ color: selectedPage == 'home' ? 'white' : 'gray' }} 
+                  style={{ color: selectedPage == 'home' ? 'black' : 'gray' }} 
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
@@ -175,7 +175,7 @@ function App() {
                     setSelectedPage("about"); 
                     aboutRef.current.scrollIntoView({ behavior: 'smooth' }); 
                   }} 
-                  style={{ color: selectedPage == 'about' ? 'white' : 'gray' }} 
+                  style={{ color: selectedPage == 'about' ? 'black' : 'gray' }} 
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
@@ -191,7 +191,7 @@ function App() {
                     setSelectedPage("skills"); 
                     skillsRef.current.scrollIntoView({ behavior: 'smooth' }); 
                   }} 
-                  style={{ color: selectedPage == 'skills' ? 'white' : 'gray' }} 
+                  style={{ color: selectedPage == 'skills' ? 'black' : 'gray' }} 
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
@@ -207,7 +207,7 @@ function App() {
                     setSelectedPage("projects"); 
                     projectsRef.current.scrollIntoView({ behavior: 'smooth' })
                   }} 
-                  style={{ color: selectedPage == 'projects' ? 'white' : 'gray' }} 
+                  style={{ color: selectedPage == 'projects' ? 'black' : 'gray' }} 
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
@@ -219,17 +219,17 @@ function App() {
                   </div>
                 </li>
                 <li 
-                  style={{ color: selectedPage == 'contactme' ? 'white' : 'gray' }} 
+                  style={{ color: selectedPage == 'contactme' ? 'black' : 'gray' }} 
                   className={'items-center flex ml-8 font-medium font-p'}
                 >
                   <a href="mailto:albertodimaio05@gmail.com">
-                    <button className='rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
+                    <button className='transition-all hover:bg-[#3d9c3d] rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
                       Contact me
                     </button>
                   </a>
                 </li>
               </ul>
-              <TfiMenu onClick={() => setMenu(true)} className='none-flex' size={34} color='white' />
+              <TfiMenu onClick={() => setMenu(true)} className='none-flex' size={34} color='black' />
             </div>
           </div>
           <div>
@@ -238,18 +238,18 @@ function App() {
                 style={{ color: '#4ca14c' }} 
                 className={'text-xl font-semibold font-p'} >Hello! 👋 My name is
               </h2>
-              <h2 
-                style={{ color: 'white' }} 
-                className={'mt-2 text-6xl font-bold font-p'} >Alberto Di Maio
+              <h2
+                style={{ color: '#686868' }} 
+                className={'mt-4 text-6xl font-bold font-p'} >Alberto Di Maio
               </h2>
               <TypeAnimation
-                className='mt-1 text-3xl text-[#b0b0b0] font-semibold font-p'
+                className='mt-4 text-3xl text-[#b0b0b0] font-semibold font-p'
                 sequence={[
                   "Full of Couriusity, Creativity", // Types 'One'
                   2400, // Waits 1s
-                  "Backend Developer",
+                  "Back-end Developer",
                   2400,
-                  "Frontend Developer",
+                  "Front-end Developer",
                   2400,
                   () => {
                     return // Place optional callbacks anywhere in the array
@@ -263,7 +263,7 @@ function App() {
               <div className='pt-14'>
                 <button 
                   onClick={() => aboutRef.current?.scrollIntoView({ behavior: 'smooth' })} 
-                  className='rounded-md p-4 text-[white] bg-[#4ca14c] text-lg font-medium font-p' >More about me
+                  className='transition-all hover:bg-[#3d9c3d] rounded-md p-4 text-[white] bg-[#4ca14c] text-lg font-medium font-p' >More about me
                 </button>
               </div>
             </div>
@@ -272,7 +272,7 @@ function App() {
         <div ref={aboutRef}>
           <div style={{ paddingBottom: 184, paddingTop: 184 }}>
             <div>
-              <h2 style={{ color: 'white' }} className={'mt-2 text-5xl font-bold font-p'}>
+              <h2 style={{ color: '#686868' }} className={'mt-2 text-5xl font-bold font-p'}>
                 About
                 <div style={{ backgroundColor: '#4ca14c' }} className='w-40 mt-1 h-2' ></div>
               </h2>
@@ -316,7 +316,7 @@ function App() {
         <div ref={skillsRef}>
           <div className='h-icons' style={{ paddingTop: 184 }}>
             <div>
-              <h2 style={{ color: 'white' }} className={'mt-2 text-5xl font-bold font-p'}>
+              <h2 style={{ color: '#686868' }} className={'mt-2 text-5xl font-bold font-p'}>
                 Skills
                 <div style={{ backgroundColor: '#4ca14c' }} className='w-40 mt-1 h-2' ></div>
               </h2>
@@ -325,7 +325,7 @@ function App() {
                   skills.map(skill => (
                     hover == skill.name ? (
                       <div className='cursor-pointer mt-10'>
-                        <div onMouseLeave={() => setHover("")} className='rounded-lg bg-[#152415]'>
+                        <div onMouseLeave={() => setHover("")} className='rounded-lg bg-[#FAFAFA]'>
                           <div className='pb-1 p-10'>
                             {skill.icon}
                           </div>
@@ -333,9 +333,10 @@ function App() {
                             <h2 className='text-lg text-[#b0b0b0] font-medium font-p'>{skill.name}</h2>
                             <div 
                               style={{ height: 14, width: '100%' }} 
-                              className='bg-opacity-40 mt-1 bg-[white]'
+                              className='rounded-md bg-opacity-10 mt-1 bg-[gray]'
                             >
-                              <div 
+                              <div
+                                className='rounded-md'
                                 style={{ height: 14, backgroundColor: '#4ca14c', width: skill.value }} >
                               </div>
                             </div>
@@ -359,9 +360,9 @@ function App() {
           </div>
         </div>
         <div ref={projectsRef}>
-          <div style={{ paddingBottom: 184, paddingTop: 184 }}>
+          <div style={{ paddingBottom: 184, paddingTop: 254 }}>
             <div>
-              <h2 style={{ color: 'white' }} className={'mt-2 text-5xl font-bold font-p'}>
+              <h2 style={{ color: '#686868' }} className={'mt-2 text-5xl font-bold font-p'}>
                 Projects
                 <div style={{ backgroundColor: '#4ca14c' }} className='w-60 mt-4 h-2' ></div>
               </h2>
@@ -371,14 +372,14 @@ function App() {
                     <div className='p-8'>
                       <div 
                         style={{ justifyContent: project.right ? 'space-between' : '' }} 
-                        className='project-flex rounded-lg p-8 bg-[#152415]'
+                        className='project-flex rounded-lg p-8 border bg-[#FAFAFA]'
                       >
                         {
                           project.right ? (
                             <div className='padding-l-no none-flex items-center justify-around'>
                               <img 
                                 width={640} 
-                                className='rounded-lg'
+                                className='img rounded-lg'
                                 src={require("./images/" + project.image)} 
                                 alt="" 
                               />
@@ -387,7 +388,7 @@ function App() {
                             <div className='flex padding-r-no items-center justify-around'>
                               <img 
                                 width={640} 
-                                className='rounded-lg' 
+                                className='img rounded-lg' 
                                 src={require("./images/" + project.image)} 
                                 alt="" 
                               />
@@ -395,7 +396,7 @@ function App() {
                           )
                         }
                         <div>
-                          <h2 style={{ color: 'white' }} className={'mt-2 text-3xl font-bold font-p'}>
+                          <h2 style={{ color: 'gray' }} className={'mt-2 text-3xl font-bold font-p'}>
                             {project.name}
                             <div style={{ backgroundColor: '#4ca14c' }} className='w-40 mt-1 h-1' ></div>
                           </h2>
@@ -414,7 +415,7 @@ function App() {
                             }
                           </div>
                           <div className='pt-8'>
-                            <h2 style={{ maxWidth: 340, color: 'white' }} className={'mt-2 text-md font-regular font-p'}>
+                            <h2 style={{ maxWidth: 340, color: 'gray' }} className={'mt-2 text-md font-regular font-p'}>
                               {project.description}
                             </h2>
                           </div>
@@ -424,8 +425,8 @@ function App() {
                               <div 
                                 className='p-2'>
                                 <a target='_blank' href={project.links.link_overview}>
-                                  <button 
-                                    className='hover:bg-[#3d9c3d] transition-all hover:mt-2 items-center 
+                                  <button
+                                    className='hover:bg-[#3d9c3d] transition-all items-center 
                                     flex rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
                                     <div className='pr-2'>
                                       <TbUnlink size={24} />
@@ -440,7 +441,7 @@ function App() {
                               className='p-2'>
                               <a target='_blank' href={project.links.link_github}>
                                 <button 
-                                  className='hover:bg-[#3d9c3d] transition-all hover:mt-2 items-center 
+                                  className='hover:bg-[#3d9c3d] transition-all items-center 
                                   flex rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
                                   <div className='pr-2'>
                                     <TbUnlink size={24} />
@@ -454,7 +455,7 @@ function App() {
                         {
                           project.right &&
                           <div className='toNone padding-l-no flex items-center justify-around'>
-                            <img width={640} className='rounded-lg' src={require("./images/" + project.image)} alt="" />
+                            <img width={640} className='img rounded-lg' src={require("./images/" + project.image)} alt="" />
                           </div>
                         }
                       </div>
