@@ -3,7 +3,7 @@ import { TfiMenu } from 'react-icons/tfi'
 import { TbUnlink } from 'react-icons/tb'
 import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit } from 'react-icons/bi'
 import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-icons/si'
-import { FaJava, FaLaptopCode } from 'react-icons/fa'
+import { FaCode, FaJava, FaLaptopCode } from 'react-icons/fa'
 import { IoLogoJavascript, IoMdClose } from 'react-icons/io'
 import { GrClose, GrReactjs } from 'react-icons/gr'
 import { ImHtmlFive, ImCss3 } from 'react-icons/im'
@@ -13,6 +13,8 @@ import { useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { projects, skills } from './consts';
+import axios from 'axios';
+import { data } from './config/config';
 
 const COLORS = ['#5fc95f', '#56b556', '#4ca14c', '#438d43', '#397939', '#306530', '#265026', '#1c3c1c', '#132813', '#091409']
 
@@ -20,6 +22,10 @@ const COLORS = ['#5fc95f', '#56b556', '#4ca14c', '#438d43', '#397939', '#306530'
 function App() {
 
   const [menu, setMenu] = useState(false)
+
+  const [isLanguageLoaded, setIsLanguageLoaded] = useState(false)
+
+  const [language, setLanguage] = useState()
 
   const homeRef = useRef(null)
 
@@ -37,7 +43,12 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    handleLanguage()
   }, []);
+  
+  useEffect(() => {
+    console.log(language)
+  });
 
   const handleScroll = (e) => {
     if (window.scrollY.toFixed() > 0 && window.scrollY.toFixed() < 734) {
@@ -48,6 +59,27 @@ function App() {
       setSelectedPage("skills")
     } else if (window.scrollY.toFixed() > 2154)
       setSelectedPage("projects")
+  }
+
+  const handleLanguage = async () => {
+    await axios.get("https://ipapi.co/json")
+    .then(res => {
+      if (data.hasOwnProperty(res.data.languages.split(",")[0].replace("-", "_"))) {
+        setLanguage(res.data.languages.split(",")[0].replace("-", "_"))
+      } else {
+        setLanguage("en_US")
+      }
+    })
+    .catch(err => {
+      setLanguage("en_US")
+    })
+    setIsLanguageLoaded(true)
+  }
+
+  if (!isLanguageLoaded) {
+    return (
+      <div></div>
+    )
   }
 
   return (
@@ -75,7 +107,7 @@ function App() {
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
-              Home
+              {data[language].menu.home}
               <div 
                 style={{ backgroundColor: selectedPage == 'home' ? '#4ca14c' : 'transparent' }} 
                 className='h-1' >
@@ -92,7 +124,7 @@ function App() {
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
-              About
+              {data[language].menu.about}
               <div 
                 style={{ backgroundColor: selectedPage == 'about' ? '#4ca14c' : 'transparent' }} 
                 className='h-1' >
@@ -109,7 +141,7 @@ function App() {
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
-              Skills
+              {data[language].menu.skills}
               <div 
                 style={{ backgroundColor: selectedPage == 'skills' ? '#4ca14c' : 'transparent' }} 
                 className='h-1' > 
@@ -126,7 +158,7 @@ function App() {
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
             <div>
-              Projects
+              {data[language].menu.projects}
               <div 
                 style={{ backgroundColor: selectedPage == 'projects' ? '#4ca14c' : 'transparent' }} 
                 className='h-1' > 
@@ -139,7 +171,7 @@ function App() {
           >
             <a href="mailto:albertodimaio05@gmail.com">
               <button className='rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
-                Contact me
+              {data[language].menu.contact_me}
               </button>
             </a>
           </li>
@@ -163,7 +195,7 @@ function App() {
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
-                    Home
+                    {data[language].menu.home}
                     <div 
                       style={{ backgroundColor: selectedPage == 'home' ? '#4ca14c' : 'transparent' }} 
                       className='h-1' > 
@@ -179,7 +211,7 @@ function App() {
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
-                    About
+                    {data[language].menu.about}
                     <div 
                       style={{ backgroundColor: selectedPage == 'about' ? '#4ca14c' : 'transparent' }} 
                       className='h-1' >
@@ -195,7 +227,7 @@ function App() {
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
-                    Skills
+                    {data[language].menu.skills}
                     <div 
                       style={{ backgroundColor: selectedPage == 'skills' ? '#4ca14c' : 'transparent' }} 
                       className='h-1' >
@@ -211,7 +243,7 @@ function App() {
                   className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
                 >
                   <div>
-                    Projects
+                    {data[language].menu.projects}
                     <div 
                       style={{ backgroundColor: selectedPage == 'projects' ? '#4ca14c' : 'transparent' }} 
                       className='h-1' >
@@ -223,8 +255,8 @@ function App() {
                   className={'items-center flex ml-8 font-medium font-p'}
                 >
                   <a href="mailto:albertodimaio05@gmail.com">
-                    <button className='transition-all hover:bg-[#3d9c3d] rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
-                      Contact me
+                    <button className='transition-all hover:bg-[#478B47] rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
+                      {data[language].menu.contact_me}
                     </button>
                   </a>
                 </li>
@@ -236,7 +268,7 @@ function App() {
             <div style={{ paddingBottom: 184, paddingTop: 184 }}>
               <h2 
                 style={{ color: '#4ca14c' }} 
-                className={'text-xl font-semibold font-p'} >Hello! 👋 My name is
+                className={'text-xl font-semibold font-p'} >{data[language].home.introduction}
               </h2>
               <h2
                 style={{ color: '#686868' }} 
@@ -245,11 +277,11 @@ function App() {
               <TypeAnimation
                 className='mt-4 text-3xl text-[#b0b0b0] font-semibold font-p'
                 sequence={[
-                  "Full of Couriusity, Creativity", // Types 'One'
+                  data[language].home.titles[0], // Types 'One'
                   2400, // Waits 1s
-                  "Back-end Developer",
+                  data[language].home.titles[1],
                   2400,
-                  "Front-end Developer",
+                  data[language].home.titles[2],
                   2400,
                   () => {
                     return // Place optional callbacks anywhere in the array
@@ -259,11 +291,11 @@ function App() {
                 cursor={true}
                 repeat={Infinity}
               />
-              <h2 className={'mt-4 text-xl text-[#b0b0b0] font-semibold font-p'} >My mom says I'm the best dev in my condo.</h2>
+              <h2 className={'mt-4 text-xl text-[#b0b0b0] font-semibold font-p'} >{data[language].home.bio}</h2>
               <div className='pt-14'>
                 <button 
                   onClick={() => aboutRef.current?.scrollIntoView({ behavior: 'smooth' })} 
-                  className='transition-all hover:bg-[#3d9c3d] rounded-md p-4 text-[white] bg-[#4ca14c] text-lg font-medium font-p' >More about me
+                  className='transition-all hover:bg-[#478B47] rounded-md p-4 text-[white] bg-[#4ca14c] text-lg font-medium font-p' >{data[language].home.more_about_me}
                 </button>
               </div>
             </div>
@@ -273,27 +305,12 @@ function App() {
           <div style={{ paddingBottom: 184, paddingTop: 184 }}>
             <div>
               <h2 style={{ color: '#686868' }} className={'mt-2 text-5xl font-bold font-p'}>
-                About
+                {data[language].about.title}
                 <div style={{ backgroundColor: '#4ca14c' }} className='w-40 mt-1 h-2' ></div>
               </h2>
               <div>
-                <h2 style={{ maxWidth: 940 }} className='mt-14 text-lg text-[#b0b0b0] font-regular font-p'>
-                    Alberto Di Maio, Full-stack developer. <br />
-                    I like to describe myself using two adjectives: <br />
-                    <b>curious & creative.</b> <br /> <br />
-
-                    My favourite passion is building products and the perfect way for me to build them by doing something 
-                    I loved was to become a software developer. <br /> <br />
-                    I started <b>building</b> a lot of projects and working as Freelance Full-Stack developer. <br />
-                    I've been programming since I was 16 and I've always learnt everything by myself. <br />
-                    I really love what I do and that's the most important thing. <br /> <br />
-
-                    I love trying new things and challenge myself because It makes me grow a lot. <br />
-                    I like creating goals, working on them and reaching them. <br />
-                    I love my my perseverance, I don’t like giving up and I work on my goals until I reach them. <br />
-                    I love working with people and share ideas. <br />
-
-                    I also love learning new things to improve my skills and become the best version of myself.
+                <h2 dangerouslySetInnerHTML={{ __html: data[language].about.content}} style={{ maxWidth: 940 }} className='mt-14 text-lg text-[#b0b0b0] font-regular font-p'>
+                    
                 </h2>
                 <TypeAnimation
                   className='italic mt-14 text-lg text-[#b0b0b0] font-regular font-p'
@@ -317,7 +334,7 @@ function App() {
           <div className='h-icons' style={{ paddingTop: 184 }}>
             <div>
               <h2 style={{ color: '#686868' }} className={'mt-2 text-5xl font-bold font-p'}>
-                Skills
+                {data[language].skills.title}
                 <div style={{ backgroundColor: '#4ca14c' }} className='w-40 mt-1 h-2' ></div>
               </h2>
               <div className='flex-wrap flex-wrap-box pt-14'>
@@ -331,7 +348,7 @@ function App() {
                           </div>
                           <div className='p-4'>
                             <h2 className='text-lg text-[#b0b0b0] font-medium font-p'>{skill.name}</h2>
-                            <div 
+                            <div
                               style={{ height: 14, width: '100%' }} 
                               className='rounded-md bg-opacity-10 mt-1 bg-[gray]'
                             >
@@ -363,12 +380,12 @@ function App() {
           <div style={{ paddingBottom: 184, paddingTop: 254 }}>
             <div>
               <h2 style={{ color: '#686868' }} className={'mt-2 text-5xl font-bold font-p'}>
-                Projects
+                {data[language].projects.title}
                 <div style={{ backgroundColor: '#4ca14c' }} className='w-60 mt-4 h-2' ></div>
               </h2>
               <div className='pt-14'>
                 {
-                  projects.map(project => (
+                  projects(language).map(project => (
                     <div className='p-8'>
                       <div 
                         style={{ justifyContent: project.right ? 'space-between' : '' }} 
@@ -426,11 +443,11 @@ function App() {
                                 className='p-2'>
                                 <a target='_blank' href={project.links.link_overview}>
                                   <button
-                                    className='hover:bg-[#3d9c3d] transition-all items-center 
+                                    className='hover:bg-[#478B47] transition-all items-center 
                                     flex rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
                                     <div className='pr-2'>
                                       <TbUnlink size={24} />
-                                    </div> Website
+                                    </div> {data[language].projects.buttons.overview}
                                   </button>
                                 </a>
                               </div>
@@ -441,11 +458,11 @@ function App() {
                               className='p-2'>
                               <a target='_blank' href={project.links.link_github}>
                                 <button 
-                                  className='hover:bg-[#3d9c3d] transition-all items-center 
+                                  className='hover:bg-[#478B47] transition-all items-center 
                                   flex rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
                                   <div className='pr-2'>
-                                    <TbUnlink size={24} />
-                                  </div> Project
+                                    <FaCode size={24} />
+                                  </div> {data[language].projects.buttons.code}
                                 </button>
                               </a>
                             </div>

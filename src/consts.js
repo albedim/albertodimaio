@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AiFillGithub } from 'react-icons/ai'
+import { data } from './config/config';
 
 
 export const skills = [
@@ -154,101 +155,103 @@ const projectsLanguages = [
   }
 ]
 
-export const projects = [
-  {
-    name: "UnBoring",
-    right: false,
-    icons: [
-      projectsLanguages[4],
-      projectsLanguages[5],
-      projectsLanguages[3],
-      projectsLanguages[7],
-      projectsLanguages[6],
-      projectsLanguages[10],
-    ],
-    description: "Bored And Tired of procrastinating? Create and complete some tasks and meet new people.",
-    links: {
-      overview: true,
-      code: false,
-      link_overview: "https://unboring.pages.dev",
-      link_github: ""
+export const projects = (language) => {
+  return [
+    {
+      name: "UnBoring",
+      right: false,
+      icons: [
+        projectsLanguages[4],
+        projectsLanguages[5],
+        projectsLanguages[3],
+        projectsLanguages[7],
+        projectsLanguages[6],
+        projectsLanguages[10],
+      ],
+      description: data[language].projects.content[0],
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://unboring.pages.dev",
+        link_github: ""
+      },
+      image: "unboring.png"
     },
-    image: "unboring.png"
-  },
-  {
-    name: "Codymio",
-    right: true,
-    icons: [
-      projectsLanguages[4],
-      projectsLanguages[5],
-      projectsLanguages[3],
-      projectsLanguages[7],
-      projectsLanguages[6],
-      projectsLanguages[11],
-    ],
-    description: "Codymio is helping 500+ developers find the perfect open source projects to contribute to",
-    links: {
-      overview: true,
-      code: false,
-      link_overview: "https://codymio.pages.dev",
-      link_github: ""
+    {
+      name: "Codymio",
+      right: true,
+      icons: [
+        projectsLanguages[4],
+        projectsLanguages[5],
+        projectsLanguages[3],
+        projectsLanguages[7],
+        projectsLanguages[6],
+        projectsLanguages[11],
+      ],
+      description: data[language].projects.content[1],
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://codymio.pages.dev",
+        link_github: ""
+      },
+      image: "codymio.png"
     },
-    image: "codymio.png"
-  },
-  {
-    name: "Deleafly",
-    right: false,
-    icons: [
-      projectsLanguages[4],
-      projectsLanguages[5],
-      projectsLanguages[3],
-      projectsLanguages[7],
-      projectsLanguages[6],
-      projectsLanguages[10],
-    ],
-    description: "The first Web tracker that let you track the traffic on your urls easy and fast with a clean dashboard.",
-    links: {
-      overview: true,
-      code: false,
-      link_overview: "https://deleafly.pages.dev",
-      link_github: ""
+    {
+      name: "Deleafly",
+      right: false,
+      icons: [
+        projectsLanguages[4],
+        projectsLanguages[5],
+        projectsLanguages[3],
+        projectsLanguages[7],
+        projectsLanguages[6],
+        projectsLanguages[10],
+      ],
+      description: data[language].projects.content[2],
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://deleafly.pages.dev",
+        link_github: ""
+      },
+      image: "deleafly.png"
     },
-    image: "deleafly.png"
-  },
-  {
-    name: "Skilly",
-    right: true,
-    icons: [
-      projectsLanguages[6],
-      projectsLanguages[10],
-    ],
-    description: "Python web framework. Build organized and fast rest api's with Skilly.",
-    links: {
-      overview: false,
-      code: true,
-      link_overview: "",
-      link_github: "https://github.com/albedim/skilly"
+    {
+      name: "Skilly",
+      right: true,
+      icons: [
+        projectsLanguages[6],
+        projectsLanguages[10],
+      ],
+      description: data[language].projects.content[3],
+      links: {
+        overview: false,
+        code: true,
+        link_overview: "",
+        link_github: "https://github.com/albedim/skilly"
+      },
+      image: "skilly.png"
     },
-    image: "skilly.png"
-  },
-  {
-    name: "Cryllet",
-    right: false,
-    icons: [
-      projectsLanguages[4],
-      projectsLanguages[5],
-      projectsLanguages[2],
-      projectsLanguages[7],
-      projectsLanguages[6],
-      projectsLanguages[10],
-    ],
-    description: "Create your payment links with Cryllet. Pay and get paid by others using cryptocurrencies",
-    links: {
-      overview: true,
-      code: false,
-      link_overview: "https://cryllet-fe.pages.dev",
-      link_github: ""
-    },
-    image: "cryllet.png"
-  }
-]
+    {
+      name: "Cryllet",
+      right: false,
+      icons: [
+        projectsLanguages[4],
+        projectsLanguages[5],
+        projectsLanguages[2],
+        projectsLanguages[7],
+        projectsLanguages[6],
+        projectsLanguages[10],
+      ],
+      description: data[language].projects.content[4],
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://cryllet-fe.pages.dev",
+        link_github: ""
+      },
+      image: "cryllet.png"
+    }
+  ]
+}
