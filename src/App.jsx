@@ -3,7 +3,8 @@ import { TfiMenu } from 'react-icons/tfi'
 import { TbUnlink } from 'react-icons/tb'
 import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit } from 'react-icons/bi'
 import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-icons/si'
-import { FaCode, FaJava, FaLaptopCode } from 'react-icons/fa'
+import { FaCode, FaLaptopCode } from 'react-icons/fa'
+import { BsTwitterX } from 'react-icons/bs'
 import { IoLogoJavascript, IoMdClose } from 'react-icons/io'
 import { GrClose, GrReactjs } from 'react-icons/gr'
 import { ImHtmlFive, ImCss3 } from 'react-icons/im'
@@ -487,7 +488,7 @@ function App() {
           <div className='flex-block justify-between'>
             <h2 style={{ color: 'gray' }} className={'mt-2 text-1xl font-regular font-p'} >© 2023 - Made with ♥ by <span className='text-[#4ca14c]' >albedim</span></h2>
             <div className='justify-around flex'>
-              <div className='p-4'><a target='_blank' href="https://twitter.com/TheAlbeDim"><SiTwitter size={24} color='gray' /></a></div>
+              <div className='p-4'><a target='_blank' href="https://twitter.com/TheAlbeDim"><BsTwitterX size={24} color='gray' /></a></div>
               <div className='p-4'><a target='_blank' href="https://github.com/albedim"><AiFillGithub size={24} color='gray' /></a></div>
               <div className='p-4'><a target='_blank' href="https://linkedin.com/in/alberto-di-maio-520531285"><AiFillLinkedin size={24} color='gray' /></a></div>
             </div>
