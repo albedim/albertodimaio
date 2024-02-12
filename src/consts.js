@@ -158,8 +158,29 @@ const projectsLanguages = [
 export const projects = (language) => {
   return [
     {
-      name: "UnBoring",
+      name: "JudJen",
       right: false,
+      icons: [
+        projectsLanguages[4],
+        projectsLanguages[5],
+        projectsLanguages[3],
+        projectsLanguages[7],
+        projectsLanguages[6],
+        projectsLanguages[10],
+        projectsLanguages[12]
+      ],
+      description: data[language].projects.content[0],
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://judjen.pages.dev",
+        link_github: ""
+      },
+      image: "unboring.png"
+    },
+    {
+      name: "UnBoring",
+      right: true,
       icons: [
         projectsLanguages[4],
         projectsLanguages[5],
@@ -179,7 +200,7 @@ export const projects = (language) => {
     },
     {
       name: "Codymio",
-      right: true,
+      right: false,
       icons: [
         projectsLanguages[4],
         projectsLanguages[5],
@@ -199,7 +220,7 @@ export const projects = (language) => {
     },
     {
       name: "Deleafly",
-      right: false,
+      right: true,
       icons: [
         projectsLanguages[4],
         projectsLanguages[5],
@@ -219,7 +240,7 @@ export const projects = (language) => {
     },
     {
       name: "Skilly",
-      right: true,
+      right: false,
       icons: [
         projectsLanguages[6],
         projectsLanguages[10],
@@ -235,7 +256,7 @@ export const projects = (language) => {
     },
     {
       name: "Cryllet",
-      right: false,
+      right: true,
       icons: [
         projectsLanguages[4],
         projectsLanguages[5],

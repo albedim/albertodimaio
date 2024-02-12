@@ -27,6 +27,7 @@ export const data = {
         projects: {
             title: "Projects",
             content: [
+                "Share your cringe stories anonymously with an anonymous community, read cringe stories and have fun!",
                 "Bored And Tired of procrastinating? Create and complete some tasks and meet new people.",
                 "Codymio is helping 500+ developers find the perfect open source projects to contribute to",
                 "The first Web tracker that let you track the traffic on your urls easy and fast with a clean dashboard.",
@@ -67,6 +68,7 @@ export const data = {
         projects: {
             title: "Progetti",
             content: [
+                "Condividi le tue storie imbarazzanti anonimamente con una community anonima, leggi storie cringe e divertiti!",
                 "Annoiato e stanco di procrastinare? Crea, completa delle tasks e conosci nuove persone",
                 "Codymio sta aiutando 500+ sviluppatori a trovare i perfetti progetti open source ai quali contribuire.",
                 "Il primo web tracker che ti permette di tracciare il traffico sui tuoi url facile e veloce con una fantastica dashboard.",
