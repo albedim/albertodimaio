@@ -421,14 +421,16 @@ function App() {
                           <div className='pt-4 flex'>
                             {
                               project.icons.map(icon => (
-                                <div onClick={() => {
-                                  window.scrollTo({ top: 1634, left: 0, behavior: "smooth" })
-                                  setHoverable(false)
-                                  setHover(icon.name)
-                                  setTimeout(() => {
-                                    setHoverable(true)
-                                  }, 1400)
-                                }} className='pl-0 p-2'><div className='cursor-pointer'>{icon.icon}</div></div>
+                                <a title={icon.name} href="#">
+                                  <div onClick={() => {
+                                    window.scrollTo({ top: 1634, left: 0, behavior: "smooth" })
+                                    setHoverable(false)
+                                    setHover(icon.name)
+                                    setTimeout(() => {
+                                      setHoverable(true)
+                                    }, 1400)
+                                  }} className='pl-0 p-2'><div className='cursor-pointer'>{icon.icon}</div></div>
+                                </a>
                               ))
                             }
                           </div>
