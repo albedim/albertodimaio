@@ -423,7 +423,7 @@ function App() {
                               project.icons.map(icon => (
                                 <a title={icon.name}>
                                   <div onClick={() => {
-                                    window.scrollTo({ top: 1634, left: 0, behavior: "smooth" })
+                                    skillsRef.current?.scrollIntoView({ behavior: 'smooth' })
                                     setHoverable(false)
                                     setHover(icon.name)
                                     setTimeout(() => {
