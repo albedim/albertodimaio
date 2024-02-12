@@ -176,7 +176,7 @@ export const projects = (language) => {
         link_overview: "https://judjen.pages.dev",
         link_github: ""
       },
-      image: "unboring.png"
+      image: "judjen.png"
     },
     {
       name: "UnBoring",
