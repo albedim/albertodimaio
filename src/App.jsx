@@ -421,7 +421,7 @@ function App() {
                           <div className='pt-4 flex'>
                             {
                               project.icons.map(icon => (
-                                <a title={icon.name} href="#">
+                                <a title={icon.name}>
                                   <div onClick={() => {
                                     window.scrollTo({ top: 1634, left: 0, behavior: "smooth" })
                                     setHoverable(false)
