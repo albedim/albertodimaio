@@ -185,7 +185,7 @@ export const projects = (language) => {
         projectsLanguages[10],
         projectsLanguages[12]
       ],
-      description: data[language].projects.content[0],
+      description: data[language].projects.content[1],
       links: {
         overview: true,
         code: false,
@@ -205,7 +205,7 @@ export const projects = (language) => {
         projectsLanguages[6],
         projectsLanguages[10],
       ],
-      description: data[language].projects.content[0],
+      description: data[language].projects.content[2],
       links: {
         overview: true,
         code: false,
@@ -225,7 +225,7 @@ export const projects = (language) => {
         projectsLanguages[6],
         projectsLanguages[11],
       ],
-      description: data[language].projects.content[1],
+      description: data[language].projects.content[3],
       links: {
         overview: true,
         code: false,
@@ -245,7 +245,7 @@ export const projects = (language) => {
         projectsLanguages[6],
         projectsLanguages[10],
       ],
-      description: data[language].projects.content[2],
+      description: data[language].projects.content[4],
       links: {
         overview: true,
         code: false,
@@ -261,7 +261,7 @@ export const projects = (language) => {
         projectsLanguages[6],
         projectsLanguages[10],
       ],
-      description: data[language].projects.content[3],
+      description: data[language].projects.content[5],
       links: {
         overview: false,
         code: true,
@@ -281,7 +281,7 @@ export const projects = (language) => {
         projectsLanguages[6],
         projectsLanguages[10],
       ],
-      description: data[language].projects.content[4],
+      description: data[language].projects.content[6],
       links: {
         overview: true,
         code: false,
