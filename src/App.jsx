@@ -85,9 +85,9 @@ function App() {
 
   return (
     <div className='bg-[white] justify-around flex h-screen w-screen'>
-      <div 
+      <div
         style={{ display: menu ? 'block' : 'none' }} 
-        className='bg-[white] border right-0 h-screen w-4/5 fixed'
+        className='z-40 bg-[white] border right-0 h-screen w-4/5 fixed'
       >
         <div className='h-10'></div>
         <div className='p-6'  >
@@ -100,8 +100,7 @@ function App() {
         <ul>
           <li 
             onClick={() => { 
-              setSelectedPage("home"); 
-              homeRef.current.scrollIntoView({ behavior: 'smooth' });
+              window.scrollTo({ top: 0, behavior: 'smooth' });
               setMenu(false) 
             }} 
             style={{ color: selectedPage == 'home' ? 'black' : 'gray' }} 
@@ -116,8 +115,7 @@ function App() {
             </div>
           </li>
           <li 
-            onClick={() => { 
-              setSelectedPage("about"); 
+            onClick={() => {
               aboutRef.current.scrollIntoView({ behavior: 'smooth' }); 
               setMenu(false) 
             }} 
@@ -133,8 +131,7 @@ function App() {
             </div>
           </li>
           <li
-            onClick={() => { 
-              setSelectedPage("skills"); 
+            onClick={() => {
               skillsRef.current.scrollIntoView({ behavior: 'smooth' }); 
               setMenu(false) 
             }} 
@@ -149,9 +146,8 @@ function App() {
               </div>
             </div>
           </li>
-          <li 
-            onClick={() => { 
-              setSelectedPage("projects"); 
+          <li
+            onClick={() => {
               projectsRef.current.scrollIntoView({ behavior: 'smooth' }); 
               setMenu(false) 
             }} 
@@ -178,127 +174,121 @@ function App() {
           </li>
         </ul>
       </div>
-      <div className='screen-w'>
-        <div ref={homeRef}>
-          <div className='justify-between p-8 items-center flex'>
-            <div className='items-center flex'>
-              <FaLaptopCode size={34} color={COLORS[3]} />
-              <h2 className={'ml-4 font-medium font-p text-[black]'} >Alberto Di Maio</h2>
-            </div>
-            <div>
-              <ul className='flex-none'>
-                <li 
-                  onClick={() => { 
-                    setSelectedPage("home"); 
-                    homeRef.current.scrollIntoView({ behavior: 'smooth' }) 
-                  }} 
-                  style={{ color: selectedPage == 'home' ? 'black' : 'gray' }} 
-                  className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
-                >
-                  <div>
-                    {data[language].menu.home}
-                    <div 
-                      style={{ backgroundColor: selectedPage == 'home' ? '#4ca14c' : 'transparent' }} 
-                      className='h-1' > 
-                    </div>
-                  </div>
-                </li>
-                <li 
-                  onClick={() => { 
-                    setSelectedPage("about"); 
-                    aboutRef.current.scrollIntoView({ behavior: 'smooth' }); 
-                  }} 
-                  style={{ color: selectedPage == 'about' ? 'black' : 'gray' }} 
-                  className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
-                >
-                  <div>
-                    {data[language].menu.about}
-                    <div 
-                      style={{ backgroundColor: selectedPage == 'about' ? '#4ca14c' : 'transparent' }} 
-                      className='h-1' >
-                    </div>
-                  </div>
-                </li>
-                <li 
-                  onClick={() => { 
-                    setSelectedPage("skills"); 
-                    skillsRef.current.scrollIntoView({ behavior: 'smooth' }); 
-                  }} 
-                  style={{ color: selectedPage == 'skills' ? 'black' : 'gray' }} 
-                  className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
-                >
-                  <div>
-                    {data[language].menu.skills}
-                    <div 
-                      style={{ backgroundColor: selectedPage == 'skills' ? '#4ca14c' : 'transparent' }} 
-                      className='h-1' >
-                    </div>
-                  </div>
-                </li>
-                <li 
-                  onClick={() => { 
-                    setSelectedPage("projects"); 
-                    projectsRef.current.scrollIntoView({ behavior: 'smooth' })
-                  }} 
-                  style={{ color: selectedPage == 'projects' ? 'black' : 'gray' }} 
-                  className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
-                >
-                  <div>
-                    {data[language].menu.projects}
-                    <div 
-                      style={{ backgroundColor: selectedPage == 'projects' ? '#4ca14c' : 'transparent' }} 
-                      className='h-1' >
-                    </div>
-                  </div>
-                </li>
-                <li 
-                  style={{ color: selectedPage == 'contactme' ? 'black' : 'gray' }} 
-                  className={'items-center flex ml-8 font-medium font-p'}
-                >
-                  <a href="mailto:albertodimaio05@gmail.com">
-                    <button className='transition-all hover:bg-[#478B47] rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
-                      {data[language].menu.contact_me}
-                    </button>
-                  </a>
-                </li>
-              </ul>
-              <TfiMenu onClick={() => setMenu(true)} className='none-flex' size={34} color='black' />
-            </div>
-          </div>
-          <div>
-            <div style={{ paddingBottom: 184, paddingTop: 184 }}>
-              <h2 
-                style={{ color: '#4ca14c' }} 
-                className={'text-xl font-semibold font-p'} >{data[language].home.introduction}
-              </h2>
-              <h2
-                style={{ color: '#686868' }} 
-                className={'mt-4 text-6xl font-bold font-p'} >Alberto Di Maio
-              </h2>
-              <TypeAnimation
-                className='mt-4 text-3xl text-[#b0b0b0] font-semibold font-p'
-                sequence={[
-                  data[language].home.titles[0], // Types 'One'
-                  2400, // Waits 1s
-                  data[language].home.titles[1],
-                  2400,
-                  data[language].home.titles[2],
-                  2400,
-                  () => {
-                    return // Place optional callbacks anywhere in the array
-                  }
-                ]}
-                wrapper="div"
-                cursor={true}
-                repeat={Infinity}
-              />
-              <h2 className={'mt-4 text-xl text-[#b0b0b0] font-semibold font-p'} >{data[language].home.bio}</h2>
-              <div className='pt-14'>
-                <button 
-                  onClick={() => aboutRef.current?.scrollIntoView({ behavior: 'smooth' })} 
-                  className='transition-all hover:bg-[#478B47] rounded-md p-4 text-[white] bg-[#4ca14c] text-lg font-medium font-p' >{data[language].home.more_about_me}
-                </button>
+      <div className='z-30 p-menu pb-2 bg-[white] w-screen fixed justify-between p-8 items-center flex'>
+        <div className='items-center flex'>
+          <FaLaptopCode size={34} color={COLORS[3]} />
+          <h2 className={'ml-4 font-medium font-p text-[black]'} >Alberto Di Maio</h2>
+        </div>
+        <div>
+          <ul className='flex-none'>
+            <li 
+              onClick={() => { 
+                window.scrollTo({ top: 0, behavior: 'smooth' }) 
+              }} 
+              style={{ color: selectedPage == 'home' ? 'black' : 'gray' }} 
+              className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
+            >
+              <div>
+                {data[language].menu.home}
+                <div 
+                  style={{ backgroundColor: selectedPage == 'home' ? '#4ca14c' : 'transparent' }} 
+                  className='h-1' > 
+                </div>
               </div>
+            </li>
+            <li 
+              onClick={() => {
+                aboutRef.current.scrollIntoView({ behavior: 'smooth' }); 
+              }} 
+              style={{ color: selectedPage == 'about' ? 'black' : 'gray' }} 
+              className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
+            >
+              <div>
+                {data[language].menu.about}
+                <div 
+                  style={{ backgroundColor: selectedPage == 'about' ? '#4ca14c' : 'transparent' }} 
+                  className='h-1' >
+                </div>
+              </div>
+            </li>
+            <li 
+              onClick={() => {
+                skillsRef.current.scrollIntoView({ behavior: 'smooth' }); 
+              }} 
+              style={{ color: selectedPage == 'skills' ? 'black' : 'gray' }} 
+              className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
+            >
+              <div>
+                {data[language].menu.skills}
+                <div 
+                  style={{ backgroundColor: selectedPage == 'skills' ? '#4ca14c' : 'transparent' }} 
+                  className='h-1' >
+                </div>
+              </div>
+            </li>
+            <li 
+              onClick={() => {
+                projectsRef.current.scrollIntoView({ behavior: 'smooth' })
+              }} 
+              style={{ color: selectedPage == 'projects' ? 'black' : 'gray' }} 
+              className={'cursor-pointer items-center flex ml-8 font-medium font-p'}
+            >
+              <div>
+                {data[language].menu.projects}
+                <div 
+                  style={{ backgroundColor: selectedPage == 'projects' ? '#4ca14c' : 'transparent' }} 
+                  className='h-1' >
+                </div>
+              </div>
+            </li>
+            <li 
+              style={{ color: selectedPage == 'contactme' ? 'black' : 'gray' }} 
+              className={'items-center flex ml-8 font-medium font-p'}
+            >
+              <a href="mailto:albertodimaio05@gmail.com">
+                <button className='transition-all hover:bg-[#478B47] rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
+                  {data[language].menu.contact_me}
+                </button>
+              </a>
+            </li>
+          </ul>
+          <TfiMenu onClick={() => setMenu(true)} className='none-flex' size={34} color='black' />
+        </div>
+      </div>
+      <div className='mt-24 screen-w'>
+        <div ref={homeRef}>
+          <div style={{ paddingBottom: 184, paddingTop: 184 }}>
+            <h2 
+              style={{ color: '#4ca14c' }} 
+              className={'text-xl font-semibold font-p'} >{data[language].home.introduction}
+            </h2>
+            <h2
+              style={{ color: '#686868' }} 
+              className={'mt-4 text-6xl font-bold font-p'} >Alberto Di Maio
+            </h2>
+            <TypeAnimation
+              className='mt-4 text-3xl text-[#b0b0b0] font-semibold font-p'
+              sequence={[
+                data[language].home.titles[0], // Types 'One'
+                2400, // Waits 1s
+                data[language].home.titles[1],
+                2400,
+                data[language].home.titles[2],
+                2400,
+                () => {
+                  return // Place optional callbacks anywhere in the array
+                }
+              ]}
+              wrapper="div"
+              cursor={true}
+              repeat={Infinity}
+            />
+            <h2 className={'mt-4 text-xl text-[#b0b0b0] font-semibold font-p'} >{data[language].home.bio}</h2>
+            <div className='pt-14'>
+              <button 
+                onClick={() => aboutRef.current?.scrollIntoView({ behavior: 'smooth' })} 
+                className='transition-all hover:bg-[#478B47] rounded-md p-4 text-[white] bg-[#4ca14c] text-lg font-medium font-p' >{data[language].home.more_about_me}
+              </button>
             </div>
           </div>
         </div>
@@ -387,7 +377,7 @@ function App() {
               <div className='pt-14'>
                 {
                   projects(language).map(project => (
-                    <div className='p-8'>
+                    <div className='pl-0 p-8'>
                       <div 
                         style={{ justifyContent: project.right ? 'space-between' : '' }} 
                         className='project-flex rounded-lg p-8 border bg-[#FAFAFA]'

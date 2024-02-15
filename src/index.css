@@ -62,6 +62,10 @@ body{
   .flex-none{
     display: none !important;
   }
+  .p-menu{
+    padding-left: 54px !important;
+    padding-right: 54px !important;
+  }
 }
 
 .screen-w{
@@ -102,4 +106,9 @@ body{
 
 .h-icons{
   height: 654px;
+}
+
+.p-menu{
+  padding-left: 354px;
+  padding-right: 354px;
 }
