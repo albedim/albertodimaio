@@ -168,7 +168,7 @@ export const projects = (language) => {
       links: {
         overview: true,
         code: true,
-        link_overview: "https://daker.pages.dev",
+        link_overview: "https://daker-web.pages.dev",
         link_github: "https://github.com/albedim/daker"
       },
       image: "daker.png"
