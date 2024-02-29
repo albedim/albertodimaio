@@ -8,7 +8,7 @@ export const data = {
             contact_me: "Contact me"
         },
         home: {
-            intruduction: "Hello! 👋 My name is",
+            introduction: "Hello! 👋 My name is",
             titles: [
                 "Back-end Developer",
                 "Front-end Developer",
@@ -50,7 +50,7 @@ export const data = {
             contact_me: "Contattami"
         },
         home: {
-            intruduction: "Ciao! 👋 Mi chiamo",
+            introduction: "Ciao! 👋 Mi chiamo",
             titles: [
                 "Sviluppatore Back-end",
                 "Svilupatore Front-end",
