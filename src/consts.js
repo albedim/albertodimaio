@@ -5,6 +5,8 @@ import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoP
 import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-icons/si'
 import { FaJava, FaLaptopCode } from 'react-icons/fa'
 import { IoLogoJavascript, IoMdClose } from 'react-icons/io'
+import { TbBrandReactNative } from 'react-icons/tb'
+import { SiNextdotjs } from 'react-icons/si'
 import { GrClose, GrReactjs } from 'react-icons/gr'
 import { ImHtmlFive, ImCss3 } from 'react-icons/im'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -39,6 +41,16 @@ export const skills = [
     name: "React JS",
     icon: <GrReactjs opacity={"80%"} size={54} color='#b0b0b0' />,
     value: "80%"
+  },
+  {
+    name: "React Native",
+    icon: <TbBrandReactNative opacity={"80%"} size={54} color='#b0b0b0' />,
+    value: "70%"
+  },
+  {
+    name: "Next JS",
+    icon: <SiNextdotjs opacity={"80%"} size={54} color='#b0b0b0' />,
+    value: "65%"
   },
   {
     name: "TailwindCss",
@@ -114,6 +126,14 @@ const projectsLanguages = [
     icon: <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />
   },
   {
+    name: "React Native",
+    icon: <TbBrandReactNative opacity={"80%"} size={28} color='#b0b0b0' />
+  },
+  {
+    name: "Next JS",
+    icon: <SiNextdotjs opacity={"80%"} size={28} color='#b0b0b0' />
+  }, 
+  {
     name: "TailwindCss",
     icon: <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />
   },
@@ -161,8 +181,8 @@ export const projects = (language) => {
       name: "Daker",
       right: false,
       icons: [
-        projectsLanguages[6],
-        projectsLanguages[7]
+        projectsLanguages[8],
+        projectsLanguages[9]
       ],
       description: data[language].projects.content[0],
       links: {
@@ -178,12 +198,12 @@ export const projects = (language) => {
       right: true,
       icons: [
         projectsLanguages[4],
-        projectsLanguages[5],
-        projectsLanguages[3],
         projectsLanguages[7],
-        projectsLanguages[6],
-        projectsLanguages[10],
-        projectsLanguages[12]
+        projectsLanguages[3],
+        projectsLanguages[9],
+        projectsLanguages[8],
+        projectsLanguages[12],
+        projectsLanguages[14]
       ],
       description: data[language].projects.content[1],
       links: {
@@ -199,11 +219,11 @@ export const projects = (language) => {
       right: false,
       icons: [
         projectsLanguages[4],
-        projectsLanguages[5],
-        projectsLanguages[3],
         projectsLanguages[7],
-        projectsLanguages[6],
-        projectsLanguages[10],
+        projectsLanguages[3],
+        projectsLanguages[9],
+        projectsLanguages[8],
+        projectsLanguages[12],
       ],
       description: data[language].projects.content[2],
       links: {
@@ -219,11 +239,11 @@ export const projects = (language) => {
       right: true,
       icons: [
         projectsLanguages[4],
-        projectsLanguages[5],
-        projectsLanguages[3],
         projectsLanguages[7],
-        projectsLanguages[6],
-        projectsLanguages[11],
+        projectsLanguages[3],
+        projectsLanguages[9],
+        projectsLanguages[8],
+        projectsLanguages[13],
       ],
       description: data[language].projects.content[3],
       links: {
@@ -239,11 +259,11 @@ export const projects = (language) => {
       right: false,
       icons: [
         projectsLanguages[4],
-        projectsLanguages[5],
-        projectsLanguages[3],
         projectsLanguages[7],
-        projectsLanguages[6],
-        projectsLanguages[10],
+        projectsLanguages[3],
+        projectsLanguages[9],
+        projectsLanguages[8],
+        projectsLanguages[12],
       ],
       description: data[language].projects.content[4],
       links: {
@@ -258,8 +278,8 @@ export const projects = (language) => {
       name: "Skilly",
       right: true,
       icons: [
-        projectsLanguages[6],
-        projectsLanguages[10],
+        projectsLanguages[8],
+        projectsLanguages[12],
       ],
       description: data[language].projects.content[5],
       links: {
@@ -275,11 +295,11 @@ export const projects = (language) => {
       right: false,
       icons: [
         projectsLanguages[4],
-        projectsLanguages[5],
-        projectsLanguages[2],
         projectsLanguages[7],
-        projectsLanguages[6],
-        projectsLanguages[10],
+        projectsLanguages[2],
+        projectsLanguages[9],
+        projectsLanguages[8],
+        projectsLanguages[12],
       ],
       description: data[language].projects.content[6],
       links: {
