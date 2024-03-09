@@ -53,7 +53,7 @@ export const data = {
             introduction: "Ciao! 👋 Mi chiamo",
             titles: [
                 "Sviluppatore Back-end",
-                "Svilupatore Front-end",
+                "Sviluppatore Front-end",
                 "Curioso & Creativo"
             ],
             bio: "Mia mamma dice che sono il dev migliore del mio condominio",
