@@ -12,7 +12,7 @@ export const data = {
             titles: [
                 "Back-end Developer",
                 "Front-end Developer",
-                "Full of Curiosity, Creativty"
+                "Curious and Creative"
             ],
             bio: "My mom says i'm the best dev in my condo",
             more_about_me: "More about me"
@@ -54,7 +54,7 @@ export const data = {
             titles: [
                 "Sviluppatore Back-end",
                 "Svilupatore Front-end",
-                "Pieno di curiosità, creatività"
+                "Curioso & Creativo"
             ],
             bio: "Mia mamma dice che sono il dev migliore del mio condominio",
             more_about_me: "Chi sono"
