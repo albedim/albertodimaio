@@ -178,8 +178,28 @@ const projectsLanguages = [
 export const projects = (language) => {
   return [
     {
-      name: "Daker",
+      name: "Bliddo",
       right: false,
+      icons: [
+        projectsLanguages[4],
+        projectsLanguages[7],
+        projectsLanguages[3],
+        projectsLanguages[9],
+        projectsLanguages[8],
+        projectsLanguages[12],
+      ],
+      description: data[language].projects.content[0],
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://bliddo.com",
+        link_github: ""
+      },
+      image: "bliddo.png"
+    },
+    {
+      name: "Daker",
+      right: true,
       icons: [
         projectsLanguages[8],
         projectsLanguages[9]
@@ -195,7 +215,7 @@ export const projects = (language) => {
     },
     {
       name: "JudJen",
-      right: true,
+      right: false,
       icons: [
         projectsLanguages[4],
         projectsLanguages[7],
@@ -216,7 +236,7 @@ export const projects = (language) => {
     },
     {
       name: "UnBoring",
-      right: false,
+      right: true,
       icons: [
         projectsLanguages[4],
         projectsLanguages[7],
@@ -236,7 +256,7 @@ export const projects = (language) => {
     },
     {
       name: "Codymio",
-      right: true,
+      right: false,
       icons: [
         projectsLanguages[4],
         projectsLanguages[7],
@@ -256,7 +276,7 @@ export const projects = (language) => {
     },
     {
       name: "Deleafly",
-      right: false,
+      right: true,
       icons: [
         projectsLanguages[4],
         projectsLanguages[7],
@@ -276,7 +296,7 @@ export const projects = (language) => {
     },
     {
       name: "Skilly",
-      right: true,
+      right: false,
       icons: [
         projectsLanguages[8],
         projectsLanguages[12],
@@ -292,7 +312,7 @@ export const projects = (language) => {
     },
     {
       name: "Cryllet",
-      right: false,
+      right: true,
       icons: [
         projectsLanguages[4],
         projectsLanguages[7],

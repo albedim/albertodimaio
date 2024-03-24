@@ -27,6 +27,7 @@ export const data = {
         projects: {
             title: "Projects",
             content: [
+                "Sell your digital guides, articles, small e-books or receipts and share your digital library to the world using your link, earn quickly with your passion.",
                 "A REST API able to generate millions of different fake users using a dataset containing more than 10 Millions fake users-data.",
                 "Share your cringe stories with an anonymous community, read cringe stories and have fun with your friends!",
                 "Bored And Tired of procrastinating? Create and complete some tasks and meet new people.",
@@ -69,6 +70,7 @@ export const data = {
         projects: {
             title: "Progetti",
             content: [
+                "Vendi le tue guide digitali, articoli, piccoli e-books o ricette e condividi la tua libreria digitale al mondo tramite un link, guadagna velocemente con la tua passione.",
                 "Una REST API capace di generare milioni di utenti fake diversi usando un dataset contentente più di 10 Milioni di dati-utente finti.",
                 "Condividi le tue storie cringe con una community anonima, leggi storie cringe e divertiti con i tuoi amici!",
                 "Annoiato e stanco di procrastinare? Crea, completa delle tasks e conosci nuove persone",
