@@ -16,6 +16,7 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { projects, skills } from './consts';
 import axios from 'axios';
 import { data } from './config/config';
+import Flag from 'react-world-flags';
 
 const COLORS = ['#5fc95f', '#56b556', '#4ca14c', '#438d43', '#397939', '#306530', '#265026', '#1c3c1c', '#132813', '#091409']
 
@@ -46,10 +47,6 @@ function App() {
     window.addEventListener("scroll", handleScroll);
     handleLanguage()
   }, []);
-  
-  useEffect(() => {
-    console.log(language)
-  });
 
   const handleScroll = (e) => {
     if (window.scrollY.toFixed() > 0 && window.scrollY.toFixed() < 734) {
@@ -85,9 +82,10 @@ function App() {
 
   return (
     <div className='bg-[white] justify-around flex h-screen w-screen'>
+      <img className="fixed opacity-20 top-0 left-0 right-0" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1003%26quot%3b)' fill='none'%3e%3cpath d='M871.12 1236.55C1100.46 1136.07 1140.14 420.19 1443.15 414.44 1746.16 408.69 1838.94 813.74 2015.18 835.64' stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M124.5 1113.93C407.92 1081.86 524.36 489.77 1056.39 455.71 1588.43 421.65 1736.98 84.81 1988.29 77.71' stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M260.84 1088.47C563.33 1033.91 704.59 283.26 1185.44 278.08 1666.3 272.9 1868.49 555.81 2110.05 558.88' stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M993.13 1251.5C1184.53 1202.72 1199.2 725.78 1539.13 680.44 1879.07 635.1 1934.18 427.71 2085.14 421.24' stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M1088.22 1129.23C1250.81 1040.94 1177.81 496.61 1470.26 495.42 1762.7 494.23 2019.09 883.2 2234.33 895.02' stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1003'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e" alt="" />
       <div
         style={{ display: menu ? 'block' : 'none' }} 
-        className='z-40 bg-[white] border right-0 h-screen w-4/5 fixed'
+        className='z-50 bg-[white] border right-0 h-screen w-4/5 fixed'
       >
         <div className='h-10'></div>
         <div className='p-6'  >
@@ -134,7 +132,7 @@ function App() {
             onClick={() => {
               skillsRef.current.scrollIntoView({ behavior: 'smooth' }); 
               setMenu(false) 
-            }} 
+            }}
             style={{ color: selectedPage == 'skills' ? 'black' : 'gray' }} 
             className={'cursor-pointer items-center flex p-8 font-large font-p'}
           >
@@ -174,10 +172,17 @@ function App() {
           </li>
         </ul>
       </div>
-      <div className='z-30 p-menu pb-2 bg-[white] w-screen fixed justify-between p-8 items-center flex'>
+      <div className='z-50 p-menu pb-2 bg-[white] w-screen fixed justify-between p-8 items-center flex'>
         <div className='items-center flex'>
           <FaLaptopCode size={34} color={COLORS[3]} />
           <h2 className={'ml-4 font-medium font-p text-[black]'} >Alberto Di Maio</h2>
+          <div className='flex ml-4 items-center'>
+            <Flag className='border rounded-sm' width={18} height={18} code={language.split("_")[1]} />
+            <select className='ml-1 outline-none font-p font-medium' onChange={(e) => setLanguage(e.target.value)} value={language} id="">
+              <option value="it_IT">IT</option>
+              <option value="en_US">EN</option>
+            </select>
+          </div>
         </div>
         <div>
           <ul className='flex-none'>
@@ -255,7 +260,7 @@ function App() {
           <TfiMenu onClick={() => setMenu(true)} className='none-flex' size={34} color='black' />
         </div>
       </div>
-      <div className='mt-24 screen-w'>
+      <div className='mt-24 z-40 screen-w'>
         <div ref={homeRef}>
           <div style={{ paddingBottom: 184, paddingTop: 184 }}>
             <h2 
@@ -284,7 +289,7 @@ function App() {
               repeat={Infinity}
             />
             <h2 className={'mt-4 text-xl text-[#b0b0b0] font-semibold font-p'} >{data[language].home.bio}</h2>
-            <div className='pt-14'>
+            <div className='pt-8'>
               <button 
                 onClick={() => aboutRef.current?.scrollIntoView({ behavior: 'smooth' })} 
                 className='transition-all hover:bg-[#478B47] rounded-md p-4 text-[white] bg-[#4ca14c] text-lg font-medium font-p' >{data[language].home.more_about_me}
