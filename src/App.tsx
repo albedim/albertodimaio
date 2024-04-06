@@ -72,7 +72,7 @@ function App() {
   }
 
   return (
-    <div className='bg-[#fafafd] h-screen w-screen'>
+    <div className='bg-[#fafafd] dark:bg-[#1c1c1c] h-screen w-screen'>
       {/*<img className="fixed opacity-20 top-0 left-0 right-0" src="data:image/svg+xml,%3csvg 
       xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' 
       xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' 
@@ -124,12 +124,12 @@ function App() {
           setMenu(false)
         }}
       />
-      <div className='homeMarginTop flex bg-[#fafafd] justify-around pl-4 pr-4 z-30'>
+      <div className='homeMarginTop flex bg-[#fafafd] dark:bg-[#1c1c1c] justify-around pl-4 pr-4 z-30'>
         <div style={{ maxWidth: 1245 }}>
           <div ref={homeRef}>
             <div style={{ paddingBottom: 184, paddingTop: 184 }}>
               <h2 className="text-xl text-[#4ca14c] font-semibold font-p" >{data[language].home.introduction}</h2>
-              <h2 className="mt-4 text-[#686868] md:text-7xl text-5xl font-bold font-p" >Alberto Di Maio</h2>
+              <h2 className="mt-4 text-[#686868] dark:text-[white] md:text-7xl text-5xl font-bold font-p" >Alberto Di Maio</h2>
               <TypeAnimation
                 className='mt-3 text-2xl md:text-4xl text-[#b0b0b0] font-semibold font-p'
                 sequence={[
@@ -153,7 +153,7 @@ function App() {
               <div className='pt-8'>
                 <button 
                   onClick={() => aboutRef.current?.scrollIntoView({ behavior: 'smooth' })} 
-                  className='transition-all hover:bg-[#478B47] rounded-md p-4 
+                  className='transition-all dark:text-[black] hover:bg-[#478B47] rounded-md p-4 
                              text-[white] bg-[#4ca14c] text-lg font-medium font-p' 
                 >
                   {data[language].home.more_about_me}
@@ -164,7 +164,7 @@ function App() {
           <div ref={aboutRef}>
             <div style={{ paddingBottom: 184, paddingTop: 184 }}>
               <div>
-                <h2 className="mt-2 text-[#686868] text-5xl font-bold font-p">
+                <h2 className="mt-2 dark:text-[white] text-[#686868] text-5xl font-bold font-p">
                   {data[language].about.title}
                   <div className='w-40 bg-[#4ca14c] mt-1 h-2' ></div>
                 </h2>
@@ -172,10 +172,10 @@ function App() {
                   <h2 
                     dangerouslySetInnerHTML={{ __html: data[language].about.content}} 
                     style={{ maxWidth: 940 }} 
-                    className='mt-14 text-lg text-[#686868] font-regular font-p'
+                    className='mt-14 dark:text-[#adadad] text-lg text-[#686868] font-regular font-p'
                   ></h2>
                   <TypeAnimation
-                    className='italic mt-14 text-xl text-[#686868] font-regular font-p'
+                    className='italic mt-14 text-xl dark:text-[#adadad] text-[#686868] font-regular font-p'
                     sequence={[
                       "''Find a job you enjoy doing, and you will never have to work a day in your life.''",
                       2400,
@@ -195,7 +195,7 @@ function App() {
           <div ref={skillsRef}>
             <div className='h-icons' style={{ paddingTop: 184 }}>
               <div>
-                <h2 className={'mt-2 text-[#686868] text-5xl font-bold font-p'}>
+                <h2 className={'mt-2 dark:text-[white] text-[#686868] text-5xl font-bold font-p'}>
                   {data[language].skills.title}
                   <div className='w-40 bg-[#4ca14c] mt-1 h-2' ></div>
                 </h2>
@@ -204,7 +204,7 @@ function App() {
                     skills.map(skill => (
                       hover == skill.name ? (
                         <div className='cursor-pointer h-24 mt-10'>
-                          <div onMouseLeave={() => setHover("")} className='rounded-lg bg-[white]'>
+                          <div onMouseLeave={() => setHover("")} className='rounded-lg dark:border border-[#3d3d3d] dark:bg-[#171616] bg-[white]'>
                             <div className='pb-1 p-10'>
                               {skill.icon}
                             </div>
@@ -212,11 +212,11 @@ function App() {
                               <h2 className='text-lg text-[#b0b0b0] font-medium font-p'>{skill.name}</h2>
                               <div
                                 style={{ height: 14, width: '100%' }} 
-                                className='rounded-md bg-opacity-10 mt-1 bg-[gray]'
+                                className='rounded-md bg-opacity-10 dark:bg-opacity-40 mt-1 bg-[gray]'
                               >
                                 <div
-                                  className='rounded-md'
-                                  style={{ height: 14, backgroundColor: '#4ca14c', width: skill.value }} >
+                                  className='bg-[#4ca14c] rounded-md'
+                                  style={{ height: 14, width: skill.value }} >
                                 </div>
                               </div>
                             </div>
@@ -241,7 +241,7 @@ function App() {
           <div ref={projectsRef}>
             <div style={{ paddingBottom: 184, paddingTop: 254 }}>
               <div>
-                <h2 className="mt-2 text-[#686868] text-5xl font-bold font-p">
+                <h2 className="mt-2 dark:text-[white] text-[#686868] text-5xl font-bold font-p">
                   {data[language].projects.title}
                   <div className='w-60 bg-[#4ca14c] mt-4 h-2' ></div>
                 </h2>
@@ -251,14 +251,14 @@ function App() {
                       <div className='pl-0 p-8'>
                         <div 
                           style={{ justifyContent: project.right ? 'space-between' : '' }} 
-                          className='project-flex rounded-lg p-8 shadow-md shadow-[#e4e4e4] bg-[white]'
+                          className='project-flex rounded-lg dark:bg-[#171616] p-8 dark:shadow-none dark:border border-[#3d3d3d] shadow-md shadow-[#e4e4e4] bg-[white]'
                         >
                           {
                             project.right ? (
                               <div className='padding-l-no none-flex items-center justify-around'>
                                 <img
-                                  width={640} 
-                                  className='border rounded-lg'
+                                  width={640}
+                                  className='border dark:boder-none rounded-lg'
                                   src={require("./images/" + project.image)} 
                                   alt=""
                                 />
@@ -267,7 +267,7 @@ function App() {
                               <div className='flex padding-r-no items-center justify-around'>
                                 <img 
                                   width={640} 
-                                  className='border rounded-lg' 
+                                  className='border dark:border-none rounded-lg' 
                                   src={require("./images/" + project.image)} 
                                   alt="" 
                                 />
@@ -275,7 +275,7 @@ function App() {
                             )
                           }
                           <div>
-                            <h2 className={'mt-2 text-[gray] text-3xl font-bold font-p'}>
+                            <h2 className={'mt-2 dark:text-[white] text-[gray] text-3xl font-bold font-p'}>
                               {project.name}
                               <div style={{ backgroundColor: '#4ca14c' }} className='w-40 mt-1 h-1' ></div>
                             </h2>
@@ -296,7 +296,7 @@ function App() {
                               }
                             </div>
                             <div className='pt-2'>
-                              <h2 style={{ maxWidth: 340 }} className={'mt-2 text-[gray] text-md font-regular font-p'}>
+                              <h2 style={{ maxWidth: 340 }} className={'mt-2 dark:text-[#adadad] text-[gray] text-md font-regular font-p'}>
                                 {project.description}
                               </h2>
                             </div>
@@ -308,7 +308,7 @@ function App() {
                                     <a target='_blank' href={project.links.link_overview}>
                                       <button
                                         className='hover:bg-[#478B47] transition-all items-center 
-                                        flex rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
+                                        flex rounded-md p-4 dark:text-[black] text-[white] bg-[#4ca14c] font-medium font-p' >
                                         <div className='pr-2'>
                                           <TbUnlink size={24} />
                                         </div> {data[language].projects.buttons.overview}
@@ -322,7 +322,7 @@ function App() {
                                     <a target='_blank' href={project.links.link_github}>
                                       <button 
                                           className='hover:bg-[#478B47] transition-all items-center 
-                                          flex rounded-md p-4 text-[white] bg-[#4ca14c] font-medium font-p' >
+                                          flex rounded-md p-4 dark:text-[black] text-[white] bg-[#4ca14c] font-medium font-p' >
                                         <div className='pr-2'>
                                           <FaCode size={24} />
                                         </div> {data[language].projects.buttons.code}
@@ -335,7 +335,7 @@ function App() {
                           {
                             project.right &&
                             <div className='toNone padding-l-no flex items-center justify-around'>
-                              <img width={640} className='border rounded-lg' src={require("./images/" + project.image)} alt="" />
+                              <img width={640} className='border dark:border-none rounded-lg' src={require("./images/" + project.image)} alt="" />
                             </div>
                           }
                         </div>
@@ -348,23 +348,23 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='flex justify-around p-24'>
+      <div className='flex dark:bg-[#1c1c1c] bg-[#fafafd] justify-around p-24'>
         <div className='flex-block gap-14 justify-between'>
-          <h2 style={{ color: 'gray' }} className={'mt-4 text-center text-1xl font-regular font-p'} >© 2023 - Made with ♥ by <span className='text-[#4ca14c]' >albedim</span></h2>
+          <h2 className={'mt-4 text-center dark:text-[#adadad] text-[gray] text-1xl font-regular font-p'} >© 2023 - Made with ♥ by <span className='text-[#4ca14c]' >albedim</span></h2>
           <div className='justify-around gap-2 mt-4 flex'>
             <a target='_blank' href="https://twitter.com/TheAlbeDim">
-              <button className='w-[30px] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
-                <BsTwitterX size={16} color='gray' />
+              <button className='w-[30px] dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+                <BsTwitterX size={16} />
               </button>
             </a>
             <a href="https://github.com/albedim">
-              <button className='w-[30px] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
-                <AiFillGithub size={16} color='gray' />
+              <button className='w-[30px] dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+                <AiFillGithub size={16} />
               </button>
             </a>
             <a href="https://linkedin.com/in/alberto-di-maio-520531285">
-              <button className='w-[30px] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
-                <AiFillLinkedin size={16} color='gray' />
+              <button className='w-[30px] dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+                <AiFillLinkedin size={16}/>
               </button>
             </a>
           </div>
