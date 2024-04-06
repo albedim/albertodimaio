@@ -19,7 +19,7 @@ interface HeaderProps{
 const Header: React.FC<HeaderProps> = ( props ) => {
 
   return (
-    <header className="z-40 dark:bg-[#1c1c1c] p-menu pb-2 dark:bg-[black] bg-[#fafafd] top-0 w-screen fixed justify-between p-8 items-center flex">
+    <header className="z-40 dark:bg-[#1c1c1c] p-menu pb-2 bg-[#fafafd] top-0 w-screen fixed justify-between p-8 items-center flex">
       <div className='items-center flex'>
         <FaLaptopCode size={34} color={"#4ca14c"} />
         <h2 className={'ml-4 dark:text-[white] font-medium font-p text-[black]'} >Alberto Di Maio</h2>
