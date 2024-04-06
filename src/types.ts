@@ -1,0 +1,1 @@
+export type LanguagesType = "it_IT" | "en_US";
