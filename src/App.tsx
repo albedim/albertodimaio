@@ -150,22 +150,22 @@ function App() {
       />
       <Stepper>
         <a target='_blank' href="https://bliddo.com">
-          <button className='w-[40px] hover:border-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+          <button className='w-[40px] hover:border-[#4ca14c] transition-all text-[#cecece] dark:border-[gray] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-[#cecece] border-2'>
             <img className='rounded-full' src="https://avatars.githubusercontent.com/u/143631314?s=400&u=570dd4decf95ae70ffe30e31de8ea319d300dbcf&v=4" alt="" />
           </button>
         </a>
         <a target='_blank' href="https://twitter.com/TheAlbeDim">
-          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[gray] text-[#cecece] border-[#cecece] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-2'>
             <BsTwitterX size={19} />
           </button>
         </a>
         <a href="https://github.com/albedim">
-          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[gray] text-[#cecece] border-[#cecece] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-2'>
             <AiFillGithub size={19} />
           </button>
         </a>
         <a href="https://linkedin.com/in/alberto-di-maio-520531285">
-          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[gray] text-[#cecece] border-[#cecece] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-2'>
             <AiFillLinkedin size={19}/>
           </button>
         </a>
