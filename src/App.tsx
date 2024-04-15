@@ -19,6 +19,7 @@ import Flag from 'react-world-flags';
 import { LanguagesType } from './types';
 import Header from './components/header';
 import MobileMenu from './components/mobile_menu'
+import Stepper from './components/stepper'
 
 
 function App() {
@@ -76,7 +77,7 @@ function App() {
    * this function prepares titles in a better way but it's currently not working properly,
    * morover it's deprecated.
    */
-  
+
   const generateTitlesArray = () => {
     const titles = data[language].home.titles
     const newArray = []
@@ -147,6 +148,28 @@ function App() {
           setMenu(false)
         }}
       />
+      <Stepper>
+        <a target='_blank' href="https://bliddo.com">
+          <button className='w-[40px] hover:border-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+            <img className='rounded-full' src="https://avatars.githubusercontent.com/u/143631314?s=400&u=570dd4decf95ae70ffe30e31de8ea319d300dbcf&v=4" alt="" />
+          </button>
+        </a>
+        <a target='_blank' href="https://twitter.com/TheAlbeDim">
+          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+            <BsTwitterX size={19} />
+          </button>
+        </a>
+        <a href="https://github.com/albedim">
+          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+            <AiFillGithub size={19} />
+          </button>
+        </a>
+        <a href="https://linkedin.com/in/alberto-di-maio-520531285">
+          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[40px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+            <AiFillLinkedin size={19}/>
+          </button>
+        </a>
+      </Stepper>
       <div className='homeMarginTop flex bg-[#fafafd] dark:bg-[#1c1c1c] justify-around pl-4 pr-4 z-30'>
         <div style={{ maxWidth: 1245 }}>
           <div ref={homeRef}>
@@ -376,17 +399,17 @@ function App() {
           <h2 className={'mt-4 text-center dark:text-[#adadad] text-[gray] text-1xl font-regular font-p'} >© 2023 - Made with ♥ by <span className='text-[#4ca14c]' >albedim</span></h2>
           <div className='justify-around gap-2 mt-4 flex'>
             <a target='_blank' href="https://twitter.com/TheAlbeDim">
-              <button className='w-[30px] dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+              <button className='w-[30px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
                 <BsTwitterX size={16} />
               </button>
             </a>
             <a href="https://github.com/albedim">
-              <button className='w-[30px] dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+              <button className='w-[30px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
                 <AiFillGithub size={16} />
               </button>
             </a>
             <a href="https://linkedin.com/in/alberto-di-maio-520531285">
-              <button className='w-[30px] dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
+              <button className='w-[30px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
                 <AiFillLinkedin size={16}/>
               </button>
             </a>

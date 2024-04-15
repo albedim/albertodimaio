@@ -20,6 +20,10 @@ body{
   display: flex;
 }
 
+.block-none{
+  display: block;
+}
+
 @media screen and (max-width: 982px) {
   .h-icons{
     height: 1354px !important;
@@ -54,6 +58,9 @@ body{
     padding-bottom: 80px !important;
   }
   .flex-none{
+    display: none !important;
+  }
+  .block-none{
     display: none !important;
   }
   .p-menu{
