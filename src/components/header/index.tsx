@@ -17,7 +17,7 @@ interface HeaderProps{
 }
 
 const Header: React.FC<HeaderProps> = ( props ) => {
-
+  
   return (
     <header className="z-40 dark:bg-[#1c1c1c] p-menu pb-2 bg-[#fafafd] top-0 w-screen fixed justify-between p-8 items-center flex">
       <div className='items-center flex'>

@@ -71,6 +71,29 @@ function App() {
     })
   }
 
+  /**
+   * @deprecated
+   * this function prepares titles in a better way but it's currently not working properly,
+   * morover it's deprecated.
+   */
+  
+  const generateTitlesArray = () => {
+    const titles = data[language].home.titles
+    const newArray = []
+    let counter = 0
+
+    for (let i = 0; i < titles.length * 2; i++) {
+      if (i % 2 == 0) {
+        newArray.push(titles[counter]);
+        counter++;
+      } else {
+        newArray.push(2400)
+      }
+    }
+
+    newArray.push(() => { return })
+  }
+
   return (
     <div className='bg-[#fafafd] dark:bg-[#1c1c1c] h-screen w-screen'>
       {/*<img className="fixed opacity-20 top-0 left-0 right-0" src="data:image/svg+xml,%3csvg 
