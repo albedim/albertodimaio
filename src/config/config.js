@@ -77,7 +77,7 @@ export const data = {
                 "Codymio sta aiutando 500+ sviluppatori a trovare i perfetti progetti open source ai quali contribuire.",
                 "Il primo web tracker che ti permette di tracciare il traffico sui tuoi url facile e veloce con una fantastica dashboard.",
                 "Framework web in python. Crea delle api's organizzate e veloci con Skilly",
-                "Crea i yuoi link di pagamento con Cryllet. Paga e vieni pagato dagli altri usando le cryptovalute"
+                "Crea i tuoi link di pagamento con Cryllet. Paga e vieni pagato dagli altri usando le cryptovalute"
             ],
             buttons: {
                 overview: "Sito Web",
