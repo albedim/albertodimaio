@@ -151,7 +151,7 @@ function App() {
       <Stepper>
         <a target='_blank' href="https://bliddo.com">
           <button className='w-[40px] hover:border-[#4ca14c] transition-all text-[#cecece] dark:border-[gray] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-[#cecece] border-2'>
-            <img className='rounded-full' src="https://avatars.githubusercontent.com/u/143631314?s=400&u=570dd4decf95ae70ffe30e31de8ea319d300dbcf&v=4" alt="" />
+            <img className='rounded-full' src="https://avatars.githubusercontent.com/u/143631314?s=400&u=c84715f9b0732f2c298058c7a6ffda2428eef07c&v=4" alt="" />
           </button>
         </a>
         <a target='_blank' href="https://twitter.com/TheAlbeDim">
