@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ( props ) => {
       <div>
         <ul className='flex-none'>
           {props.selectedPage == 'home' ? (
-            <li 
+            <li
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className={'cursor-pointer text-[black] dark:text-[white] items-center flex ml-8 font-medium font-p'}
             >

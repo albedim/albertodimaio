@@ -178,7 +178,7 @@ const projectsLanguages = [
 export const projects = (language) => {
   return [
     {
-      name: "Bliddo",
+      name: "Uteka",
       right: false,
       icons: [
         projectsLanguages[4],
@@ -192,10 +192,10 @@ export const projects = (language) => {
       links: {
         overview: true,
         code: false,
-        link_overview: "https://bliddo.com",
+        link_overview: "https://uteka.pages.dev",
         link_github: ""
       },
-      image: "bliddo.png"
+      image: "uteka.png"
     },
     {
       name: "Daker",
