@@ -192,7 +192,7 @@ export const projects = (language) => {
       links: {
         overview: true,
         code: false,
-        link_overview: "https://uteka.pages.dev",
+        link_overview: "https://utekafe.pages.dev",
         link_github: ""
       },
       image: "uteka.png"
