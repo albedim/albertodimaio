@@ -6,7 +6,7 @@ import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-ic
 import { FaJava, FaLaptopCode } from 'react-icons/fa'
 import { IoLogoJavascript, IoMdClose } from 'react-icons/io'
 import { TbBrandReactNative } from 'react-icons/tb'
-import { SiNextdotjs } from 'react-icons/si'
+import { SiNextdotjs, SiSocketdotio } from 'react-icons/si'
 import { GrClose, GrReactjs } from 'react-icons/gr'
 import { ImHtmlFive, ImCss3 } from 'react-icons/im'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -100,6 +100,11 @@ export const skills = [
   {
     name: "Express.js",
     icon: <SiExpress opacity={"80%"} size={54} color='#b0b0b0' />,
+    value: "60%"
+  }
+  {
+    name: "SocketIo",
+    icon: <SiSocketdotio opacity={"60%"} size={54} color={"#b0b0b0"}/>,
     value: "60%"
   }
 ]
