@@ -101,7 +101,7 @@ export const skills = [
     name: "Express.js",
     icon: <SiExpress opacity={"80%"} size={54} color='#b0b0b0' />,
     value: "60%"
-  }
+  },
   {
     name: "SocketIo",
     icon: <SiSocketdotio opacity={"60%"} size={54} color={"#b0b0b0"}/>,
