@@ -2,110 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  background-color: #fafafd;
 }
 
-.flex-wrap-box{
-  border: none;
-  margin: 0;
-  list-style: none;
-  -ms-box-orient: horizontal;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
+.black{
+  color: #171717;
 }
 
-.block-none{
-  display: block;
-}
 
-@media screen and (max-width: 982px) {
-  .h-icons{
-    height: 1354px !important;
-  }
-}
-
-@media screen and (max-width: 842px) {
-  .project-flex{
-    display: block !important;
-  }
-  .toNone{
-    display: none !important;
-  }
-  .flex-block{
-    display: block !important;
-  }
-  .padding-l-no{
-    padding-left: 0px !important;
-    padding-bottom: 80px;
-  }
-  .padding-r-no{
-    padding-right: 0px !important;
-    padding-bottom: 80px;
-  }
-  .homeMarginTop {
-    margin-top: 14px !important;
-  }
-  .none-flex{
-    display: flex !important;
-  }
-  .padding-no{
-    padding-bottom: 80px !important;
-  }
-  .flex-none{
-    display: none !important;
-  }
-  .block-none{
-    display: none !important;
-  }
-  .p-menu{
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-}
-
-.padding-r-no{
-  padding-right: 34px;
-}
-
-.flex-block{
-  display: flex;
-}
-
-.project-flex{
-  display: flex;
-}
-
-.homeMarginTop {
-  margin-top: 96px;
-}
-
-.flex-none{
-  display: flex;
-}
-
-.none-flex{
-  display: none;
-}
-
-.padding-l-no{
-  padding-left: 34px;
-}
-
-.tr{
-  transition: 0.4s;
-}
-
-.h-icons{
-  height: 654px;
-}
-
-.p-menu{
-  padding-left: 154px;
-  padding-right: 154px;
+.blackbg{
+  background-color: #35cc58;
 }

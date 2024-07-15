@@ -1,8 +1,8 @@
-import { TfiMenu } from 'react-icons/tfi'
-import { TbUnlink } from 'react-icons/tb'
+import { TfiEmail, TfiMenu } from 'react-icons/tfi'
+import { TbUnlink, TbWorldWww } from 'react-icons/tb'
 import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit } from 'react-icons/bi'
 import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-icons/si'
-import { FaCode, FaLaptopCode } from 'react-icons/fa'
+import { FaCode, FaGithub, FaLaptopCode, FaLinkedin } from 'react-icons/fa'
 import { BsTwitterX } from 'react-icons/bs'
 import { IoLogoJavascript, IoMdClose } from 'react-icons/io'
 import { GrClose, GrReactjs } from 'react-icons/gr'
@@ -20,404 +20,161 @@ import { LanguagesType } from './types';
 import Header from './components/header';
 import MobileMenu from './components/mobile_menu'
 import Stepper from './components/stepper'
+import Section from './components/section'
 
 
 function App() {
 
-  const [menu, setMenu] = useState(false)
-
   const [language, setLanguage] = useState<LanguagesType>("en_US")
-
-  const homeRef = useRef<HTMLInputElement>(null)
-
-  const aboutRef = useRef<HTMLInputElement>(null)
-
-  const skillsRef = useRef<HTMLInputElement>(null)
-
-  const projectsRef = useRef<HTMLInputElement>(null)
-
-  const [hoverable, setHoverable] = useState(true)
-
-  const [hover, setHover] = useState("")
-
-  const [selectedPage, setSelectedPage] = useState("home")
+  const [pageProjects, setPageProjects] = useState<any[]>()
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleLanguage()
-  }, []);
-
-  const handleScroll = () => {
-    if (window.scrollY > 0 && window.scrollY < 734) {
-      setSelectedPage("home")
-    } else if (window.scrollY > 735 && window.scrollY < 1534) {
-      setSelectedPage("about")
-    } else if (window.scrollY > 1535 && window.scrollY < 2154) {
-      setSelectedPage("skills")
-    } else if (window.scrollY > 2154)
-      setSelectedPage("projects")
-  }
-
-  const handleLanguage = async () => {
-    await axios.get("https://ipapi.co/json")
-    .then(res => {
-      if (data.hasOwnProperty(res.data.languages.split(",")[0].replace("-", "_"))) {
-        setLanguage(res.data.languages.split(",")[0].replace("-", "_"))
-      } else {
-        setLanguage("en_US")
-      }
-    })
-    .catch(err => {
-      setLanguage("en_US")
-    })
-  }
-
-  /**
-   * @deprecated
-   * this function prepares titles in a better way but it's currently not working properly,
-   * morover it's deprecated.
-   */
-
-  const generateTitlesArray = () => {
-    const titles = data[language].home.titles
-    const newArray = []
-    let counter = 0
-
-    for (let i = 0; i < titles.length * 2; i++) {
-      if (i % 2 == 0) {
-        newArray.push(titles[counter]);
-        counter++;
-      } else {
-        newArray.push(2400)
-      }
-    }
-
-    newArray.push(() => { return })
-  }
+    const prjs = projects(language)
+    setPageProjects(prjs)
+  }, [])
 
   return (
-    <div className='bg-[#fafafd] dark:bg-[#1c1c1c] h-screen w-screen'>
-      {/*<img className="fixed opacity-20 top-0 left-0 right-0" src="data:image/svg+xml,%3csvg 
-      xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' 
-      xmlns:svgjs='http://svgjs.dev/svgjs' width='1920' height='1080' preserveAspectRatio='none' 
-      viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1003%26quot%3b)' fill='none'%3e%3cpath 
-      d='M871.12 1236.55C1100.46 1136.07 1140.14 420.19 1443.15 414.44 1746.16 408.69 1838.94 813.74 2015.18 835.64' 
-      stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath 
-      d='M124.5 1113.93C407.92 1081.86 524.36 489.77 1056.39 455.71 1588.43 421.65 1736.98 84.81 1988.29 77.71' 
-      stroke='rgba(76%2c 161%2c 76%2c 1)' 
-      stroke-width='2'%3e%3c/path%3e%3cpath 
-      d='M260.84 1088.47C563.33 1033.91 704.59 283.26 1185.44 278.08 1666.3 272.9 1868.49 555.81 2110.05 558.88' 
-      stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3cpath 
-      d='M993.13 1251.5C1184.53 1202.72 1199.2 725.78 1539.13 680.44 1879.07 635.1 1934.18 427.71 2085.14 421.24' 
-      stroke='rgba(76%2c 161%2c 76%2c 1)' 
-      stroke-width='2'%3e%3c/path%3e%3cpath 
-      d='M1088.22 1129.23C1250.81 1040.94 1177.81 496.61 1470.26 495.42 1762.7 494.23 2019.09 883.2 2234.33 895.02' 
-      stroke='rgba(76%2c 161%2c 76%2c 1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask 
-      id='SvgjsMask1003'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e" 
-      alt=""
-      />*/}
-      <Header
-        setLanguage={(language) => setLanguage(language)}
-        language={language || 'en_US'}
-        selectedPage={selectedPage}
-        setMenu={() => setMenu(true)}
-        onHomeClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        onAboutClick={() => aboutRef?.current?.scrollIntoView({ behavior: 'smooth' })}
-        onSkillsClick={() => skillsRef?.current?.scrollIntoView({ behavior: 'smooth' })}
-        onProjectsClick={() => projectsRef?.current?.scrollIntoView({ behavior: 'smooth' })}
-      />
-      <MobileMenu
-        language={language || 'en_US'}
-        selectedPage={selectedPage}
-        visible={menu}
-        setMenu={() => setMenu(false)}
-        onHomeClick={() => {
-          window.scrollTo({ top: 0, behavior: 'smooth' })
-          setMenu(false)
-        }}
-        onAboutClick={() => {
-          aboutRef?.current?.scrollIntoView({ behavior: 'smooth' })
-          setMenu(false)
-        }}
-        onSkillsClick={() => {
-          skillsRef?.current?.scrollIntoView({ behavior: 'smooth' })
-          setMenu(false)
-        }}
-        onProjectsClick={() => {
-          projectsRef?.current?.scrollIntoView({ behavior: 'smooth' })
-          setMenu(false)
-        }}
-      />
-      <Stepper>
-        <a target='_blank' href="https://bliddo.com">
-          <button className='w-[40px] hover:border-[#4ca14c] transition-all text-[#cecece] dark:border-[gray] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-[#cecece] border-2'>
-            <img className='rounded-full' src="https://avatars.githubusercontent.com/u/143631314?s=400&u=c84715f9b0732f2c298058c7a6ffda2428eef07c&v=4" alt="" />
-          </button>
-        </a>
-        <a target='_blank' href="https://twitter.com/TheAlbeDim">
-          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[gray] text-[#cecece] border-[#cecece] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-2'>
-            <BsTwitterX size={19} />
-          </button>
-        </a>
-        <a href="https://github.com/albedim">
-          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[gray] text-[#cecece] border-[#cecece] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-2'>
-            <AiFillGithub size={19} />
-          </button>
-        </a>
-        <a href="https://linkedin.com/in/alberto-di-maio-520531285">
-          <button className='w-[40px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[gray] text-[#cecece] border-[#cecece] h-[40px] flex items-center justify-around rounded-full border dark:border-[gray] border-2'>
-            <AiFillLinkedin size={19}/>
-          </button>
-        </a>
-      </Stepper>
-      <div className='homeMarginTop flex bg-[#fafafd] dark:bg-[#1c1c1c] justify-around pl-4 pr-4 z-30'>
-        <div style={{ maxWidth: 1245 }}>
-          <div ref={homeRef}>
-            <div style={{ paddingBottom: 184, paddingTop: 184 }}>
-              <h2 className="text-xl text-[#4ca14c] font-semibold font-p" >{data[language].home.introduction}</h2>
-              <h2 className="mt-4 text-[#686868] dark:text-[white] md:text-7xl text-5xl font-bold font-p" >Alberto Di Maio</h2>
-              <TypeAnimation
-                className='mt-3 text-2xl md:text-4xl text-[#b0b0b0] font-semibold font-p'
-                sequence={[
-                  data[language].home.titles[0], // Types 'One'
-                  2400, // Waits 1s
-                  data[language].home.titles[1],
-                  2400,
-                  data[language].home.titles[2],
-                  2400,
-                  () => {
-                    return // Place optional callbacks anywhere in the array
-                  }
-                ]}
-                wrapper="div"
-                cursor={true}
-                repeat={Infinity}
-              />
-              <h2 className="mt-4 text-lg md:text-xl text-xl text-[#b0b0b0] font-semibold font-p" >
-                {data[language].home.bio}
-              </h2>
-              <div className='pt-8'>
-                <button 
-                  onClick={() => aboutRef.current?.scrollIntoView({ behavior: 'smooth' })} 
-                  className='transition-all dark:text-[black] hover:bg-[#478B47] rounded-md p-4 
-                             text-[white] bg-[#4ca14c] text-lg font-medium font-p' 
-                >
-                  {data[language].home.more_about_me}
+    <div className='flex p-8 md:p-0 overflow-x-hidden w-screen h-screen justify-around md:mt-24 mt-8'>
+      <div>
+        <div className='flex items-center'>
+          <div>
+            <h1 className='font-bold black text-2xl md:text-6xl' >Hi, I'm Alberto👋</h1>
+            <p className='text-sm md:text-xl max-w-[514px] black mt-2'>Full-Stack Software Engineer, passionate of building and developing new projects.</p>
+          </div>
+          <div className='md:w-28 w-[214px] ml-[-24px] md:ml-4 md:h-28'>
+            <img className='object-contain rounded-full' src={require("./images/albedim.png")} alt="" />
+          </div>
+        </div>
+        <div className='md:mt-20 pt-4'></div>
+        <Section title={data[language].about.title}>
+          <p className='text-[#939393] text-sm max-w-[424px] md:max-w-[684px]' dangerouslySetInnerHTML={{ __html: data[language].about.content }} ></p>
+        </Section>
+        <Section title='Skills'>
+          <div className='flex gap-2 flex-wrap md:max-w-[684px] max-w-[384px]'>
+            {skills.map((skill, index) => (
+              <div key={index} className='flex hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] hover:opacity-80 p-2 border border-[#35cc58] shadow-sm rounded-md items-center transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                {skill.icon}
+                <p className='ml-2 text-xs font-medium' >{skill.name}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+        <Section title='Projects'>
+          <div className='flex gap-2 flex-wrap max-w-[684px]'>
+            {pageProjects && pageProjects.map((project, index) => (
+              <div key={index} className='w-80 border shadow-sm rounded-md'>
+                <div className='w-full h-40'>
+                  <img className='w-full object-cover rounded-t-md h-full' src={require("./images/" + project.image)} alt="" />
+                </div>
+                <div className='p-4'>
+                  <div className='flex gap-2 mt-2 text-sm'>
+                    {project.icons.map((icon: any, index: number) => (
+                      <div key={index} >{icon.icon}</div>
+                    ))}
+                  </div>
+                  <p className='mt-2 text-md font-semibold' >{project.name}</p>
+                  <p className='mt-2 text-sm text-[#939393]' >{project.description}</p>
+                  <div className='mt-6 flex gap-2'>
+                    {project.links.overview && (
+                      <a target='__blank' href={project.links.link_overview}>
+                        <button className='flex p-2 items-center gap-2 rounded-md text-[white] pb-2 pt-2 blackbg transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                          <TbWorldWww/>
+                          <p className='text-sm'>Website</p>
+                        </button>
+                      </a>
+                    )}
+                    {project.links.code && (
+                      <a target='__blank' href={project.links.link_github}>
+                        <button className='flex p-2 items-center gap-2 rounded-md text-[white] pb-2 pt-2 blackbg transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                          <FaGithub/>
+                          <p className='text-sm'>Repository</p>
+                        </button>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+        <div className='mt-24'></div>
+        <div className='flex justify-around'>
+          <div>
+            <div className='flex justify-around'>
+              <div>
+                <h2 className='text-2xl black text-center font-bold' >Get In Touch</h2>
+                <p className='text-lg max-w-[540px] text-center'>You can contact me on Twitter, connect with me on Linkedin or even Leave me a follow on Github!</p>
+              </div>
+            </div>
+            <div className='mt-8 md:flex justify-around'>
+              <div className='md:flex gap-6'>
+                <a target='__blank' href="https://linkedin.com/in/alberto-di-maio-520531285/">
+                  <button className='flex md:mb-0 mb-4 w-full border-[#35cc58] border hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] justify-around w-40 p-2 gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <div className='flex items-center gap-2'>
+                      <FaLinkedin/>
+                      <p>Linkedin</p>
+                    </div>
+                  </button>
+                </a>
+                <a target='__blank' href="https://x.com/TheAlbeDim">
+                  <button className='flex md:mb-0 mb-4 border border-[#35cc58] hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] p-2 w-40 w-full justify-around gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <div className='flex items-center gap-2'>
+                      <BsTwitterX/>
+                      <p>Twitter/X</p>
+                    </div>
+                  </button>
+                </a>
+                <a target='__blank' href="https://github.com/albedim">
+                  <button className='flex md:mb-0 mb-4 border-[#35cc58] border hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] justify-around p-2 w-40 w-full gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <div className='flex items-center gap-2'>
+                      <FaGithub/>
+                      <p>FaGithub</p>
+                    </div>
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div className='flex mt-10 border-b w-full justify-around'>
+              
+            </div>
+            <div className='mt-10 flex justify-around gap-6'>
+              <a className='md:w-auto w-full' target='__blank' href="mailto:albertodimaio05@gmail.com">
+                <button className='flex w-full border-[#35cc58] border hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                  <div className='flex items-center gap-2'>
+                    <TfiEmail/>
+                    <p>Send Me an E-mail</p>
+                  </div>
                 </button>
-              </div>
+              </a>
             </div>
           </div>
-          <div ref={aboutRef}>
-            <div style={{ paddingBottom: 184, paddingTop: 184 }}>
-              <div>
-                <h2 className="mt-2 dark:text-[white] text-[#686868] text-5xl font-bold font-p">
-                  {data[language].about.title}
-                  <div className='w-40 bg-[#4ca14c] mt-1 h-2' ></div>
-                </h2>
-                <div>
-                  <h2 
-                    dangerouslySetInnerHTML={{ __html: data[language].about.content}} 
-                    style={{ maxWidth: 940 }} 
-                    className='mt-14 dark:text-[#adadad] text-lg text-[#686868] font-regular font-p'
-                  ></h2>
-                  <TypeAnimation
-                    className='italic mt-14 text-xl dark:text-[#adadad] text-[#686868] font-regular font-p'
-                    sequence={[
-                      "''Find a job you enjoy doing, and you will never have to work a day in your life.''",
-                      2400,
-                      "",
-                      () => {
-                        return
-                      }
-                    ]}
-                    wrapper="div"
-                    cursor={true}
-                    repeat={Infinity}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div ref={skillsRef}>
-            <div className='h-icons' style={{ paddingTop: 184 }}>
-              <div>
-                <h2 className={'mt-2 dark:text-[white] text-[#686868] text-5xl font-bold font-p'}>
-                  {data[language].skills.title}
-                  <div className='w-40 bg-[#4ca14c] mt-1 h-2' ></div>
-                </h2>
-                <div className='flex-wrap flex-wrap-box pt-14'>
-                  {
-                    skills.map(skill => (
-                      hover == skill.name ? (
-                        <div className='cursor-pointer h-24 mt-10'>
-                          <div onMouseLeave={() => setHover("")} className='rounded-lg dark:border border-[#3d3d3d] dark:bg-[#171616] bg-[white]'>
-                            <div className='pb-1 p-10'>
-                              {skill.icon}
-                            </div>
-                            <div className='p-4'>
-                              <h2 className='text-lg text-[#b0b0b0] font-medium font-p'>{skill.name}</h2>
-                              <div
-                                style={{ height: 14, width: '100%' }} 
-                                className='rounded-md bg-opacity-10 dark:bg-opacity-40 mt-1 bg-[gray]'
-                              >
-                                <div
-                                  className='bg-[#4ca14c] rounded-md'
-                                  style={{ height: 14, width: skill.value }} >
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ) : (
-                        <div
-                          onMouseEnter={() => {
-                            if (hoverable)
-                              setHover(skill.name)
-                          }}
-                          className='cursor-pointer mt-10 pb-1 p-10'>
-                          {skill.icon}
-                        </div>
-                      )
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
-          <div ref={projectsRef}>
-            <div style={{ paddingBottom: 184, paddingTop: 254 }}>
-              <div>
-                <h2 className="mt-2 dark:text-[white] text-[#686868] text-5xl font-bold font-p">
-                  {data[language].projects.title}
-                  <div className='w-60 bg-[#4ca14c] mt-4 h-2' ></div>
-                </h2>
-                <div className='pt-14'>
-                  {
-                    projects(language).map(project => (
-                      <div className='pl-0 p-8'>
-                        <div 
-                          style={{ justifyContent: project.right ? 'space-between' : '' }} 
-                          className='project-flex rounded-lg dark:bg-[#171616] p-8 dark:shadow-none dark:border border-[#3d3d3d] shadow-md shadow-[#e4e4e4] bg-[white]'
-                        >
-                          {
-                            project.right ? (
-                              <div className='padding-l-no none-flex items-center justify-around'>
-                                <img
-                                  width={640}
-                                  className='border dark:boder-none rounded-lg'
-                                  src={require("./images/" + project.image)} 
-                                  alt=""
-                                />
-                              </div>
-                            ) : (
-                              <div className='flex padding-r-no items-center justify-around'>
-                                <img 
-                                  width={640} 
-                                  className='border dark:border-none rounded-lg' 
-                                  src={require("./images/" + project.image)} 
-                                  alt="" 
-                                />
-                              </div>
-                            )
-                          }
-                          <div>
-                            <h2 className={'mt-2 dark:text-[white] text-[gray] text-3xl font-bold font-p'}>
-                              {project.name}
-                              <div style={{ backgroundColor: '#4ca14c' }} className='w-40 mt-1 h-1' ></div>
-                            </h2>
-                            <div className='pt-4 flex'>
-                              {
-                                project.icons.map(icon => (
-                                  <a title={icon.name}>
-                                    <div onClick={() => {
-                                      skillsRef.current?.scrollIntoView({ behavior: 'smooth' })
-                                      setHoverable(false)
-                                      setHover(icon.name)
-                                      setTimeout(() => {
-                                        setHoverable(true)
-                                      }, 1400)
-                                    }} className='pl-0 p-2'><div className='cursor-pointer'>{icon.icon}</div></div>
-                                  </a>
-                                ))
-                              }
-                            </div>
-                            <div className='pt-2'>
-                              <h2 style={{ maxWidth: 340 }} className={'mt-2 dark:text-[#adadad] text-[gray] text-md font-regular font-p'}>
-                                {project.description}
-                              </h2>
-                            </div>
-                            <div className='flex-block pt-5'>
-                              {
-                                project.links.overview &&
-                                  <div 
-                                    className='pl-0 hover:mt-1 transition-all p-2'>
-                                    <a target='_blank' href={project.links.link_overview}>
-                                      <button
-                                        className='hover:bg-[#478B47] transition-all items-center 
-                                        flex rounded-md p-4 dark:text-[black] text-[white] bg-[#4ca14c] font-medium font-p' >
-                                        <div className='pr-2'>
-                                          <TbUnlink size={24} />
-                                        </div> {data[language].projects.buttons.overview}
-                                      </button>
-                                    </a>
-                                  </div>
-                              }
-                              {
-                                project.links.code &&
-                                  <div className='pl-0 hover:mt-1 transition-all p-2'>
-                                    <a target='_blank' href={project.links.link_github}>
-                                      <button 
-                                          className='hover:bg-[#478B47] transition-all items-center 
-                                          flex rounded-md p-4 dark:text-[black] text-[white] bg-[#4ca14c] font-medium font-p' >
-                                        <div className='pr-2'>
-                                          <FaCode size={24} />
-                                        </div> {data[language].projects.buttons.code}
-                                      </button>
-                                    </a>
-                                  </div>
-                              }
-                            </div>
-                          </div>
-                          {
-                            project.right &&
-                            <div className='toNone padding-l-no flex items-center justify-around'>
-                              <img width={640} className='border dark:border-none rounded-lg' src={require("./images/" + project.image)} alt="" />
-                            </div>
-                          }
-                        </div>
-                      </div>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+        <div className='mt-24 flex justify-around pb-16'>
+          <p>Made with ♥ by <span className='black'>albedim</span></p>
         </div>
       </div>
-      <div className='flex dark:bg-[#1c1c1c] bg-[#fafafd] justify-around p-24'>
-        <div className='flex-block gap-14 justify-between'>
-          <h2 className={'mt-4 text-center dark:text-[#adadad] text-[gray] text-1xl font-regular font-p'} >© 2023 - Made with ♥ by <span className='text-[#4ca14c]' >albedim</span></h2>
-          <div className='justify-around gap-2 mt-4 flex'>
-            <a target='_blank' href="https://twitter.com/TheAlbeDim">
-              <button className='w-[30px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
-                <BsTwitterX size={16} />
-              </button>
-            </a>
-            <a href="https://github.com/albedim">
-              <button className='w-[30px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
-                <AiFillGithub size={16} />
-              </button>
-            </a>
-            <a href="https://linkedin.com/in/alberto-di-maio-520531285">
-              <button className='w-[30px] hover:border-[#4ca14c] hover:text-[#4ca14c] transition-all dark:text-[#adadad] text-[gray] dark:border-[#adadad] h-[30px] flex items-center justify-around rounded-full border border-[gray] border-2'>
-                <AiFillLinkedin size={16}/>
-              </button>
-            </a>
-          </div>
-        </div>
+      <div className='absolute'>
+        <Stepper>
+          <a target='__blank' href="https://linkedin.com/in/alberto-di-maio-520531285/">
+            <button className='border-2 hover:border-[#35cc58] opacity-[74%] hover:text-[#35cc58] transition-all text-[#939393] text-xl p-[10px] rounded-full border-[#939393]'>
+              <FaLinkedin/>
+            </button>
+          </a>
+          <a target='__blank' href="https://x.com/TheAlbeDim">
+            <button className='border-2 hover:border-[#35cc58] opacity-[74%] hover:text-[#35cc58] transition-all text-[#939393] text-xl p-[10px] rounded-full border-[#939393]'>
+              <BsTwitterX/>
+            </button>
+          </a>
+          <a target='__blank' href="https://github.com/albedim">
+            <button className='border-2 hover:border-[#35cc58] opacity-[74%] hover:text-[#35cc58] transition-all text-[#939393] text-xl p-[10px] rounded-full border-[#939393]'>
+              <FaGithub/>
+            </button>
+          </a>
+        </Stepper>
       </div>
     </div>
-  );
+  )
+
 }
 
 export default App;

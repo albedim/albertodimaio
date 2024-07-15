@@ -19,92 +19,92 @@ import { data } from './config/config';
 export const skills = [
   {
     name: "HTML",
-    icon: <ImHtmlFive opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <ImHtmlFive opacity={"80%"} size={18}/>,
     value: "94%"
   },
   {
     name: "CSS",
-    icon: <ImCss3 opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <ImCss3 opacity={"80%"} size={18}/>,
     value: "80%"
   },
   {
     name: "Javascript",
-    icon: <IoLogoJavascript opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <IoLogoJavascript opacity={"80%"} size={18}/>,
     value: "70%"
   },
   {
     name: "Typescript",
-    icon: <BiLogoTypescript opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <BiLogoTypescript opacity={"80%"} size={18}/>,
     value: "70%"
   },
   {
     name: "React JS",
-    icon: <GrReactjs opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <GrReactjs opacity={"80%"} size={18}/>,
     value: "80%"
   },
   {
     name: "React Native",
-    icon: <TbBrandReactNative opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <TbBrandReactNative opacity={"80%"} size={18}/>,
     value: "70%"
   },
   {
     name: "Next JS",
-    icon: <SiNextdotjs opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <SiNextdotjs opacity={"80%"} size={18}/>,
     value: "65%"
   },
   {
     name: "TailwindCss",
-    icon: <BiLogoTailwindCss opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <BiLogoTailwindCss opacity={"80%"} size={18}/>,
     value: "50%"
   },
   {
     name: "Python",
-    icon: <BiLogoPython opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <BiLogoPython opacity={"80%"} size={18}/>,
     value: "94%"
   },
   {
     name: "Flask",
-    icon: <BiLogoFlask opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <BiLogoFlask opacity={"80%"} size={18}/>,
     value: "94%"
   },
   {
     name: "Java",
-    icon: <FaJava opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <FaJava opacity={"80%"} size={18}/>,
     value: "84%"
   },
   {
     name: "Spring Boot",
-    icon: <BiLogoSpringBoot opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <BiLogoSpringBoot opacity={"80%"} size={18}/>,
     value: "75%"
   },
   {
     name: "MySQL",
-    icon: <SiMysql opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <SiMysql opacity={"80%"} size={18}/>,
     value: "70%"
   },
   {
     name: "PostgreSQL",
-    icon: <SiPostgresql opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <SiPostgresql opacity={"80%"} size={18}/>,
     value: "70%"
   },
   {
     name: "MongoDb",
-    icon: <BiLogoMongodb opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <BiLogoMongodb opacity={"80%"} size={18}/>,
     value: "45%"
   },
   {
     name: "PHP",
-    icon: <BiLogoPhp opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <BiLogoPhp opacity={"80%"} size={18}/>,
     value: "50%"
   },
   {
     name: "Express.js",
-    icon: <SiExpress opacity={"80%"} size={54} color='#b0b0b0' />,
+    icon: <SiExpress opacity={"80%"} size={18}/>,
     value: "60%"
   },
   {
     name: "SocketIo",
-    icon: <SiSocketdotio opacity={"60%"} size={54} color={"#b0b0b0"}/>,
+    icon: <SiSocketdotio opacity={"60%"} size={18}/>,
     value: "60%"
   }
 ]
@@ -112,71 +112,71 @@ export const skills = [
 const projectsLanguages = [
   {
     name: "HTML",
-    icon: <ImHtmlFive opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <ImHtmlFive size={21} color='#939393' />
   },
   {
     name: "CSS",
-    icon: <ImCss3 opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <ImCss3 size={21} color='#939393' />
   },
   {
     name: "Javascript",
-    icon: <IoLogoJavascript opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <IoLogoJavascript size={21} color='#939393' />
   },
   {
     name: "Typescript",
-    icon: <BiLogoTypescript opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <BiLogoTypescript size={21} color='#939393' />
   },
   {
     name: "React JS",
-    icon: <GrReactjs opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <GrReactjs size={21} color='#939393' />
   },
   {
     name: "React Native",
-    icon: <TbBrandReactNative opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <TbBrandReactNative size={21} color='#939393' />
   },
   {
     name: "Next JS",
-    icon: <SiNextdotjs opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <SiNextdotjs size={21} color='#939393' />
   }, 
   {
     name: "TailwindCss",
-    icon: <BiLogoTailwindCss opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <BiLogoTailwindCss size={21} color='#939393' />
   },
   {
     name: "Python",
-    icon: <BiLogoPython opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <BiLogoPython size={21} color='#939393' />
   },
   {
     name: "Flask",
-    icon: <BiLogoFlask opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <BiLogoFlask size={21} color='#939393' />
   },
   {
     name: "Java",
-    icon: <FaJava opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <FaJava size={21} color='#939393' />
   },
   {
     name: "Spring Boot",
-    icon: <BiLogoSpringBoot opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <BiLogoSpringBoot size={21} color='#939393' />
   },
   {
     name: "MySQL",
-    icon: <SiMysql opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <SiMysql size={21} color='#939393' />
   },
   {
     name: "PostgreSQL",
-    icon: <SiPostgresql opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <SiPostgresql size={21} color='#939393' />
   },
   {
     name: "MongoDb",
-    icon: <BiLogoMongodb opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <BiLogoMongodb size={21} color='#939393' />
   },
   {
     name: "PHP",
-    icon: <BiLogoPhp opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <BiLogoPhp size={21} color='#939393' />
   },
   {
     name: "Express.js",
-    icon: <SiExpress opacity={"80%"} size={28} color='#b0b0b0' />
+    icon: <SiExpress size={21} color='#939393' />
   }
 ]
 
@@ -200,7 +200,7 @@ export const projects = (language) => {
         link_overview: "https://utekafe.pages.dev",
         link_github: ""
       },
-      image: "uteka.png"
+      image: "uteka.jpg"
     },
     {
       name: "Daker",
@@ -216,7 +216,7 @@ export const projects = (language) => {
         link_overview: "https://daker-web.pages.dev",
         link_github: "https://github.com/albedim/daker"
       },
-      image: "daker.png"
+      image: "daker.jpg"
     },
     {
       name: "JudJen",
@@ -237,7 +237,7 @@ export const projects = (language) => {
         link_overview: "https://judjen.pages.dev",
         link_github: ""
       },
-      image: "judjen.png"
+      image: "judjen.jpg"
     },
     {
       name: "UnBoring",
@@ -257,7 +257,7 @@ export const projects = (language) => {
         link_overview: "https://unboring.pages.dev",
         link_github: ""
       },
-      image: "unboring.png"
+      image: "unboring.jpg"
     },
     {
       name: "Codymio",
@@ -277,7 +277,7 @@ export const projects = (language) => {
         link_overview: "https://codymio.pages.dev",
         link_github: ""
       },
-      image: "codymio.png"
+      image: "codymio.jpg"
     },
     {
       name: "Deleafly",
@@ -297,23 +297,7 @@ export const projects = (language) => {
         link_overview: "https://deleafly.pages.dev",
         link_github: ""
       },
-      image: "deleafly.png"
-    },
-    {
-      name: "Skilly",
-      right: false,
-      icons: [
-        projectsLanguages[8],
-        projectsLanguages[12],
-      ],
-      description: data[language].projects.content[6],
-      links: {
-        overview: false,
-        code: true,
-        link_overview: "",
-        link_github: "https://github.com/albedim/skilly"
-      },
-      image: "skilly.png"
+      image: "deleafly.jpg"
     },
     {
       name: "Cryllet",
@@ -333,7 +317,7 @@ export const projects = (language) => {
         link_overview: "https://cryllet-fe.pages.dev",
         link_github: ""
       },
-      image: "cryllet.png"
+      image: "cryllet.jpg"
     }
   ]
 }
