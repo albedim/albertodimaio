@@ -12,7 +12,7 @@ const Section: React.FC<SectionProps> = ( props ) => {
         <div className="w-4 h-4 rounded-full blackbg"></div>
         <h1 className="text-xl black font-bold">{props.title}</h1>
       </div>
-      <div className="mt-2">
+      <div className="mt-4">
         {props.children}
       </div>
     </div>

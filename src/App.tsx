@@ -45,7 +45,7 @@ function App() {
             <img className='object-contain rounded-full' src={require("./images/albedim.png")} alt="" />
           </div>
         </div>
-        <div className='md:mt-20 pt-4'></div>
+        <div className='md:mt-10 pt-4'></div>
         <Section title={data[language].about.title}>
           <p className='text-[#939393] text-sm max-w-[424px] md:max-w-[684px]' dangerouslySetInnerHTML={{ __html: data[language].about.content }} ></p>
         </Section>
