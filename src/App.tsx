@@ -109,27 +109,21 @@ function App() {
             <div className='mt-8 md:flex justify-around'>
               <div className='md:flex gap-6'>
                 <a target='__blank' href="https://linkedin.com/in/alberto-di-maio-520531285/">
-                  <button className='flex md:mb-0 mb-4 w-full border-[#35cc58] border hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] justify-around w-40 p-2 gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
-                    <div className='flex items-center gap-2'>
-                      <FaLinkedin/>
-                      <p>Linkedin</p>
-                    </div>
+                  <button className='flex text-[#35cc58] md:mb-0 mb-4 w-full border-[#35cc58] border hover:bg-[#35cc58] hover:text-[white] justify-around w-40 p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <FaLinkedin/>
+                    <p>Linkedin</p>
                   </button>
                 </a>
                 <a target='__blank' href="https://x.com/TheAlbeDim">
-                  <button className='flex md:mb-0 mb-4 border border-[#35cc58] hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] p-2 w-40 w-full justify-around gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
-                    <div className='flex items-center gap-2'>
-                      <BsTwitterX/>
-                      <p>Twitter/X</p>
-                    </div>
+                  <button className='flex text-[#35cc58] md:mb-0 mb-4 border border-[#35cc58] hover:bg-[#35cc58] hover:text-[white] p-2 w-40 w-full justify-around gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <BsTwitterX/>
+                    <p>Twitter/X</p>
                   </button>
                 </a>
                 <a target='__blank' href="https://github.com/albedim">
-                  <button className='flex md:mb-0 mb-4 border-[#35cc58] border hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] justify-around p-2 w-40 w-full gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
-                    <div className='flex items-center gap-2'>
-                      <FaGithub/>
-                      <p>FaGithub</p>
-                    </div>
+                  <button className='flex text-[#35cc58] md:mb-0 mb-4 border-[#35cc58] border hover:bg-[#35cc58] hover:text-[white] justify-around p-2 w-40 w-full gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <FaGithub/>
+                    <p>FaGithub</p>
                   </button>
                 </a>
               </div>
@@ -139,11 +133,9 @@ function App() {
             </div>
             <div className='mt-10 flex justify-around gap-6'>
               <a className='md:w-auto w-full' target='__blank' href="mailto:albertodimaio05@gmail.com">
-                <button className='flex w-full border-[#35cc58] border hover:bg-[#35cc58] text-[#35cc58] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 text-white items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
-                  <div className='flex items-center gap-2'>
-                    <TfiEmail/>
-                    <p>Send Me an E-mail</p>
-                  </div>
+                <button className='flex w-full text-[#35cc58] border-[#35cc58] border hover:bg-[#35cc58] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                  <TfiEmail/>
+                  <p>Send Me an E-mail</p>
                 </button>
               </a>
             </div>
