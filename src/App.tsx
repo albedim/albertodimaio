@@ -62,7 +62,7 @@ function App() {
               <div className='mt-4'><button onClick={() => {goTo(homepageRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button></div>
               <div className='mt-4'><button onClick={() => {goTo(aboutRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button></div>
               <div className='mt-4'><button onClick={() => {goTo(skillsRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button></div>
-              <div className='mt-4'><button onClick={() => {goTo(homepageRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button></div>
+              <div className='mt-4'><button onClick={() => {goTo(projectsRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button></div>
               <div className='mt-4'><button onClick={() => {goTo(getInTouchRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button></div>
             </div>
           </div>
@@ -73,7 +73,7 @@ function App() {
           <button onClick={() => goTo(homepageRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button>
           <button onClick={() => goTo(aboutRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button>
           <button onClick={() => goTo(skillsRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button>
-          <button onClick={() => goTo(homepageRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button>
+          <button onClick={() => goTo(projectsRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button>
           <button onClick={() => goTo(getInTouchRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button>
         </div>
         <div className='text-[white] md:hidden flex'>
