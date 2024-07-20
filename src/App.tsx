@@ -213,8 +213,8 @@ function App() {
         <div>
           <div className='flex justify-around'>
             <div>
-              <h2 className='text-2xl black text-center font-bold' >Get In Touch</h2>
-              <p className='text-lg max-w-[540px] text-center'>You can contact me on Twitter, connect with me on Linkedin or even Leave me a follow on Github!</p>
+              <h2 className='text-4xl black text-center font-bold' >Get In Touch</h2>
+              <p className='text-lg mt-2 max-w-[540px] text-center'>You can contact me on Twitter, connect with me on Linkedin or even Leave me a follow on Github!</p>
             </div>
           </div>
           <div className='mt-8 md:flex justify-around'>
