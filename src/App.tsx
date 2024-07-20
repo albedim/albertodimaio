@@ -1,15 +1,15 @@
-import { TfiEmail, TfiMenu } from 'react-icons/tfi'
+import { TfiClose, TfiEmail, TfiMenu } from 'react-icons/tfi'
 import { TbUnlink, TbWorldWww } from 'react-icons/tb'
-import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit } from 'react-icons/bi'
+import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit, BiMenu } from 'react-icons/bi'
 import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-icons/si'
-import { FaCode, FaGithub, FaLaptopCode, FaLinkedin } from 'react-icons/fa'
+import { FaCode, FaGithub, FaHamburger, FaLaptopCode, FaLinkedin } from 'react-icons/fa'
 import { BsTwitterX } from 'react-icons/bs'
-import { IoLogoJavascript, IoMdClose } from 'react-icons/io'
+import { IoIosMenu, IoLogoJavascript, IoMdClose } from 'react-icons/io'
 import { GrClose, GrReactjs } from 'react-icons/gr'
-import { ImHtmlFive, ImCss3 } from 'react-icons/im'
+import { ImHtmlFive, ImCss3, ImMenu } from 'react-icons/im'
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { projects, skills } from './consts';
@@ -27,15 +27,238 @@ function App() {
 
   const [language, setLanguage] = useState<LanguagesType>("en_US")
   const [pageProjects, setPageProjects] = useState<any[]>()
+  const [menuVisible, setMenuVisible] = useState(false)
+  const [hover, setHover] = useState("")
+  const homepageRef = useRef<HTMLInputElement>(null)
+  const getInTouchRef = useRef<HTMLInputElement>(null)
+  const [hoverable, setHoverable] = useState(true)
+  const aboutRef = useRef<HTMLInputElement>(null)
+  const skillsRef = useRef<HTMLInputElement>(null)
+  const projectsRef = useRef<HTMLInputElement>(null)
+
 
   useEffect(() => {
     const prjs = projects(language)
     setPageProjects(prjs)
   }, [])
 
+  const goTo = (ref: RefObject<HTMLInputElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <div className='flex p-8 md:p-0 overflow-x-hidden w-screen h-screen justify-around md:mt-24 mt-8'>
-      <div>
+    <div className='overflow-x-hidden w-screen h-screen'>
+      <div className='fixed top-0 z-50 w-full flex justify-between pl-6 md:pr-24 pr-6 h-24'>
+        <div className='flex gap-2 items-center z-30'>
+          <img width={18} src={require("./images/albedim.png")} className='rounded-full' alt="" />
+          <p className='font-bold text-[white]'>ALBERTO DI MAIO</p>
+        </div>
+        {menuVisible ? (
+          <div className='absolute z-30 top-0 h-screen rounded-l-xl right-0 w-3/4 bg-[white]'>
+            <div className='w-full p-8'>
+              <button onClick={() => setMenuVisible(false)}><TfiClose size={24}/></button>
+            </div>
+            <div className='text-[black] p-8 gap-y-14'>
+              <div className='mt-4'><button onClick={() => {goTo(homepageRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button></div>
+              <div className='mt-4'><button onClick={() => {goTo(aboutRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button></div>
+              <div className='mt-4'><button onClick={() => {goTo(skillsRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button></div>
+              <div className='mt-4'><button onClick={() => {goTo(homepageRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button></div>
+              <div className='mt-4'><button onClick={() => {goTo(getInTouchRef); setMenuVisible(false)}} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button></div>
+            </div>
+          </div>
+        ):(
+          null
+        )}
+        <div className='text-[gray] md:flex hidden gap-14'>
+          <button onClick={() => goTo(homepageRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button>
+          <button onClick={() => goTo(aboutRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button>
+          <button onClick={() => goTo(skillsRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button>
+          <button onClick={() => goTo(homepageRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button>
+          <button onClick={() => goTo(getInTouchRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button>
+        </div>
+        <div className='text-[white] md:hidden flex'>
+          <button onClick={() => setMenuVisible(true)} ><IoIosMenu size={34}/></button>
+        </div>
+      </div>
+      <div ref={homepageRef} className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url('./image.webp')` }}>
+        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="relative flex justify-around items-center w-full h-full items-center z-10 text-white p-6">
+          <div>
+            <h2 className='text-4xl text-center font-extrabold'>WELCOME</h2>
+            <div className='flex justify-around'>
+              <TypeAnimation
+                className='mt-6 text-3xl md:text-6xl text-[white] font-extrabold'
+                sequence={[
+                  data[language].home.titles[0],
+                  1000,
+                  data[language].home.titles[1],
+                  1000,
+                  data[language].home.titles[2],
+                  1000,
+                  () => {
+                    return
+                  }
+                ]}
+                wrapper="div"
+                speed={64}
+                cursor={true}
+                repeat={Infinity}
+              />
+            </div>
+            <p className="mt-6 text-center">Full-Stack Software Engineer able to turn innovative ideas into <br />amazing projects, passionate of building and developing new projects.</p>
+          </div>
+        </div>
+      </div>
+      <div ref={aboutRef} className='w-full h-full flex justify-around md:items-center pt-14 p-6 md:p-0'>
+        <div>
+          <p className='text-4xl font-semibold'>About</p>
+          <div className='flex items-center gap-14'>
+            <p className='mt-6 max-w-[540px]' dangerouslySetInnerHTML={{ __html: data[language].about.content}}></p>
+            <div className='w-64 md:block hidden h-64'>
+              <img src={require("./images/albedim.png")} alt="" className='w-full rounded-2xl h-full' />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ref={skillsRef} className='w-full h-full flex justify-around md:items-center md:mt-0 mt-24 p-6 md:p-0'>
+        <div>
+          <p className='text-4xl font-semibold'>Skills</p>
+          <div className='flex gap-2 flex-wrap md:max-w-[884px] max-w-[384px]'>
+            {skills.map((skill, index) => (
+              hover == skill.name ? (
+                <div className='cursor-pointer z-20 h-24 mt-4'>
+                  <div onMouseLeave={() => setHover("")} className='rounded-lg bg-[black]'>
+                    <div className='pb-1 text-[white] p-10'>
+                      {skill.icon}
+                    </div>
+                    <div className='p-4'>
+                      <h2 className='text-lg text-[white] font-medium font-p'>{skill.name}</h2>
+                      <div
+                        style={{ height: 14, width: '100%' }} 
+                        className='rounded-md bg-opacity-20 mt-1 bg-[white]'
+                      >
+                        <div
+                          className='bg-[white] rounded-md'
+                          style={{ height: 14, width: skill.value }} >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div
+                  onMouseEnter={() => {
+                    if (hoverable)
+                      setHover(skill.name)
+                  }}
+                  className='cursor-pointer z-10 rounded-lg border mt-4 p-10'>
+                  {skill.icon}
+                </div>
+              ) 
+            ))}
+          </div>
+        </div>
+      </div>
+      <div ref={projectsRef} className='flex justify-around w-full pt-24 md:mt-0 mt-[745px] md:p-0 p-6'>
+        <div>
+          <p className='text-4xl font-semibold'>Projects</p>
+          <div className='flex mt-6 gap-2 flex-wrap max-w-[1084px]'>
+            {pageProjects && pageProjects.map((project, index) => (
+              <div key={index} className='w-80 border shadow-sm rounded-md'>
+                <div className='w-full h-40'>
+                  <img className='w-full object-cover rounded-t-md h-full' src={require("./images/" + project.image)} alt="" />
+                </div>
+                <div className='p-4'>
+                  <div className='flex gap-2 mt-2 text-sm'>
+                    {project.icons.map((icon: any, index: number) => (
+                      <button onClick={() => {
+                        goTo(skillsRef)
+                        setHoverable(false)
+                        setHover(icon.name)
+                        setTimeout(() => {
+                          setHoverable(true)
+                        } , 1400)
+                      }} 
+                      key={index} >{icon.icon}</button>
+                    ))}
+                  </div>
+                  <p className='mt-2 text-md font-semibold' >{project.name}</p>
+                  <p className='mt-2 text-sm text-[#939393]' >{project.description}</p>
+                  <div className='mt-6 flex gap-2'>
+                    {project.links.overview && (
+                      <a target='__blank' href={project.links.link_overview}>
+                        <button className='flex p-2 items-center gap-2 rounded-md text-[white] pb-2 pt-2 bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                          <TbWorldWww/>
+                          <p className='text-sm'>Website</p>
+                        </button>
+                      </a>
+                    )}
+                    {project.links.code && (
+                      <a target='__blank' href={project.links.link_github}>
+                        <button className='flex p-2 items-center gap-2 rounded-md text-[white] pb-2 pt-2 bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                          <FaGithub/>
+                          <p className='text-sm'>Repository</p>
+                        </button>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className='mt-40'></div>
+      <div ref={getInTouchRef} className='flex pb-32 p-6 justify-around'>
+        <div>
+          <div className='flex justify-around'>
+            <div>
+              <h2 className='text-2xl black text-center font-bold' >Get In Touch</h2>
+              <p className='text-lg max-w-[540px] text-center'>You can contact me on Twitter, connect with me on Linkedin or even Leave me a follow on Github!</p>
+            </div>
+          </div>
+          <div className='mt-8 md:flex justify-around'>
+            <div className='md:flex gap-6'>
+              <a target='__blank' href="https://linkedin.com/in/alberto-di-maio-520531285/">
+                <button className='flex text-[black] md:mb-0 mb-4 w-full border-[black] border hover:bg-[black] hover:text-[white] justify-around w-40 p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                  <div className='flex gap-2 items-center'>
+                    <FaLinkedin/>
+                    <p>Linkedin</p>
+                  </div>
+                </button>
+              </a>
+              <a target='__blank' href="https://x.com/TheAlbeDim">
+                <button className='flex text-[black] md:mb-0 mb-4 border border-[black] hover:bg-[black] hover:text-[white] p-2 w-40 w-full justify-around gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                  <div className='flex gap-2 items-center'>
+                    <BsTwitterX/>
+                    <p>Twitter/X</p>
+                  </div>
+                </button>
+              </a>
+              <a target='__blank' href="https://github.com/albedim">
+                <button className='flex text-[black] md:mb-0 mb-4 border-[black] border hover:bg-[black] hover:text-[white] justify-around p-2 w-40 w-full gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                  <div className='flex gap-2 items-center'>
+                    <FaGithub/>
+                    <p>FaGithub</p>
+                  </div>
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className='flex mt-10 border-b w-full justify-around'>
+            
+          </div>
+          <div className='mt-10 flex justify-around gap-6'>
+            <a className='md:w-auto w-full' target='__blank' href="mailto:albertodimaio05@gmail.com">
+              <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                <TfiEmail/>
+                <p>Send Me an E-mail</p>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      {/*<div>
         <div className='flex items-center'>
           <div>
             <h1 className='font-bold black text-2xl md:text-6xl' >Hi, I'm Alberto👋</h1>
@@ -163,7 +386,7 @@ function App() {
             </button>
           </a>
         </Stepper>
-      </div>
+      </div>*/}
     </div>
   )
 

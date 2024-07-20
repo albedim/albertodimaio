@@ -19,92 +19,92 @@ import { data } from './config/config';
 export const skills = [
   {
     name: "HTML",
-    icon: <ImHtmlFive opacity={"80%"} size={18}/>,
+    icon: <ImHtmlFive size={54}/>,
     value: "94%"
   },
   {
     name: "CSS",
-    icon: <ImCss3 opacity={"80%"} size={18}/>,
+    icon: <ImCss3 size={54}/>,
     value: "80%"
   },
   {
     name: "Javascript",
-    icon: <IoLogoJavascript opacity={"80%"} size={18}/>,
+    icon: <IoLogoJavascript size={54}/>,
     value: "70%"
   },
   {
     name: "Typescript",
-    icon: <BiLogoTypescript opacity={"80%"} size={18}/>,
+    icon: <BiLogoTypescript size={54}/>,
     value: "70%"
   },
   {
     name: "React JS",
-    icon: <GrReactjs opacity={"80%"} size={18}/>,
+    icon: <GrReactjs size={54}/>,
     value: "80%"
   },
   {
     name: "React Native",
-    icon: <TbBrandReactNative opacity={"80%"} size={18}/>,
+    icon: <TbBrandReactNative size={54}/>,
     value: "70%"
   },
   {
     name: "Next JS",
-    icon: <SiNextdotjs opacity={"80%"} size={18}/>,
+    icon: <SiNextdotjs size={54}/>,
     value: "65%"
   },
   {
     name: "TailwindCss",
-    icon: <BiLogoTailwindCss opacity={"80%"} size={18}/>,
+    icon: <BiLogoTailwindCss size={54}/>,
     value: "50%"
   },
   {
     name: "Python",
-    icon: <BiLogoPython opacity={"80%"} size={18}/>,
+    icon: <BiLogoPython size={54}/>,
     value: "94%"
   },
   {
     name: "Flask",
-    icon: <BiLogoFlask opacity={"80%"} size={18}/>,
+    icon: <BiLogoFlask size={54}/>,
     value: "94%"
   },
   {
     name: "Java",
-    icon: <FaJava opacity={"80%"} size={18}/>,
+    icon: <FaJava size={54}/>,
     value: "84%"
   },
   {
     name: "Spring Boot",
-    icon: <BiLogoSpringBoot opacity={"80%"} size={18}/>,
+    icon: <BiLogoSpringBoot size={54}/>,
     value: "75%"
   },
   {
     name: "MySQL",
-    icon: <SiMysql opacity={"80%"} size={18}/>,
+    icon: <SiMysql size={54}/>,
     value: "70%"
   },
   {
     name: "PostgreSQL",
-    icon: <SiPostgresql opacity={"80%"} size={18}/>,
+    icon: <SiPostgresql size={54}/>,
     value: "70%"
   },
   {
     name: "MongoDb",
-    icon: <BiLogoMongodb opacity={"80%"} size={18}/>,
+    icon: <BiLogoMongodb size={54}/>,
     value: "45%"
   },
   {
     name: "PHP",
-    icon: <BiLogoPhp opacity={"80%"} size={18}/>,
+    icon: <BiLogoPhp size={54}/>,
     value: "50%"
   },
   {
     name: "Express.js",
-    icon: <SiExpress opacity={"80%"} size={18}/>,
+    icon: <SiExpress size={54}/>,
     value: "60%"
   },
   {
     name: "SocketIo",
-    icon: <SiSocketdotio opacity={"60%"} size={18}/>,
+    icon: <SiSocketdotio size={54}/>,
     value: "60%"
   }
 ]

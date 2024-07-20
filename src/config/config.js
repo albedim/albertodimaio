@@ -10,9 +10,9 @@ export const data = {
         home: {
             introduction: "Hello! 👋 My name is",
             titles: [
-                "Back-end Developer",
-                "Front-end Developer",
-                "Curious and Creative"
+                "Sr. Software Engineer",
+                "Software Designer",
+                "Software Architect",
             ],
             bio: "My mom says i'm the best dev in my condo",
             more_about_me: "More about me"
