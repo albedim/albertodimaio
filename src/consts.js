@@ -183,6 +183,26 @@ const projectsLanguages = [
 export const projects = (language) => {
   return [
     {
+      name: "Bliddo",
+      right: false,
+      icons: [
+        projectsLanguages[4],
+        projectsLanguages[7],
+        projectsLanguages[3],
+        projectsLanguages[9],
+        projectsLanguages[8],
+        projectsLanguages[12],
+      ],
+      description: data[language].projects.content[0],
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://bliddo.com",
+        link_github: ""
+      },
+      image: "bliddo.png"
+    },
+    {
       name: "Uteka",
       right: false,
       icons: [
@@ -278,26 +298,6 @@ export const projects = (language) => {
         link_github: ""
       },
       image: "codymio.jpg"
-    },
-    {
-      name: "Deleafly",
-      right: true,
-      icons: [
-        projectsLanguages[4],
-        projectsLanguages[7],
-        projectsLanguages[3],
-        projectsLanguages[9],
-        projectsLanguages[8],
-        projectsLanguages[12],
-      ],
-      description: data[language].projects.content[5],
-      links: {
-        overview: true,
-        code: false,
-        link_overview: "https://deleafly.pages.dev",
-        link_github: ""
-      },
-      image: "deleafly.jpg"
     },
     {
       name: "Cryllet",
