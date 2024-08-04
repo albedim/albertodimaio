@@ -310,7 +310,7 @@ export const projects = (language) => {
         projectsLanguages[8],
         projectsLanguages[12],
       ],
-      description: data[language].projects.content[7],
+      description: data[language].projects.content[5],
       links: {
         overview: true,
         code: false,
