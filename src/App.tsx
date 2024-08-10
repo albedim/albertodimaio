@@ -159,7 +159,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div ref={projectsRef} className='flex justify-around w-full pt-24 md:mt-0 mt-[745px] md:p-0 p-6'>
+      <div ref={projectsRef} className='flex justify-around w-full pt-40 md:mt-0 mt-[745px] md:p-0 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Projects</p>
           <div className='flex mt-6 gap-2 flex-wrap max-w-[1084px]'>
@@ -251,8 +251,10 @@ function App() {
           <div className='mt-10 flex justify-around gap-6'>
             <a className='md:w-auto w-full' target='__blank' href="mailto:albertodimaio05@gmail.com">
               <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
-                <TfiEmail/>
-                <p>Send Me an E-mail</p>
+                <div className="flex gap-2 items-center">
+                  <TfiEmail/>
+                  <p>Send Me an E-mail</p>
+                </div>
               </button>
             </a>
           </div>
