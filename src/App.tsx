@@ -120,7 +120,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div ref={skillsRef} className='w-full h-full flex justify-around md:items-center md:mt-0 mt-24 p-6 md:p-0'>
+      <div ref={skillsRef} className='w-full h-full flex justify-around md:items-center pt-40 md:pt-14 md:mt-0 mt-24 p-6 md:p-0'>
         <div>
           <p className='text-4xl font-semibold'>Skills</p>
           <div className='flex gap-2 flex-wrap md:max-w-[884px] max-w-[384px]'>
@@ -159,7 +159,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div ref={projectsRef} className='flex justify-around w-full pt-40 md:mt-0 mt-[745px] md:p-0 p-6'>
+      <div ref={projectsRef} className='flex justify-around w-full pt-40 md:pt-24 md:mt-0 mt-[845px] md:p-0 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Projects</p>
           <div className='flex mt-6 gap-2 flex-wrap max-w-[1084px]'>
