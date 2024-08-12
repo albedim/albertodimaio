@@ -118,13 +118,15 @@ function Homepage() {
                 <img src={require("../../images/albedim.png")} alt="" className='w-full rounded-2xl h-full' />
               </div>
               <div className='mt-6'>
-                <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
-                  <div className="flex gap-2 items-center">
-                    <TfiEmail />
-                    <p>Follow me on X</p>
-                  </div>
-                </button>
-                <button className='flex w-full text-[black] border-[black] border hover:bg-[black] mt-4 hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                <a href="https://x.com/TheAlbeDim">
+                  <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <div className="flex gap-2 items-center">
+                      <TfiEmail />
+                      <p>Follow me on X</p>
+                    </div>
+                  </button>
+                </a>
+                <button disabled className='flex w-full text-[black] opacity-40 border-[black] border hover:bg-[black] mt-4 hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                   <div className="flex gap-2 items-center">
                     <BiBook />
                     <p>My newsletter</p>
