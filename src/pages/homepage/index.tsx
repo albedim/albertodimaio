@@ -139,7 +139,7 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-14 p-6 md:p-0'>
+      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-14 mt-40 p-6 md:p-0'>
         <div>
           <p className='text-4xl font-semibold'>Education</p>
           <div className='mt-8'>
