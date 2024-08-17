@@ -1,9 +1,9 @@
 import { TfiClose, TfiEmail, TfiMenu } from 'react-icons/tfi'
 import { TbUnlink, TbWorldWww } from 'react-icons/tb'
-import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit, BiMenu, BiBook } from 'react-icons/bi'
-import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-icons/si'
-import { FaCode, FaGithub, FaHamburger, FaLaptopCode, FaLinkedin } from 'react-icons/fa'
-import { BsTwitterX } from 'react-icons/bs'
+import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit, BiMenu, BiBook, BiUser } from 'react-icons/bi'
+import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiSkillshare, SiTwitter } from 'react-icons/si'
+import { FaCode, FaGithub, FaHamburger, FaIdeal, FaLaptopCode, FaLinkedin } from 'react-icons/fa'
+import { BsLightbulb, BsTwitterX } from 'react-icons/bs'
 import { IoIosMenu, IoLogoJavascript, IoMdClose } from 'react-icons/io'
 import { GrClose, GrReactjs } from 'react-icons/gr'
 import { ImHtmlFive, ImCss3, ImMenu } from 'react-icons/im'
@@ -25,6 +25,7 @@ import Section from '../../components/section'
 function Homepage() {
 
   const [language, setLanguage] = useState<LanguagesType>("en_US")
+  const educationRef = useRef<HTMLInputElement>(null)
   const [pageProjects, setPageProjects] = useState<any[]>()
   const [menuVisible, setMenuVisible] = useState(false)
   const [hover, setHover] = useState("")
@@ -55,6 +56,7 @@ function Homepage() {
           <div className='text-[black] p-8 gap-y-14'>
             <div className='mt-4'><button onClick={() => { goTo(homepageRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button></div>
             <div className='mt-4'><button onClick={() => { goTo(aboutRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button></div>
+            <div className='mt-4'><button onClick={() => { goTo(educationRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>EDUCATION</button></div>
             <div className='mt-4'><button onClick={() => { goTo(skillsRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button></div>
             <div className='mt-4'><button onClick={() => { goTo(projectsRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button></div>
             <div className='mt-4'><button onClick={() => { goTo(getInTouchRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button></div>
@@ -63,24 +65,21 @@ function Homepage() {
       ) : (
         null
       )}
-      <div className='fixed top-0 backdrop-blur-sm z-20 w-full flex justify-between pl-6 md:pr-24 pr-6 h-[94px]'>
-        <div className='flex gap-2 items-center'>
-          <img width={18} src={require("../../images/albedim.png")} className='rounded-full' alt="" />
-          <p className='font-bold text-[white]'>ALBERTO DI MAIO</p>
-        </div>
+      <div className='fixed top-0 backdrop-blur-sm z-20 w-full flex justify-around pl-6 md:pr-24 pr-6 h-[94px]'>
         <div className='text-[gray] md:flex hidden gap-14'>
-          <button onClick={() => goTo(homepageRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button>
-          <button onClick={() => goTo(aboutRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button>
-          <button onClick={() => goTo(skillsRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button>
-          <button onClick={() => goTo(projectsRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button>
-          <button onClick={() => goTo(getInTouchRef)} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button>
+          <button onClick={() => goTo(homepageRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>HOME</button>
+          <button onClick={() => goTo(aboutRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>ABOUT</button>
+          <button onClick={() => goTo(educationRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>EDUCATION</button>
+          <button onClick={() => goTo(skillsRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>SKILLS</button>
+          <button onClick={() => goTo(projectsRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>PROJECTS</button>
+          <button onClick={() => goTo(getInTouchRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>GET IN TOUCH</button>
         </div>
         <div className='text-[white] md:hidden flex'>
           <button onClick={() => setMenuVisible(true)} ><IoIosMenu size={34} /></button>
         </div>
       </div>
       <div ref={homepageRef} className="relative h-screen bg-cover bg-center" style={{ backgroundImage: `url('./image.webp')` }}>
-        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="absolute inset-0 bg-black opacity-90"></div>
         <div className="relative flex justify-around items-center w-full h-full items-center z-10 text-white p-6">
           <div>
             <h2 className='text-4xl text-center font-extrabold'>WELCOME</h2>
@@ -118,20 +117,65 @@ function Homepage() {
                 <img src={require("../../images/albedim.png")} alt="" className='w-full rounded-2xl h-full' />
               </div>
               <div className='mt-6'>
-                <a href="https://x.com/TheAlbeDim">
+                <a target='_blank' href="https://x.com/TheAlbeDim">
                   <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                     <div className="flex gap-2 items-center">
-                      <TfiEmail />
+                      <BsTwitterX />
                       <p>Follow me on X</p>
                     </div>
                   </button>
                 </a>
-                <button disabled className='flex w-full text-[black] opacity-40 border-[black] border hover:bg-[black] mt-4 hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
-                  <div className="flex gap-2 items-center">
-                    <BiBook />
-                    <p>My newsletter</p>
-                  </div>
-                </button>
+                <a target='_blank' href="https://www.linkedin.com/in/alberto-di-maio-520531285">
+                  <button className='flex w-full text-[black] border-[black] border hover:bg-[black] mt-4 hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                    <div className="flex gap-2 items-center">
+                      <FaLinkedin />
+                      <p>Follow me on Linkedin</p>
+                    </div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-14 p-6 md:p-0'>
+        <div>
+          <p className='text-4xl font-semibold'>Education</p>
+          <div className='mt-8'>
+            <div className='flex mt-4 gap-2'>
+              <div>
+                <img width={54} src={require("../../images/sec.png")} alt="" />
+              </div>
+              <div>
+                <a target='_blank' href='https://www.international.unina.it' className='font-semibold hover:underline text-xl'>Università Federico II </a>
+                <p className='text-sm max-w-[545px]'>Bachelor of Engineering - BS, Computer Engineering</p>
+                <p className='text-[gray] text-sm mt-1'>09/24 - 04/27</p>
+                <div className='flex mt-1'>
+                  <a target="_blank" href="https://www.linkedin.com/in/alberto-di-maio-520531285/overlay/urn:li:fsd_profileEducation:(ACoAAEVPyKgBu5ANhvj-zcPp2AQ_UKQE9SGzE6o,996902719)/skill-associations-details/">
+                    <button className='flex hover:underline items-center gap-2 mt-2'>
+                      <BsLightbulb/>
+                      <p className='font-medium text-sm'>Project Managment, C++ and 7+ skills</p>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='flex border-t pt-4 mt-4 gap-2'>
+              <div>
+                <img width={54} src={require("../../images/gs.png")} alt="" />
+              </div>
+              <div>
+              <a target='_blank' href='https://www.ittfrancescogiordaninapoli.it' className='font-semibold hover:underline text-xl'>ITIS Francesco Giordani Striano</a>
+                <p className='text-sm max-w-[545px]'>High School Diploma in Computer Science and Technology, Computer Programming, Specific Applications.</p>
+                <p className='text-[gray] text-sm mt-1'>09/19 - 07/24</p>
+                <div className='mt-1 flex'>
+                  <a target="_blank" href="https://www.linkedin.com/in/alberto-di-maio-520531285/overlay/urn:li:fsd_profileEducation:(ACoAAEVPyKgBu5ANhvj-zcPp2AQ_UKQE9SGzE6o,905008944)/skill-associations-details/">
+                    <button className='flex hover:underline items-center gap-2 mt-2'>
+                      <BsLightbulb/>
+                      <p className='font-medium text-sm'>Python, OOP and + 6 skills</p>
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -179,7 +223,7 @@ function Homepage() {
       <div ref={projectsRef} className='flex justify-around w-full pt-40 md:pt-24 md:mt-0 mt-[845px] md:p-0 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Projects</p>
-          <div className='flex mt-6 gap-2 flex-wrap max-w-[1084px]'>
+          <div className='flex mt-6 gap-2 flex-wrap max-w-[984px]'>
             {pageProjects && pageProjects.map((project, index) => (
               <div key={index} className='w-80 border shadow-sm rounded-md'>
                 <div className='w-full h-40'>
