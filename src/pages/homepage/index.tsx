@@ -163,7 +163,7 @@ function Homepage() {
             </div>
             <div className='flex border-t pt-4 mt-4 gap-2'>
               <div>
-                <img width={54} src={require("../../images/gs.png")} alt="" />
+                <img width={74} src={require("../../images/gs.png")} alt="" />
               </div>
               <div>
               <a target='_blank' href='https://www.ittfrancescogiordaninapoli.it' className='font-semibold hover:underline text-xl'>ITIS Francesco Giordani Striano</a>
