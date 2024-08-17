@@ -65,7 +65,7 @@ function Homepage() {
       ) : (
         null
       )}
-      <div className='fixed top-0 backdrop-blur-sm z-20 w-full flex justify-around pl-6 md:pr-24 pr-6 h-[94px]'>
+      <div className='fixed top-0 z-20 w-full flex md:justify-around justify-between pl-6 md:pr-24 pr-6 h-[94px]'>
         <div className='text-[gray] md:flex hidden gap-14'>
           <button onClick={() => goTo(homepageRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>HOME</button>
           <button onClick={() => goTo(aboutRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>ABOUT</button>
@@ -74,6 +74,7 @@ function Homepage() {
           <button onClick={() => goTo(projectsRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>PROJECTS</button>
           <button onClick={() => goTo(getInTouchRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>GET IN TOUCH</button>
         </div>
+        <div className='md:hidden'></div>
         <div className='text-[white] md:hidden flex'>
           <button onClick={() => setMenuVisible(true)} ><IoIosMenu size={34} /></button>
         </div>
