@@ -208,7 +208,7 @@ export const EDUCATION = [
       label: "Python, OOP and +6 skills",
       url: "https://www.linkedin.com/in/alberto-di-maio-520531285/overlay/urn:li:fsd_profileEducation:(ACoAAEVPyKgBu5ANhvj-zcPp2AQ_UKQE9SGzE6o,905008944)/skill-associations-details/"
     }
-  }
+  },
 ]
 
 

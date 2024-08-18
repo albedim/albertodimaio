@@ -111,13 +111,12 @@ function Homepage() {
       <div ref={aboutRef} className='w-full h-full flex justify-around md:items-center pt-14 p-6 md:p-0'>
         <div>
           <p className='text-4xl font-semibold'>About</p>
-          <div className='flex items-center gap-14'>
-            <p className='mt-6 max-w-[540px]' dangerouslySetInnerHTML={{ __html: data[language].about.content }}></p>
-            <div className='md:block hidden'>
-              <div className='h-64 w-64'>
-                <img src={require("../../images/albedim.png")} alt="" className='w-full rounded-2xl h-full' />
+          <div className='md:flex items-center gap-14'>
+            <div>
+              <div className='h-64 md:mt-0 mt-4 md:w-auto w-full w-64'>
+                <img src={require("../../images/albedim.png")} alt="" className='w-full rounded-2xl object-cover h-full' />
               </div>
-              <div className='mt-6'>
+              <div className='md:block hidden mt-6'>
                 <a target='_blank' href="https://x.com/TheAlbeDim">
                   <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                     <div className="flex gap-2 items-center">
@@ -136,29 +135,30 @@ function Homepage() {
                 </a>
               </div>
             </div>
+            <p className='mt-6 max-w-[540px]' dangerouslySetInnerHTML={{ __html: data[language].about.content }}></p>
           </div>
         </div>
       </div>
-      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-14 mt-40 p-6 md:p-0'>
+      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-14 md:mt-40 mt-96 p-6 md:p-0'>
         <div>
           <p className='text-4xl font-semibold'>Education</p>
           <div className='mt-8'>
             {EDUCATION.map((education, i) => (
               <>
                 <div className='flex mt-4 mb-4 gap-2'>
-                  <div className='w-16 h-16'>
+                  <div className='md:w-16 md:h-16 w-16 h-14'>
                     {education.image}
                   </div>
                   <div className='ml-1'>
                     <a target='_blank' href={education.title.url} className='font-semibold hover:underline text-xl'>{education.title.label}</a>
-                    <p className='text-sm max-w-[545px]'>{education.description}</p>
+                    <p className='text-sm md:max-w-[545px] max-w-[345px]'>{education.description}</p>
                     <p className='text-[gray] text-sm mt-1'>{education.date}</p>
                     {education.grade && <p className='text-sm mt-2'>Grade: {education.grade}</p>}
                     <div className='flex mt-1'>
                       <a target="_blank" href={education.skills.url}>
                         <button className='flex hover:underline items-center gap-2 mt-2'>
                           <BsLightbulb/>
-                          <p className='font-medium text-sm'>{education.skills.label}</p>
+                          <p className='font-medium text-left text-sm'>{education.skills.label}</p>
                         </button>
                       </a>
                     </div>
@@ -310,6 +310,9 @@ function Homepage() {
             </a>
           </div>
         </div>
+      </div>
+      <div className='w-full pb-14 flex justify-around'>
+        <p className='text-[gray]'>Made with ♥ by <span className='text-[black]'>albedim</span></p>
       </div>
     </div>
   )
