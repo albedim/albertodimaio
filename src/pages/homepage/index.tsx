@@ -7,7 +7,7 @@ import { BsLightbulb, BsTwitterX } from 'react-icons/bs'
 import { IoIosMenu, IoLogoJavascript, IoMdClose } from 'react-icons/io'
 import { GrClose, GrReactjs } from 'react-icons/gr'
 import { ImHtmlFive, ImCss3, ImMenu } from 'react-icons/im'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useSearchParams } from 'react-router-dom';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
@@ -25,6 +25,7 @@ import Section from '../../components/section'
 function Homepage() {
 
   const [language, setLanguage] = useState<LanguagesType>("en_US")
+  const [searchParams, setSearchParams] = useSearchParams()
   const educationRef = useRef<HTMLInputElement>(null)
   const [pageProjects, setPageProjects] = useState<any[]>()
   const [menuVisible, setMenuVisible] = useState(false)
@@ -45,6 +46,35 @@ function Homepage() {
   const goTo = (ref: RefObject<HTMLInputElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    if (searchParams.has('ref')) {
+      const ref = searchParams.get("ref") || "homepage"
+      switch (ref) {
+        case "homepage":
+          goTo(homepageRef)
+          break;
+        case "about":
+          goTo(aboutRef)
+          break;
+        case "education":
+          goTo(educationRef)
+          break;
+        case "skills":
+          goTo(skillsRef)
+          break;
+        case "projects":
+          goTo(projectsRef)
+          break;
+        case "get_in_touch":
+          goTo(getInTouchRef)
+          break;
+        default:
+          goTo(homepageRef)
+          break;
+      }
+    }
+  },[searchParams])
 
   return (
     <div className='overflow-x-hidden w-screen h-screen'>
