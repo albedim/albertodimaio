@@ -28,8 +28,8 @@ export const data = {
             title: "Projects",
             content: [
                 "Bliddo empowers businesses and individuals to generate custom QR codes and gain real-time insights for every scan.",
-                "Sell your digital guides, articles, small e-books or recipes and share your digital library to the world using your link, earn quickly with your passion.",
-                "A REST API able to generate millions of different fake users using a dataset containing more than 10 Millions fake users-data.",
+                "Sell your digital guides, articles, small e-books or recipes and share your digital library to the world using your link.",
+                "A REST API able to generate more than 10 Millions fake but realistic users for testing and development.",
                 "Share your cringe stories with an anonymous community, read cringe stories and have fun with your friends!",
                 "Bored And Tired of procrastinating? Create and complete some tasks and meet new people.",
                 "Codymio is helping 500+ developers find the perfect open source projects to contribute to",

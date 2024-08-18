@@ -177,36 +177,35 @@ function Homepage() {
           <p className='text-4xl font-semibold'>Skills</p>
           <div className='flex gap-2 flex-wrap md:max-w-[884px] max-w-[384px]'>
             {skills.map((skill, index) => (
-              hover == skill.name ? (
-                <div className='cursor-pointer z-20 h-24 mt-4'>
-                  <div onMouseLeave={() => setHover("")} className='rounded-lg bg-[black]'>
-                    <div className='pb-1 text-[white] p-10'>
-                      {skill.icon}
-                    </div>
-                    <div className='p-4'>
-                      <h2 className='text-lg text-[white] font-medium font-p'>{skill.name}</h2>
-                      <div
-                        style={{ height: 14, width: '100%' }}
-                        className='rounded-md bg-opacity-20 mt-1 bg-[white]'
-                      >
-                        <div
-                          className='bg-[white] rounded-md'
-                          style={{ height: 14, width: skill.value }} >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div
-                  onMouseEnter={() => {
-                    if (hoverable)
-                      setHover(skill.name)
-                  }}
-                  className='cursor-pointer z-10 rounded-lg border mt-4 p-10'>
+              <div
+                onMouseEnter={() => {
+                  if (hoverable) setHover(skill.name);
+                }}
+                onMouseLeave={() => setHover("")}
+                className={`cursor-pointer group z-10 rounded-lg mt-4 transition-all duration-300 ${
+                  hover === skill.name ? 'h-[184px] bg-black z-20' : 'h-[140px] bg-white border'
+                }`}
+                style={{ overflow: 'hidden' }}
+              >
+                <div className='p-10 group-hover:text-[white]'>
                   {skill.icon}
                 </div>
-              )
+
+                {hover === skill.name && (
+                  <div className='p-4 mt-[-40px]'>
+                    <h2 className='text-lg text-white font-medium'>{skill.name}</h2>
+                    <div
+                      style={{ height: 14, width: '100%' }}
+                      className='rounded-md bg-opacity-20 mt-1 bg-white'
+                    >
+                      <div
+                        className='bg-white rounded-md'
+                        style={{ height: 14, width: skill.value }}
+                      ></div>
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
