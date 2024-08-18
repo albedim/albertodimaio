@@ -11,7 +11,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { RefObject, useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
-import { projects, skills } from '../../consts';
+import { EDUCATION, projects, skills } from '../../consts';
 import axios from 'axios';
 import { data } from '../../config/config';
 import Flag from 'react-world-flags';
@@ -143,42 +143,32 @@ function Homepage() {
         <div>
           <p className='text-4xl font-semibold'>Education</p>
           <div className='mt-8'>
-            <div className='flex mt-4 gap-2'>
-              <div>
-                <img width={54} src={require("../../images/sec.png")} alt="" />
-              </div>
-              <div>
-                <a target='_blank' href='https://www.international.unina.it' className='font-semibold hover:underline text-xl'>Università Federico II </a>
-                <p className='text-sm max-w-[545px]'>Bachelor of Engineering - BS, Computer Engineering</p>
-                <p className='text-[gray] text-sm mt-1'>09/24 - 04/27</p>
-                <div className='flex mt-1'>
-                  <a target="_blank" href="https://www.linkedin.com/in/alberto-di-maio-520531285/overlay/urn:li:fsd_profileEducation:(ACoAAEVPyKgBu5ANhvj-zcPp2AQ_UKQE9SGzE6o,996902719)/skill-associations-details/">
-                    <button className='flex hover:underline items-center gap-2 mt-2'>
-                      <BsLightbulb/>
-                      <p className='font-medium text-sm'>Project Managment, C++ and 7+ skills</p>
-                    </button>
-                  </a>
+            {EDUCATION.map((education, i) => (
+              <>
+                <div className='flex mt-4 mb-4 gap-2'>
+                  <div className='w-16 h-16'>
+                    {education.image}
+                  </div>
+                  <div className='ml-1'>
+                    <a target='_blank' href={education.title.url} className='font-semibold hover:underline text-xl'>{education.title.label}</a>
+                    <p className='text-sm max-w-[545px]'>{education.description}</p>
+                    <p className='text-[gray] text-sm mt-1'>{education.date}</p>
+                    {education.grade && <p className='text-sm mt-2'>Grade: {education.grade}</p>}
+                    <div className='flex mt-1'>
+                      <a target="_blank" href={education.skills.url}>
+                        <button className='flex hover:underline items-center gap-2 mt-2'>
+                          <BsLightbulb/>
+                          <p className='font-medium text-sm'>{education.skills.label}</p>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className='flex border-t pt-4 mt-4 gap-2'>
-              <div>
-                <img width={74} src={require("../../images/gs.png")} alt="" />
-              </div>
-              <div>
-              <a target='_blank' href='https://www.ittfrancescogiordaninapoli.it' className='font-semibold hover:underline text-xl'>ITIS Francesco Giordani Striano</a>
-                <p className='text-sm max-w-[545px]'>High School Diploma in Computer Science and Technology, Computer Programming, Specific Applications.</p>
-                <p className='text-[gray] text-sm mt-1'>09/19 - 07/24</p>
-                <div className='mt-1 flex'>
-                  <a target="_blank" href="https://www.linkedin.com/in/alberto-di-maio-520531285/overlay/urn:li:fsd_profileEducation:(ACoAAEVPyKgBu5ANhvj-zcPp2AQ_UKQE9SGzE6o,905008944)/skill-associations-details/">
-                    <button className='flex hover:underline items-center gap-2 mt-2'>
-                      <BsLightbulb/>
-                      <p className='font-medium text-sm'>Python, OOP and + 6 skills</p>
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
+                {i < EDUCATION.length - 1 ? (
+                  <div className='border-t'></div>
+                ): null}
+              </>
+            ))}
           </div>
         </div>
       </div>

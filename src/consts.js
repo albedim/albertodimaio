@@ -180,6 +180,38 @@ const projectsLanguages = [
   }
 ]
 
+export const EDUCATION = [
+  {
+    title: {
+      label: "Università Federico II",
+      url: "https://www.international.unina.it/",
+    },
+    image: <img className='w-full h-full' src={require('./images/sec.png')} alt="" />,
+    description: "Bachelor of Engineering - BS, Computer Engineering",
+    date: "09/2024 - 04/2027",
+    grade: null,
+    skills: {
+      label: "Project Management, Engineering and +13 skills",
+      url: "https://www.linkedin.com/in/alberto-di-maio-520531285/overlay/urn:li:fsd_profileEducation:(ACoAAEVPyKgBu5ANhvj-zcPp2AQ_UKQE9SGzE6o,996902719)/skill-associations-details/"
+    }
+  },
+  {
+    title: {
+      label: "ITIS Francesco Giordani Striano",
+      url: "https://ittfrancesogiordaninapoli.it",
+    },
+    grade: "100/100",
+    image: <img className='w-full h-full' src={require('./images/gs.png')} alt="" />,
+    description: "High School Diploma in Computer Science and Technology, Computer Programming, Specific Applications.",
+    date: "09/2019 - 07/2024",
+    skills: {
+      label: "Python, OOP and +6 skills",
+      url: "https://www.linkedin.com/in/alberto-di-maio-520531285/overlay/urn:li:fsd_profileEducation:(ACoAAEVPyKgBu5ANhvj-zcPp2AQ_UKQE9SGzE6o,905008944)/skill-associations-details/"
+    }
+  }
+]
+
+
 export const projects = (language) => {
   return [
     {
