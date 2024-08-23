@@ -1,4 +1,5 @@
 const NewsLetter = () => {
+  
   return (
     <div>
       <h1>NewsLetter</h1>

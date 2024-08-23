@@ -25,6 +25,8 @@ import Section from '../../components/section'
 function Homepage() {
 
   const [language, setLanguage] = useState<LanguagesType>("en_US")
+  const [headerStyle, setHeaderStyle] = useState("")
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams()
   const educationRef = useRef<HTMLInputElement>(null)
   const [pageProjects, setPageProjects] = useState<any[]>()
@@ -46,6 +48,35 @@ function Homepage() {
   const goTo = (ref: RefObject<HTMLInputElement>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const toggleY = window.innerWidth > 768 ? 848 : 694
+    if (scrollPosition > toggleY) {
+      if (window.innerWidth > 768) {
+        setHeaderStyle("bg-[black] shadow-xl text-[white]")
+      } else {
+        setHeaderStyle("bg-[transparent] text-[black]")
+      }
+    } else {
+      if (window.innerWidth > 768) {
+        setHeaderStyle("bg-[transparent] text-[gray]")
+      } else {
+        setHeaderStyle("bg-[transparent] text-[white]")
+      }
+    }
+  }, [scrollPosition])
 
   useEffect(() => {
     if (searchParams.has('ref')) {
@@ -77,9 +108,9 @@ function Homepage() {
   },[searchParams])
 
   return (
-    <div className='overflow-x-hidden w-screen h-screen'>
+    <div className='overflow-x-hidden w-screen'>
       {menuVisible ? (
-        <div className='absolute z-30 top-0 h-screen rounded-l-xl top-0 right-0 w-3/4 bg-[white]'>
+        <div className='fixed shadow-md z-30 top-0 h-screen rounded-l-xl top-0 right-0 w-3/4 bg-[white]'>
           <div className='w-full p-8'>
             <button onClick={() => setMenuVisible(false)}><TfiClose size={24} /></button>
           </div>
@@ -95,8 +126,8 @@ function Homepage() {
       ) : (
         null
       )}
-      <div className='fixed top-0 z-20 w-full flex md:justify-around justify-between pl-6 md:pr-24 pr-6 h-[94px]'>
-        <div className='text-[gray] md:flex hidden gap-14'>
+      <div className={`fixed top-0 z-20 w-full flex md:justify-around justify-between pl-6 md:pr-24 pr-6 bg-opacity-40 ${headerStyle} h-[94px]`}>
+        <div className='md:flex hidden gap-14'>
           <button onClick={() => goTo(homepageRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>HOME</button>
           <button onClick={() => goTo(aboutRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>ABOUT</button>
           <button onClick={() => goTo(educationRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>EDUCATION</button>
@@ -105,7 +136,7 @@ function Homepage() {
           <button onClick={() => goTo(getInTouchRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>GET IN TOUCH</button>
         </div>
         <div className='md:hidden'></div>
-        <div className='text-[white] md:hidden flex'>
+        <div className='md:hidden flex'>
           <button onClick={() => setMenuVisible(true)} ><IoIosMenu size={34} /></button>
         </div>
       </div>
@@ -138,12 +169,12 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div ref={aboutRef} className='w-full h-full flex justify-around md:items-center pt-14 p-6 md:p-0'>
+      <div ref={aboutRef} className='w-full h-full flex justify-around md:items-center pt-40 p-6'>
         <div>
           <p className='text-4xl font-semibold'>About</p>
           <div className='md:flex items-center gap-14'>
             <div>
-              <div className='h-64 md:mt-0 mt-4 md:w-auto w-full w-64'>
+              <div className='h-64 md:block hidden md:mt-0 mt-4 md:w-auto w-full w-64'>
                 <img src={require("../../images/albedim.png")} alt="" className='w-full rounded-2xl object-cover h-full' />
               </div>
               <div className='md:block hidden mt-6'>
@@ -169,13 +200,13 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-14 md:mt-40 mt-96 p-6 md:p-0'>
+      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-64 pb-40 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Education</p>
           <div className='mt-8'>
             {EDUCATION.map((education, i) => (
               <>
-                <div className='flex mt-4 mb-4 gap-2'>
+                <div className='flex md:w-[840px] mt-4 mb-4 gap-2'>
                   <div className='md:w-16 md:h-16 w-16 h-14'>
                     {education.image}
                   </div>
@@ -202,7 +233,7 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div ref={skillsRef} className='w-full h-full flex justify-around md:items-center pt-40 md:pt-14 md:mt-0 mt-24 p-6 md:p-0'>
+      <div ref={skillsRef} className='w-full h-full flex justify-around md:items-center pt-64 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Skills</p>
           <div className='flex gap-2 flex-wrap md:max-w-[884px] max-w-[384px]'>
@@ -240,7 +271,7 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div ref={projectsRef} className='flex justify-around w-full pt-40 md:pt-24 md:mt-0 mt-[845px] md:p-0 p-6'>
+      <div ref={projectsRef} className='flex justify-around w-full pt-64 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Projects</p>
           <div className='flex mt-6 gap-2 flex-wrap max-w-[984px]'>
