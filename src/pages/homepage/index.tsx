@@ -200,7 +200,7 @@ function Homepage() {
           </div>
         </div>
       </div>
-      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-64 pb-40 p-6'>
+      <div ref={educationRef} className='w-full h-full flex justify-around md:items-center pt-64 pb-24 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Education</p>
           <div className='mt-8'>
