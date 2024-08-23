@@ -112,71 +112,71 @@ export const skills = [
 const projectsLanguages = [
   {
     name: "HTML",
-    icon: <ImHtmlFive size={21} color='#939393' />
+    icon: <ImHtmlFive size={21} color='black' opacity="60%" />
   },
   {
     name: "CSS",
-    icon: <ImCss3 size={21} color='#939393' />
+    icon: <ImCss3 size={21} color='black' opacity="60%" />
   },
   {
     name: "Javascript",
-    icon: <IoLogoJavascript size={21} color='#939393' />
+    icon: <IoLogoJavascript size={21} color='black' opacity="60%" />
   },
   {
     name: "Typescript",
-    icon: <BiLogoTypescript size={21} color='#939393' />
+    icon: <BiLogoTypescript size={21} color='black' opacity="60%" />
   },
   {
     name: "React JS",
-    icon: <GrReactjs size={21} color='#939393' />
+    icon: <GrReactjs size={21} color='black' opacity="60%" />
   },
   {
     name: "React Native",
-    icon: <TbBrandReactNative size={21} color='#939393' />
+    icon: <TbBrandReactNative size={21} color='black' opacity="60%" />
   },
   {
     name: "Next JS",
-    icon: <SiNextdotjs size={21} color='#939393' />
+    icon: <SiNextdotjs size={21} color='black' opacity="60%" />
   }, 
   {
     name: "TailwindCss",
-    icon: <BiLogoTailwindCss size={21} color='#939393' />
+    icon: <BiLogoTailwindCss size={21} color='black' opacity="60%" />
   },
   {
     name: "Python",
-    icon: <BiLogoPython size={21} color='#939393' />
+    icon: <BiLogoPython size={21} color='black' opacity="60%" />
   },
   {
     name: "Flask",
-    icon: <BiLogoFlask size={21} color='#939393' />
+    icon: <BiLogoFlask size={21} color='black' opacity="60%" />
   },
   {
     name: "Java",
-    icon: <FaJava size={21} color='#939393' />
+    icon: <FaJava size={21} color='black' opacity="60%" />
   },
   {
     name: "Spring Boot",
-    icon: <BiLogoSpringBoot size={21} color='#939393' />
+    icon: <BiLogoSpringBoot size={21} color='black' opacity="60%" />
   },
   {
     name: "MySQL",
-    icon: <SiMysql size={21} color='#939393' />
+    icon: <SiMysql size={21} color='black' opacity="60%" />
   },
   {
     name: "PostgreSQL",
-    icon: <SiPostgresql size={21} color='#939393' />
+    icon: <SiPostgresql size={21} color='black' opacity="60%" />
   },
   {
     name: "MongoDb",
-    icon: <BiLogoMongodb size={21} color='#939393' />
+    icon: <BiLogoMongodb size={21} color='black' opacity="60%" />
   },
   {
     name: "PHP",
-    icon: <BiLogoPhp size={21} color='#939393' />
+    icon: <BiLogoPhp size={21} color='black' opacity="60%" />
   },
   {
     name: "Express.js",
-    icon: <SiExpress size={21} color='#939393' />
+    icon: <SiExpress size={21} color='black' opacity="60%" />
   }
 ]
 

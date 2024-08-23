@@ -274,32 +274,32 @@ function Homepage() {
       <div ref={projectsRef} className='flex justify-around w-full pt-64 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Projects</p>
-          <div className='flex mt-6 gap-2 flex-wrap max-w-[984px]'>
+          <div className='mt-6 gap-2 md:w-[884px]'>
             {pageProjects && pageProjects.map((project, index) => (
-              <div key={index} className='w-80 border shadow-sm rounded-md'>
-                <div className='w-full h-40'>
-                  <img className='w-full object-cover rounded-t-md h-full' src={require("../../images/" + project.image)} alt="" />
+              <div key={index} className='w-full border shadow-sm pb-2 rounded-xl mb-4'>
+                <div className='w-full h-[214px]'>
+                  <img className='w-full object-cover rounded-t-xl h-full' src={require("../../images/" + project.image)} alt="" />
                 </div>
                 <div className='p-4'>
                   <div className='flex gap-2 mt-2 text-sm'>
                     {project.icons.map((icon: any, index: number) => (
-                      <button onClick={() => {
-                        goTo(skillsRef)
-                        /*setHoverable(false)
+                      <div onClick={() => {
+                        /*goTo(skillsRef)
+                        setHoverable(false)
                         setHover(icon.name)
                         setTimeout(() => {
                           setHoverable(true)
                         }, 1400)*/
                       }}
-                        key={index} >{icon.icon}</button>
+                        key={index} >{icon.icon}</div>
                     ))}
                   </div>
-                  <p className='mt-2 text-md font-semibold' >{project.name}</p>
-                  <p className='mt-2 text-sm text-[#939393]' >{project.description}</p>
+                  <p className='mt-6 text-xl font-semibold' >{project.name}</p>
+                  <p className='mt-2 text-md max-w-[458px] text-[#939393]' >{project.description}</p>
                   <div className='mt-6 flex gap-2'>
                     {project.links.overview && (
                       <a target='__blank' href={project.links.link_overview}>
-                        <button className='flex p-2 items-center gap-2 rounded-md text-[white] pb-2 pt-2 bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                        <button className='flex p-6 items-center gap-1 rounded-lg text-[white] pb-[10.4px] pt-[10.4px] bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                           <TbWorldWww />
                           <p className='text-sm'>Website</p>
                         </button>
@@ -307,7 +307,7 @@ function Homepage() {
                     )}
                     {project.links.code && (
                       <a target='__blank' href={project.links.link_github}>
-                        <button className='flex p-2 items-center gap-2 rounded-md text-[white] pb-2 pt-2 bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                        <button className='flex p-6 items-center gap-1 rounded-lg text-[white] pb-[10.4px] pt-[10.4px] bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                           <FaGithub />
                           <p className='text-sm'>Repository</p>
                         </button>
