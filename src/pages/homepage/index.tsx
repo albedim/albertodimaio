@@ -62,8 +62,7 @@ function Homepage() {
   }, []);
 
   useEffect(() => {
-    const toggleY = window.innerWidth > 768 ? 848 : 694
-    if (scrollPosition > toggleY) {
+    if (scrollPosition > 654) {
       if (window.innerWidth > 768) {
         setHeaderStyle("bg-[black] shadow-xl text-[white]")
       } else {
@@ -109,23 +108,19 @@ function Homepage() {
 
   return (
     <div className='overflow-x-hidden w-screen'>
-      {menuVisible ? (
-        <div className='fixed shadow-md z-30 top-0 h-screen rounded-l-xl top-0 right-0 w-3/4 bg-[white]'>
-          <div className='w-full p-8'>
-            <button onClick={() => setMenuVisible(false)}><TfiClose size={24} /></button>
-          </div>
-          <div className='text-[black] p-8 gap-y-14'>
-            <div className='mt-4'><button onClick={() => { goTo(homepageRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button></div>
-            <div className='mt-4'><button onClick={() => { goTo(aboutRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button></div>
-            <div className='mt-4'><button onClick={() => { goTo(educationRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>EDUCATION</button></div>
-            <div className='mt-4'><button onClick={() => { goTo(skillsRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button></div>
-            <div className='mt-4'><button onClick={() => { goTo(projectsRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button></div>
-            <div className='mt-4'><button onClick={() => { goTo(getInTouchRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button></div>
-          </div>
+      <div className={`fixed shadow-md ${menuVisible ? "w-3/4" : "w-[0px]" } z-30 top-0 transition-all h-screen rounded-l-xl top-0 right-0 bg-[white]`}>
+        <div className='w-full p-8'>
+          <button onClick={() => setMenuVisible(false)}><TfiClose size={24} /></button>
         </div>
-      ) : (
-        null
-      )}
+        <div className='text-[black] p-8 gap-y-14'>
+          <div className='mt-4'><button onClick={() => { goTo(homepageRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>HOME</button></div>
+          <div className='mt-4'><button onClick={() => { goTo(aboutRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>ABOUT</button></div>
+          <div className='mt-4'><button onClick={() => { goTo(educationRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>EDUCATION</button></div>
+          <div className='mt-4'><button onClick={() => { goTo(skillsRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>SKILLS</button></div>
+          <div className='mt-4'><button onClick={() => { goTo(projectsRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>PROJECTS</button></div>
+          <div className='mt-4'><button onClick={() => { goTo(getInTouchRef); setMenuVisible(false) }} className='hover:text-3xl hover:font-semibold transition-all text-xl'>GET IN TOUCH</button></div>
+        </div>
+      </div>
       <div className={`fixed top-0 z-20 w-full flex md:justify-around justify-between pl-6 md:pr-24 pr-6 bg-opacity-40 ${headerStyle} h-[94px]`}>
         <div className='md:flex hidden gap-14'>
           <button onClick={() => goTo(homepageRef)} className='hover:text-xl hover:font-semibold transition-all text-lg'>HOME</button>
