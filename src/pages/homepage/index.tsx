@@ -76,7 +76,6 @@ function Homepage() {
       }
     }
   }, [scrollPosition])
-  
 
   useEffect(() => {
     if (searchParams.has('ref')) {
