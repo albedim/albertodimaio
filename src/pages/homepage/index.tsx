@@ -160,7 +160,7 @@ function Homepage() {
                 repeat={Infinity}
               />
             </div>
-            <p className="mt-6 text-center">Full-Stack Software Engineer able to turn innovative ideas into <br />amazing projects, passionate of building and developing new projects.</p>
+            <p className="mt-6 text-center">A Software Engineer that likes bringing innovative ideas into <br />reality, passionate of building and developing new projects.</p>
           </div>
         </div>
       </div>
@@ -170,22 +170,22 @@ function Homepage() {
           <div className='md:flex items-center gap-14'>
             <div>
               <div className='h-64 md:block hidden md:mt-0 mt-4 md:w-auto w-full w-64'>
-                <img src={require("../../images/albedim.png")} alt="" className='w-full rounded-2xl object-cover h-full' />
+                <img src={require("../../images/albedim.jpg")} alt="" className='w-full border-2 border-[black] rounded-2xl object-cover h-full' />
               </div>
               <div className='md:block hidden mt-6'>
                 <a target='_blank' href="https://x.com/TheAlbeDim">
-                  <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                  <button className='flex w-full text-[black] border-[black] border-2 hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                     <div className="flex gap-2 items-center">
                       <BsTwitterX />
-                      <p>Follow me on X</p>
+                      <p className='font-medium'>Follow me on X</p>
                     </div>
                   </button>
                 </a>
                 <a target='_blank' href="https://www.linkedin.com/in/alberto-di-maio-520531285">
-                  <button className='flex w-full text-[black] border-[black] border hover:bg-[black] mt-4 hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                  <button className='flex w-full text-[black] border-[black] border-2 hover:bg-[black] mt-4 hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                     <div className="flex gap-2 items-center">
                       <FaLinkedin />
-                      <p>Follow me on Linkedin</p>
+                      <p className='font-medium'>Follow me on LinkedIn</p>
                     </div>
                   </button>
                 </a>
@@ -231,7 +231,7 @@ function Homepage() {
       <div ref={skillsRef} className='w-full h-full flex justify-around md:items-center pt-64 p-6'>
         <div>
           <p className='text-4xl font-semibold'>Skills</p>
-          <div className='flex gap-2 flex-wrap md:max-w-[884px] max-w-[384px]'>
+          <div className='flex md:gap-2 gap-x-8 flex-wrap md:max-w-[884px] max-w-[334px]'>
             {skills.map((skill, index) => (
               <div
                 onMouseEnter={() => {
@@ -294,17 +294,17 @@ function Homepage() {
                   <div className='mt-6 flex gap-2'>
                     {project.links.overview && (
                       <a target='__blank' href={project.links.link_overview}>
-                        <button className='flex p-6 items-center gap-1 rounded-lg text-[white] pb-[10.4px] pt-[10.4px] bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                        <button className='flex p-6 items-center gap-1 rounded-lg text-[white] pb-[12.4px] pt-[12.4px] bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                           <TbWorldWww />
-                          <p className='text-sm'>Website</p>
+                          <p className='text-md font-medium'>Website</p>
                         </button>
                       </a>
                     )}
                     {project.links.code && (
                       <a target='__blank' href={project.links.link_github}>
-                        <button className='flex p-6 items-center gap-1 rounded-lg text-[white] pb-[10.4px] pt-[10.4px] bg-[black] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                        <button className='flex p-6 items-center gap-1 border-2 border-[black] rounded-lg text-[black] pb-[10.4px] pt-[11.4px] bg-[transparent] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                           <FaGithub />
-                          <p className='text-sm'>Repository</p>
+                          <p className='text-md font-medium'>Repository</p>
                         </button>
                       </a>
                     )}
@@ -321,32 +321,32 @@ function Homepage() {
           <div className='flex justify-around'>
             <div>
               <h2 className='text-4xl black text-center font-bold' >Get In Touch</h2>
-              <p className='text-lg mt-2 max-w-[540px] text-center'>You can contact me on Twitter, connect with me on Linkedin or even Leave me a follow on Github!</p>
+              <p className='text-lg mt-2 max-w-[540px] text-center'>Let's connect on Twitter and LinkedIn or leave me a follow on Github! :)</p>
             </div>
           </div>
           <div className='mt-8 md:flex justify-around'>
             <div className='md:flex gap-6'>
               <a target='__blank' href="https://linkedin.com/in/alberto-di-maio-520531285/">
-                <button className='flex text-[black] md:mb-0 mb-4 w-full border-[black] border hover:bg-[black] hover:text-[white] justify-around w-40 p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                <button className='flex text-[black] md:mb-0 mb-4 w-full border-[black] border-2 hover:bg-[black] hover:text-[white] justify-around w-40 p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                   <div className='flex gap-2 items-center'>
                     <FaLinkedin />
-                    <p>Linkedin</p>
+                    <p className='font-medium'>LinkedIn</p>
                   </div>
                 </button>
               </a>
               <a target='__blank' href="https://x.com/TheAlbeDim">
-                <button className='flex text-[black] md:mb-0 mb-4 border border-[black] hover:bg-[black] hover:text-[white] p-2 w-40 w-full justify-around gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                <button className='flex text-[black] md:mb-0 mb-4 border-2 border-[black] hover:bg-[black] hover:text-[white] p-2 w-40 w-full justify-around gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                   <div className='flex gap-2 items-center'>
                     <BsTwitterX />
-                    <p>Twitter/X</p>
+                    <p className='font-medium'>Twitter/X</p>
                   </div>
                 </button>
               </a>
               <a target='__blank' href="https://github.com/albedim">
-                <button className='flex text-[black] md:mb-0 mb-4 border-[black] border hover:bg-[black] hover:text-[white] justify-around p-2 w-40 w-full gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+                <button className='flex text-[black] md:mb-0 mb-4 border-[black] border-2 hover:bg-[black] hover:text-[white] justify-around p-2 w-40 w-full gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                   <div className='flex gap-2 items-center'>
                     <FaGithub />
-                    <p>FaGithub</p>
+                    <p className='font-medium'>Github</p>
                   </div>
                 </button>
               </a>
@@ -357,10 +357,10 @@ function Homepage() {
           </div>
           <div className='mt-10 flex justify-around gap-6'>
             <a className='md:w-auto w-full' target='__blank' href="mailto:albertodimaio05@gmail.com">
-              <button className='flex w-full text-[black] border-[black] border hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
+              <button className='flex w-full text-[black] border-[black] border-2 hover:bg-[black] hover:text-[white] w-64 flex justify-around p-2 gap-2 hover:opacity-80 pl-6 pr-6 items-center rounded-md transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>
                 <div className="flex gap-2 items-center">
                   <TfiEmail />
-                  <p>Send Me an E-mail</p>
+                  <p className='font-medium'>Send me an e-mail</p>
                 </div>
               </button>
             </a>
