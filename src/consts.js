@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import { TfiMenu } from 'react-icons/tfi'
 import { TbUnlink } from 'react-icons/tb'
-import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit } from 'react-icons/bi'
+import { BiLogoSpringBoot, BiLogoFlask, BiLogoPython, BiLogoTailwindCss, BiLogoPhp, BiLogoMongodb, BiLogoTypescript, BiSolidEdit, BiSolidSchool } from 'react-icons/bi'
 import { SiExpress, SiMongodb, SiMysql, SiPostgresql, SiTwitter } from 'react-icons/si'
-import { FaJava, FaLaptopCode } from 'react-icons/fa'
-import { IoLogoJavascript, IoMdClose } from 'react-icons/io'
+import { FaJava, FaLaptopCode, FaSchool } from 'react-icons/fa'
+import { IoLogoJavascript, IoMdClose, IoMdSchool } from 'react-icons/io'
 import { TbBrandReactNative } from 'react-icons/tb'
 import { SiNextdotjs, SiSocketdotio } from 'react-icons/si'
 import { GrClose, GrReactjs } from 'react-icons/gr'
@@ -12,171 +12,97 @@ import { ImHtmlFive, ImCss3 } from 'react-icons/im'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import { AiFillGithub } from 'react-icons/ai'
-import { data } from './config/config';
-
 
 export const skills = [
   {
     name: "HTML",
-    icon: <ImHtmlFive size={54}/>,
+    icon: <ImHtmlFive/>,
     value: "94%"
   },
   {
     name: "CSS",
-    icon: <ImCss3 size={54}/>,
+    icon: <ImCss3/>,
     value: "80%"
   },
   {
     name: "Javascript",
-    icon: <IoLogoJavascript size={54}/>,
+    icon: <IoLogoJavascript/>,
     value: "70%"
   },
   {
     name: "Typescript",
-    icon: <BiLogoTypescript size={54}/>,
+    icon: <BiLogoTypescript/>,
     value: "70%"
   },
   {
     name: "React JS",
-    icon: <GrReactjs size={54}/>,
+    icon: <GrReactjs/>,
     value: "80%"
   },
   {
     name: "React Native",
-    icon: <TbBrandReactNative size={54}/>,
+    icon: <TbBrandReactNative/>,
     value: "70%"
   },
   {
     name: "Next JS",
-    icon: <SiNextdotjs size={54}/>,
+    icon: <SiNextdotjs/>,
     value: "65%"
   },
   {
     name: "TailwindCss",
-    icon: <BiLogoTailwindCss size={54}/>,
+    icon: <BiLogoTailwindCss/>,
     value: "50%"
   },
   {
     name: "Python",
-    icon: <BiLogoPython size={54}/>,
+    icon: <BiLogoPython/>,
     value: "94%"
   },
   {
     name: "Flask",
-    icon: <BiLogoFlask size={54}/>,
+    icon: <BiLogoFlask/>,
     value: "94%"
   },
   {
     name: "Java",
-    icon: <FaJava size={54}/>,
+    icon: <FaJava/>,
     value: "84%"
   },
   {
     name: "Spring Boot",
-    icon: <BiLogoSpringBoot size={54}/>,
+    icon: <BiLogoSpringBoot/>,
     value: "75%"
   },
   {
     name: "MySQL",
-    icon: <SiMysql size={54}/>,
+    icon: <SiMysql/>,
     value: "70%"
   },
   {
     name: "PostgreSQL",
-    icon: <SiPostgresql size={54}/>,
+    icon: <SiPostgresql/>,
     value: "70%"
   },
   {
     name: "MongoDb",
-    icon: <BiLogoMongodb size={54}/>,
+    icon: <BiLogoMongodb/>,
     value: "45%"
   },
   {
     name: "PHP",
-    icon: <BiLogoPhp size={54}/>,
+    icon: <BiLogoPhp/>,
     value: "50%"
   },
   {
     name: "Express.js",
-    icon: <SiExpress size={54}/>,
+    icon: <SiExpress/>,
     value: "60%"
   },
   {
     name: "SocketIo",
-    icon: <SiSocketdotio size={54}/>,
+    icon: <SiSocketdotio/>,
     value: "60%"
-  }
-]
-
-const projectsLanguages = [
-  {
-    name: "HTML",
-    icon: <ImHtmlFive size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "CSS",
-    icon: <ImCss3 size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Javascript",
-    icon: <IoLogoJavascript size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Typescript",
-    icon: <BiLogoTypescript size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "React JS",
-    icon: <GrReactjs size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "React Native",
-    icon: <TbBrandReactNative size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Next JS",
-    icon: <SiNextdotjs size={21} color='black' opacity="60%" />
-  }, 
-  {
-    name: "TailwindCss",
-    icon: <BiLogoTailwindCss size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Python",
-    icon: <BiLogoPython size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Flask",
-    icon: <BiLogoFlask size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Java",
-    icon: <FaJava size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Spring Boot",
-    icon: <BiLogoSpringBoot size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "MySQL",
-    icon: <SiMysql size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "PostgreSQL",
-    icon: <SiPostgresql size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "MongoDb",
-    icon: <BiLogoMongodb size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "PHP",
-    icon: <BiLogoPhp size={21} color='black' opacity="60%" />
-  },
-  {
-    name: "Express.js",
-    icon: <SiExpress size={21} color='black' opacity="60%" />
   }
 ]
 
@@ -186,7 +112,7 @@ export const EDUCATION = [
       label: "Università Federico II",
       url: "https://www.international.unina.it/",
     },
-    image: <img className='w-full h-full' src={require('./images/sec.png')} alt="" />,
+    icon: <IoMdSchool/>,
     description: "Bachelor of Engineering - BS, Computer Engineering",
     date: "09/2024 - 04/2027",
     grade: null,
@@ -201,7 +127,7 @@ export const EDUCATION = [
       url: "https://ittfrancesogiordaninapoli.it",
     },
     grade: "100/100",
-    image: <img className='w-full h-full' src={require('./images/gs.png')} alt="" />,
+    icon: <BiSolidSchool/>,
     description: "High School Diploma in Computer Science and Technology, Computer Programming, Specific Applications.",
     date: "09/2019 - 07/2024",
     skills: {
@@ -212,20 +138,12 @@ export const EDUCATION = [
 ]
 
 
-export const projects = (language) => {
-  return [
+export const projects = [
     {
       name: "Bliddo",
       right: false,
-      icons: [
-        projectsLanguages[4],
-        projectsLanguages[7],
-        projectsLanguages[3],
-        projectsLanguages[9],
-        projectsLanguages[8],
-        projectsLanguages[12],
-      ],
-      description: data[language].projects.content[0],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot"],
+      description: "Bliddo empowers businesses and individuals to generate custom QR codes and gain real-time insights for every scan.",
       links: {
         overview: true,
         code: false,
@@ -237,15 +155,8 @@ export const projects = (language) => {
     {
       name: "Uteka",
       right: false,
-      icons: [
-        projectsLanguages[4],
-        projectsLanguages[7],
-        projectsLanguages[3],
-        projectsLanguages[9],
-        projectsLanguages[8],
-        projectsLanguages[12],
-      ],
-      description: data[language].projects.content[1],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot"],
+      description: "Sell your digital guides, articles, small e-books or recipes and share your digital library to the world using your link.",
       links: {
         overview: true,
         code: false,
@@ -257,11 +168,8 @@ export const projects = (language) => {
     {
       name: "Daker",
       right: true,
-      icons: [
-        projectsLanguages[8],
-        projectsLanguages[9]
-      ],
-      description: data[language].projects.content[2],
+      skills: ["Python", "Flask"],
+      description: "A REST API able to generate more than 10 Millions fake but realistic users for testing and development.",
       links: {
         overview: true,
         code: true,
@@ -273,16 +181,8 @@ export const projects = (language) => {
     {
       name: "JudJen",
       right: false,
-      icons: [
-        projectsLanguages[4],
-        projectsLanguages[7],
-        projectsLanguages[3],
-        projectsLanguages[9],
-        projectsLanguages[8],
-        projectsLanguages[12],
-        projectsLanguages[14]
-      ],
-      description: data[language].projects.content[3],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot", "MongoDb"],
+      description: "Share your cringe stories with an anonymous community, read cringe stories and have fun with your friends!",
       links: {
         overview: true,
         code: false,
@@ -294,15 +194,8 @@ export const projects = (language) => {
     {
       name: "UnBoring",
       right: true,
-      icons: [
-        projectsLanguages[4],
-        projectsLanguages[7],
-        projectsLanguages[3],
-        projectsLanguages[9],
-        projectsLanguages[8],
-        projectsLanguages[12],
-      ],
-      description: data[language].projects.content[4],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot"],
+      description: "Bored And Tired of procrastinating? Create and complete some tasks and meet new people.",
       links: {
         overview: true,
         code: false,
@@ -314,15 +207,8 @@ export const projects = (language) => {
     {
       name: "Codymio",
       right: false,
-      icons: [
-        projectsLanguages[4],
-        projectsLanguages[7],
-        projectsLanguages[3],
-        projectsLanguages[9],
-        projectsLanguages[8],
-        projectsLanguages[13],
-      ],
-      description: data[language].projects.content[5],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "PostgreSQL"],
+      description: "Codymio is helping 500+ developers find the perfect open source projects to contribute to",
       links: {
         overview: true,
         code: false,
@@ -334,15 +220,8 @@ export const projects = (language) => {
     {
       name: "Cryllet",
       right: true,
-      icons: [
-        projectsLanguages[4],
-        projectsLanguages[7],
-        projectsLanguages[2],
-        projectsLanguages[9],
-        projectsLanguages[8],
-        projectsLanguages[12],
-      ],
-      description: data[language].projects.content[6],
+      skills: ["React JS", "TailwindCss", "Javascript", "Flask", "Python", "Spring Boot"],
+      description: "Create your payment links with Cryllet. Pay and get paid by others using cryptocurrencies",
       links: {
         overview: true,
         code: false,
@@ -352,4 +231,3 @@ export const projects = (language) => {
       image: "cryllet.jpg"
     }
   ]
-}

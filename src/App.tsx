@@ -11,6 +11,10 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Homepage from './pages/homepage'
 import NewsLetter from './pages/newsletter'
+import Education from './pages/education'
+import Projects from './pages/projects'
+import Skills from './pages/skills'
+import NotFound from './pages/not_found'
 
 
 function App() {
@@ -19,7 +23,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/newsletter" element={<NewsLetter />} />
+        <Route path='/*' element={<NotFound/>}/>
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/education" element={<Education />} />
       </Routes>
     </BrowserRouter>
   )
