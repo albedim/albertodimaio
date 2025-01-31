@@ -57,7 +57,7 @@ const Projects = () => {
                 <div className="flex gap-4">
                   {project.links.overview ? (
                     <div className="flex border border-[#83d656] rounded-md p-2 transition-all hover:bg-opacity-10 bg-[#09090b] items-center mt-8 gap-2">
-                      <a href={project.links.link_overview}>
+                      <a href={project.links.link_overview} target="_blank">
                         <div className="flex text-sm items-center gap-2">
                           <BiLinkExternal/>
                           <p>Open website</p>
@@ -67,7 +67,7 @@ const Projects = () => {
                   ):null}
                   {project.links.code ? (
                     <div className="flex border border-[#83d656] rounded-md p-2 transition-all hover:bg-opacity-10 bg-[#09090b] items-center mt-8 gap-2">
-                      <a href={project.links.link_github}>
+                      <a href={project.links.link_github} target="_blank">
                         <div className="flex text-sm items-center gap-2">
                           <BiLinkExternal/>
                           <p>Open repository</p>
