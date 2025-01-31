@@ -37,7 +37,7 @@ const Projects = () => {
         <div className="mt-6 ml-1">
           <p className="md:text-sm text-md text-[#818896]">→ projects</p>
           {projects.map((project) => (
-            <div className="bg-[#121214] mt-6 p-5 max-w-[740px] border border-[#242426] rounded-lg">
+            <div className="bg-[#121214] mt-6 p-5 hover:border-[#83d656] transition-all max-w-[740px] border border-[#242426] rounded-lg">
               <div className="text-[#83d656] items-center gap-3">
                 <div className="flex text-[#83d656] items-center gap-3">
                   <BiBulb size={31.4}/>

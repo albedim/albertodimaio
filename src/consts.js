@@ -142,7 +142,7 @@ export const projects = [
     {
       name: "Bliddo",
       right: false,
-      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot"],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "MySQL"],
       description: "Bliddo empowers businesses and individuals to generate custom QR codes and gain real-time insights for every scan.",
       links: {
         overview: true,
@@ -155,7 +155,7 @@ export const projects = [
     {
       name: "Uteka",
       right: false,
-      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot"],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "MySQL"],
       description: "Sell your digital guides, articles, small e-books or recipes and share your digital library to the world using your link.",
       links: {
         overview: true,
@@ -181,7 +181,7 @@ export const projects = [
     {
       name: "JudJen",
       right: false,
-      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot", "MongoDb"],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "MySQL", "MongoDb"],
       description: "Share your cringe stories with an anonymous community, read cringe stories and have fun with your friends!",
       links: {
         overview: true,
@@ -194,7 +194,7 @@ export const projects = [
     {
       name: "UnBoring",
       right: true,
-      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "Spring Boot"],
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "MySQL"],
       description: "Bored And Tired of procrastinating? Create and complete some tasks and meet new people.",
       links: {
         overview: true,
@@ -220,7 +220,7 @@ export const projects = [
     {
       name: "Cryllet",
       right: true,
-      skills: ["React JS", "TailwindCss", "Javascript", "Flask", "Python", "Spring Boot"],
+      skills: ["React JS", "TailwindCss", "Javascript", "Flask", "Python", "MySQL"],
       description: "Create your payment links with Cryllet. Pay and get paid by others using cryptocurrencies",
       links: {
         overview: true,

@@ -1,19 +1,26 @@
 import React, { useEffect } from "react";
-import { BiBook, BiBrain, BiPackage, BiUser } from "react-icons/bi";
+import { BiBook, BiBrain, BiError, BiPackage, BiSolidError, BiUser } from "react-icons/bi";
 import { BsAppIndicator, BsEye, BsLinkedin, BsPerson, BsTwitterX } from "react-icons/bs";
 import { FaGithub, FaIdeal, FaLanguage, FaLinkedin } from "react-icons/fa";
 import { TbMail, TbPrompt, TbSchool } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import NavigationElement from "../../components/navigation_element";
-import { GrConnect, GrGithub } from "react-icons/gr";
+import { GrClose, GrConnect, GrGithub } from "react-icons/gr";
 import { TfiEmail } from "react-icons/tfi";
 import { ImMail } from "react-icons/im";
 import axios from "axios";
+import { IoMdDoneAll } from "react-icons/io";
+import { MdClose, MdDone, MdError } from "react-icons/md";
 
 const Homepage = () => {
 
   const [cursorDisplayVisible, setCursorDisplayVisible] = React.useState(true);
+  const [email, setEmail] = React.useState("");
+  const [res, setRes] = React.useState({
+    message: null,
+    error: false
+  });
   const [views, setViews] = React.useState(0);
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const contactRef = React.useRef<HTMLDivElement>(null);
@@ -33,7 +40,16 @@ const Homepage = () => {
     .then((response) => {
       setViews(response.data.views);
     }).catch((error) => {
-      console.log(error);
+      getViews();
+    });
+  }
+
+  const subscribe = async () => {
+    await axios.post("https://albedim.pythonanywhere.com/subscribe", {email})
+    .then((response) => {
+      setRes({message: response.data.message, error: false});
+    }).catch((error) => {
+      setRes({message: error.response.data.message, error: true});
     });
   }
 
@@ -165,6 +181,29 @@ const Homepage = () => {
               path="mailto:albertodimaio05@gmail.com"
               description="Send me an e-mail if you want to talk to me privately or for business"
             />
+          </div>
+          <div className="bg-[#e3ffe0] h-[174px] bg-opacity-10 mt-6 p-5 border border-[#658257] rounded-lg">
+            <h2 className="font-semibold text-[17px] text-[#83d656]">Stay tuned</h2>
+            <p className="text-[#658257] mt-1 text-sm">Don't subscribe If you don't want to see my new publications and data ok</p>
+            <div className="mt-6 md:flex gap-4 w-full">
+                {res.message != null ? (
+                  <div className="flex items-center">
+                    {res.error ? (
+                      <div className="border-[red] border-2 text-[red] p-1 rounded-full">
+                        <MdClose/>
+                      </div>
+                    ):(
+                      <div className="border-[#83d656] border-2 text-[#83d656] p-1 rounded-full">
+                        <MdDone/>
+                      </div>
+                    )}
+                  </div>
+                ):null}
+              <input type="email" placeholder="Enter your e-mail" value={email} onChange={(e) => setEmail(e.target.value)} className="rounded-md text-sm pl-4 pt-[18px] pb-[18px] border-[#83d656] border md:w-[324px] w-full h-8" />
+              <button onClick={subscribe} disabled={!email.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')}className="bg-[#83d656] md:mt-0 mt-2 md:w-auto w-full enabled:hover:bg-opacity-80 transition-all p-[9px] text-sm text-[white] rounded-md">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
         <div className="flex justify-around items-center mt-24">
