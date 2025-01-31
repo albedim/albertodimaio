@@ -95,9 +95,9 @@ const Homepage = () => {
           <div className="bg-[#121214] mt-6 p-5 max-w-[740px] border border-[#242426] rounded-lg">
             <p className="text-[#818896] text-[15px]">My mum says I'm the best dev in my condo but I'm just a Software Engineer that likes bringing innovative ideas into reality. Passionate of building and developing new projects.</p>
             <div className="md:mt-4 mt-6 flex text-[#83d656] gap-3 md:text-lg text-2xl">
-              <a href="https://github.com/albedim"><FaGithub className="hover:text-[#75b354] transition-all"/></a>
-              <a href="https://www.linkedin.com/in/alberto-di-maio-520531285/"><FaLinkedin className="hover:text-[#75b354] transition-all"/></a>
-              <a href="https://x.com/TheAlbeDim"><BsTwitterX className="hover:text-[#75b354] transition-all"/></a>
+              <a href="https://github.com/albedim" target="_blank"><FaGithub className="hover:text-[#75b354] transition-all"/></a>
+              <a href="https://www.linkedin.com/in/alberto-di-maio-520531285/" target="_blank"><FaLinkedin className="hover:text-[#75b354] transition-all"/></a>
+              <a href="https://x.com/TheAlbeDim" target="_blank"><BsTwitterX className="hover:text-[#75b354] transition-all"/></a>
             </div>
           </div>
         </div>
