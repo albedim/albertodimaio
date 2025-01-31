@@ -184,7 +184,7 @@ const Homepage = () => {
           </div>
           <div className="bg-[#e3ffe0] h-[174px] bg-opacity-10 mt-6 p-5 border border-[#658257] rounded-lg">
             <h2 className="font-semibold text-[17px] text-[#83d656]">Stay tuned</h2>
-            <p className="text-[#658257] mt-1 text-sm">Don't subscribe If you don't want to see my new publications and data ok</p>
+            <p className="text-[#658257] mt-1 text-sm">Don’t subscribe if you’re fine with mediocrity while I crush it.</p>
             <div className="mt-6 md:flex gap-4 w-full">
                 {res.message != null ? (
                   <div className="flex items-center">
