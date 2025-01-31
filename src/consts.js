@@ -114,7 +114,7 @@ export const EDUCATION = [
     },
     icon: <IoMdSchool/>,
     description: "Bachelor of Engineering - BS, Computer Engineering",
-    date: "09/2024 - 04/2027",
+    date: "09/2024 - Currenr",
     grade: null,
     skills: {
       label: "Project Management, Engineering and +13 skills",
