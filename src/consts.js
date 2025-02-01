@@ -147,7 +147,7 @@ export const projects = [
       links: {
         overview: true,
         code: false,
-        link_overview: "https://bliddo.com",
+        link_overview: "https://bliddofe.pages.dev",
         link_github: ""
       },
       image: "bliddo.png"
