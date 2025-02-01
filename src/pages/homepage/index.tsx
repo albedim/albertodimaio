@@ -182,10 +182,11 @@ const Homepage = () => {
               description="Send me an e-mail if you want to talk to me privately or for business"
             />
           </div>
-          <div className="bg-[#e3ffe0] h-[174px] bg-opacity-10 mt-6 p-5 border border-[#658257] rounded-lg">
+          <div className="bg-[#e3ffe0] md:h-[164px] bg-opacity-10 mt-6 p-5 border border-[#658257] rounded-lg">
             <h2 className="font-semibold text-[17px] text-[#83d656]">Stay tuned</h2>
             <p className="text-[#658257] mt-1 text-sm">Don’t subscribe if you’re fine with mediocrity while I crush it.</p>
             <div className="mt-6 md:flex gap-4 w-full">
+              <div className="flex gap-4">
                 {res.message != null ? (
                   <div className="flex items-center">
                     {res.error ? (
@@ -199,7 +200,8 @@ const Homepage = () => {
                     )}
                   </div>
                 ):null}
-              <input type="email" placeholder="Enter your e-mail" value={email} onChange={(e) => setEmail(e.target.value)} className="rounded-md text-sm pl-4 pt-[18px] pb-[18px] border-[#83d656] border md:w-[324px] w-full h-8" />
+                <input type="email" placeholder="Enter your e-mail" value={email} onChange={(e) => setEmail(e.target.value)} className="rounded-md text-sm pl-4 pt-[18px] pb-[18px] border-[#83d656] border md:w-[324px] w-full h-8" />
+              </div>
               <button onClick={subscribe} disabled={!email.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')}className="bg-[#83d656] md:mt-0 mt-2 md:w-auto w-full enabled:hover:bg-opacity-80 transition-all p-[9px] text-sm text-[white] rounded-md">
                 Subscribe
               </button>
