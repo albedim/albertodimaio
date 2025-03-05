@@ -21,6 +21,7 @@ const Homepage = () => {
     message: null,
     error: false
   });
+  const [isLoading, setIsLoading] = React.useState(true);
   const [views, setViews] = React.useState(0);
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const contactRef = React.useRef<HTMLDivElement>(null);
@@ -39,6 +40,7 @@ const Homepage = () => {
     await axios.get("https://albedim.pythonanywhere.com/views")
     .then((response) => {
       setViews(response.data.views);
+      setIsLoading(false);
     }).catch((error) => {
       getViews();
     });
@@ -56,20 +58,24 @@ const Homepage = () => {
   return (
     <div className="bg-[#09090b] h-full w-screen flex pt-[64px] pb-[64px] pl-8 pr-8 justify-center">
       <div>
-        <div className="md:hidden block mb-4 text-[#83d656] flex items-center gap-1">
-          <BsEye />
-          <p className="text-sm">{views}</p>
-        </div>
+        {!isLoading ? (
+          <div className="md:hidden block mb-4 text-[#83d656] flex items-center gap-1">
+            <BsEye />
+            <p className="text-sm">{views}</p>
+          </div>
+        ): null}
         <div className="flex justify-between">
           <div className="flex items-center gap-2">
             <TbPrompt color="#83d656" size={24}/>
             <p className="text-[#83d656] text-sm" >albertodimaio.com ~ main</p>
             <div style={{ display: cursorDisplayVisible ? "block" : "none" }} className="bg-[#83d656] w-[3px] h-4"></div>
             </div>
-            <div className="md:flex hidden text-[#83d656] flex items-center gap-1">
-              <BsEye />
-              <p className="text-sm">{views}</p>
-            </div>
+            {!isLoading ? (
+              <div className="md:flex hidden text-[#83d656] flex items-center gap-1">
+                <BsEye />
+                <p className="text-sm">{views}</p>
+              </div>
+            ): null}
         </div>
         <div className="mt-6 ml-1">
           <p className="md:text-sm text-md text-[#818896]">→ whoami</p>
