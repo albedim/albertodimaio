@@ -3,14 +3,10 @@ import { BiBook, BiBrain, BiError, BiPackage, BiSolidError, BiUser } from "react
 import { BsAppIndicator, BsEye, BsLinkedin, BsPerson, BsTwitterX } from "react-icons/bs";
 import { FaGithub, FaIdeal, FaLanguage, FaLinkedin } from "react-icons/fa";
 import { TbMail, TbPrompt, TbSchool } from "react-icons/tb";
-import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import NavigationElement from "../../components/navigation_element";
-import { GrClose, GrConnect, GrGithub } from "react-icons/gr";
-import { TfiEmail } from "react-icons/tfi";
-import { ImMail } from "react-icons/im";
+import { GrConnect, GrGithub } from "react-icons/gr";
 import axios from "axios";
-import { IoMdDoneAll } from "react-icons/io";
 import { MdClose, MdDone, MdError } from "react-icons/md";
 
 const Homepage = () => {
