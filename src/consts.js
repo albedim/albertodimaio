@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
+
 export const skills = [
   {
     name: "HTML",
