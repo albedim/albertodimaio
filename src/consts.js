@@ -140,6 +140,19 @@ export const EDUCATION = [
 
 export const projects = [
     {
+      name: "Kodegee",
+      right: false,
+      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "MongoDb", "MySQL"],
+      description: "We’re on a mission to make open source simple, social, and accessible to everyone.",
+      links: {
+        overview: true,
+        code: false,
+        link_overview: "https://kodegeefe.pages.dev",
+        link_github: ""
+      },
+      image: "kodegeefe.png"
+    },
+    {
       name: "Bliddo",
       right: false,
       skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "MySQL"],
@@ -203,19 +216,6 @@ export const projects = [
         link_github: ""
       },
       image: "unboring.jpg"
-    },
-    {
-      name: "Codymio",
-      right: false,
-      skills: ["React JS", "TailwindCss", "Typescript", "Flask", "Python", "PostgreSQL"],
-      description: "Codymio is helping 500+ developers find the perfect open source projects to contribute to",
-      links: {
-        overview: true,
-        code: false,
-        link_overview: "https://codymio.pages.dev",
-        link_github: ""
-      },
-      image: "codymio.jpg"
     },
     {
       name: "Cryllet",
