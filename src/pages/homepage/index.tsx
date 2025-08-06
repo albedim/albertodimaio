@@ -21,7 +21,7 @@ const Homepage = () => {
   const [views, setViews] = React.useState(0);
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const contactRef = React.useRef<HTMLDivElement>(null);
-  const about = `<h2>I'm a <b style="color: #83d656;">curious</b> and <b style="color: #83d656;">creative</b> guy who loves building things. For me, the most rewarding way to do this is in the tech field, where I’ve picked up software development skills along the way. I’ve been freelancing and working on <b style="color: #83d656;">numerous projects</b> since I was 16, learning mostly on my own and getting hands-on with everything. These projects have given me a chance to see every side of the process—from design and development to deployment and keeping things running smoothly.<br><br>I'm always up for trying new things and pushing myself because, let’s face it, that’s how real growth happens. I set <b style="color: #83d656;">goals</b> and dive into them with a laser-focused, determined attitude, making sure I see them through to the end. <b style="color: #83d656;">Perseverance</b> is my middle name (okay, not really, but it should be)—I don’t give up easily and I’ll keep going until I reach my goal.<br><br>I thrive on <b style="color: #83d656;">collaboration</b> and bouncing ideas off people because that’s where the magic happens—whether it’s learning something new or coming up with a game-changing solution. And yes, I’m all about continuous learning because who doesn’t want to be the best version of themselves?</h2>`
+  const about = `<h2>I'm a <b style="color: #83d656;">curious</b> and <b style="color: #83d656;">creative</b> guy who loves building things. For me, the most rewarding way to do this is in the tech field, where I’ve picked up software development skills along the way. I’ve been freelancing and working on <b style="color: #83d656;">numerous projects</b> since I was 16, learning mostly on my own and getting hands-on with everything. These projects have given me a chance to see every side of the process: from design and development to deployment and keeping things running smoothly.<br><br>I'm always up for trying new things and pushing myself because, let’s face it, that’s how real growth happens. I set <b style="color: #83d656;">goals</b> and dive into them with a laser-focused, determined attitude, making sure I see them through to the end.<br><br>I thrive on <b style="color: #83d656;">collaboration</b> and bouncing ideas off people because that’s where the magic happens, whether it’s learning something new or coming up with a game-changing solution. And yes, I’m all about continuous learning because who doesn’t want to be the best version of themselves?</h2>`
 
   useEffect(() => {
     const interval = setInterval(async () => {
@@ -39,15 +39,6 @@ const Homepage = () => {
       setIsLoading(false);
     }).catch((error) => {
       getViews();
-    });
-  }
-
-  const subscribe = async () => {
-    await axios.post("https://albedim.pythonanywhere.com/subscribe", {email})
-    .then((response) => {
-      setRes({message: response.data.message, error: false});
-    }).catch((error) => {
-      setRes({message: error.response.data.message, error: true});
     });
   }
 
@@ -183,31 +174,6 @@ const Homepage = () => {
               path="mailto:albertodimaio05@gmail.com"
               description="Send me an e-mail if you want to talk to me privately or for business"
             />
-          </div>
-          <div className="bg-[#e3ffe0] md:h-[164px] bg-opacity-10 mt-6 p-5 border border-[#658257] rounded-lg">
-            <h2 className="font-semibold text-[17px] text-[#83d656]">Stay tuned</h2>
-            <p className="text-[#658257] mt-1 text-sm">If you’re happy writing JavaScript in Notepad, don’t subscribe.</p>
-            <div className="mt-6 md:flex gap-4 w-full">
-              <div className="flex gap-4">
-                {res.message != null ? (
-                  <div className="flex items-center">
-                    {res.error ? (
-                      <div className="border-[red] border-2 text-[red] p-1 rounded-full">
-                        <MdClose/>
-                      </div>
-                    ):(
-                      <div className="border-[#83d656] border-2 text-[#83d656] p-1 rounded-full">
-                        <MdDone/>
-                      </div>
-                    )}
-                  </div>
-                ):null}
-                <input type="email" placeholder="Enter your e-mail" value={email} onChange={(e) => setEmail(e.target.value)} className="rounded-md text-sm pl-4 pt-[18px] pb-[18px] border-[#83d656] border md:w-[324px] w-full h-8" />
-              </div>
-              <button onClick={subscribe} disabled={!email.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')}className="bg-[#83d656] md:mt-0 mt-2 md:w-auto w-full enabled:hover:bg-opacity-80 transition-all p-[9px] text-sm text-[white] rounded-md">
-                Subscribe
-              </button>
-            </div>
           </div>
         </div>
         <div className="flex justify-around items-center mt-24">
