@@ -30,19 +30,19 @@ const HomePage = () => {
   const [email, setEmail] = React.useState<string>("");
   
   // 1. Initialize theme from localStorage or default to 'light'
-  const [theme, setTheme] = React.useState<string>(() => {
+  /*const [theme, setTheme] = React.useState<string>(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('theme') || 'light';
     }
     return 'light';
-  });
+  });*/
 
   React.useEffect(() => {
     getViews();
   }, []);
 
   // 2. Effect to apply the class to the HTML element and save preference
-  React.useEffect(() => {
+  /*React.useEffect(() => {
     const root = window.document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
@@ -50,12 +50,12 @@ const HomePage = () => {
       root.classList.remove('dark');
     }
     localStorage.setItem('theme', theme);
-  }, [theme]);
+  }, [theme]);*/
 
   // 3. Toggle function
-  const toggleTheme = () => {
+  /*const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
+  };*/
 
   const getViews = async () => {
     await axios.get("https://albedim.pythonanywhere.com/views")

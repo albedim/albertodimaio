@@ -1,7 +1,6 @@
 import 'react-tooltip/dist/react-tooltip.css';
-import { ContainerWithVerticalBorders, HorizontalDivider, SectionHeader, SectionWithBorder } from '../../components/sections';
+import { SectionHeader, SectionWithBorder } from '../../components/sections';
 import Experiences from '../../components/experiences';
-import { DotGrid } from '../home';
 
 
 const ExperiencesPage = () => {

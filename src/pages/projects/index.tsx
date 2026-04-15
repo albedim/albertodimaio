@@ -1,5 +1,5 @@
 import 'react-tooltip/dist/react-tooltip.css';
-import { HorizontalDivider, SectionHeader, SectionWithBorder } from '../../components/sections';
+import { SectionHeader, SectionWithBorder } from '../../components/sections';
 import Projects from '../../components/projects';
 
 const ProjectsPage = () => {
