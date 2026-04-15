@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  
+  /* Custom colors matching your original CSS */
+  --color-non-hover: var(--non-hover);
+  --color-hover: var(--hover);
+  --color-title: var(--title);
+  --color-bg-hover: var(--bg-hover);
+  --color-muted-background: var(--muted-background);
+  --color-muted-background-hover: var(--muted-background-hover);
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #424242; /* Matches your uploaded CSS */
+    --muted: #9f9fa9;
+    --muted-foreground: #71717b;
+    
+    --border: #e4e4e7;
+    --border-color: #e4e4e7;
+    
+    /* Button Colors (Light Mode) */
+    --non-hover: #52525c;  /* Dark Grey button */
+    --hover: #27272a;
+    
+    --muted-background: #f2f2f2;
+    --muted-background-hover: #e8e8e8;
+    
+    --title: #333333;
+    
+    /* Grid & Dots */
+    --line-color: #d6d6d6;
+    --dot-color: #dfdfe2; /* Darker dot as requested */
+    --grid-color: #d6d6d6;
+    
+    --bg-hover: #f5f5f5;
+  }
+
+  .dark {
+    --background: #0e0d09;
+    --foreground: #d4d4d4;
+    --muted: #5d5d5d;
+    --muted-foreground: #989898;
+    
+    --border: #313131;
+    --border-color: #313131;
+    
+    /* Button Colors (Dark Mode) */
+    --non-hover: #c7c7c7; /* Light Grey button */
+    --hover: #f5f5f5;
+    
+    --muted-background: #1f1f1f;
+    --muted-background-hover: #2e2e2e;
+    
+    --title: #ebebeb;
+    
+    /* Grid & Dots */
+    --line-color: #303030;
+    --dot-color: #5e5e5e; 
+    --grid-color: #303030;
+    
+    --bg-hover: #151515;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased min-h-screen flex flex-col font-sans;
+  }
+}
+
+@layer components {
+  .calendar-block {
+    stroke: rgba(0, 0, 0, 0.08);
+    shape-rendering: geometricPrecision;
+  }
+  .dark .calendar-block {
+    stroke: rgba(255, 255, 255, 0.04);
+  }
+}
+
+@layer utilities {
+  .bg-dot-grid {
+    background-image: radial-gradient(var(--dot-color) 1.25px, transparent 1.25px);
+    background-size: 7.5px 7.5px; /* Tighter spacing as requested */
+  }
+
+  .bg-striped {
+    background-image: repeating-linear-gradient(-45deg, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent 6px);
+  }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+
+h1, h2, h3, h4, h5, h6, p, span, a, li, div {
+  font-family: 'Instagram Sans', sans-serif;
+}
